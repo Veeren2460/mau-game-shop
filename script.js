@@ -68,7 +68,12 @@ document.querySelector("#checkoutForm").addEventListener("submit",async e=>{
  const methods={"Juice":"juice","MCB":"mcb","Card inquiry":"card"};
  button.disabled=true;button.textContent="Saving order...";
  try{
-  const response=await fetch("https://czncneyrbtepheyuwett.supabase.co/functions/v1/create-order",{method:"POST",headers:{"Content-Type":"application/json","apikey":"sb_publishable_57CYWH5ZetDxyEx8fLD8hg_wuJNw9om"},body:JSON.stringify({name,phone,player_id:player,payment_method:methods[payment],note,items:cart.map(x=>({id:x.id,qty:x.qty}))})});
+  const proof=$("#paymentProof").files[0];
+  if(proof && (proof.size>5242880||!["image/jpeg","image/png","image/webp","application/pdf"].includes(proof.type)))throw Error("Receipt must be JPG, PNG, WEBP or PDF under 5 MB");
+  const body=new FormData();
+  body.append("order",JSON.stringify({name,phone,player_id:player,payment_method:methods[payment],note,items:cart.map(x=>({id:x.id,qty:x.qty}))}));
+  if(proof)body.append("proof",proof);
+  const response=await fetch("https://czncneyrbtepheyuwett.supabase.co/functions/v1/create-order",{method:"POST",headers:{"apikey":"sb_publishable_57CYWH5ZetDxyEx8fLD8hg_wuJNw9om"},body});
   const result=await response.json();if(!response.ok)throw Error(result.error||"Order could not be saved");
   const status=document.querySelector("#checkoutStatus");
   if(status)status.textContent="Order #"+result.order_number+" placed successfully! Your order is pending confirmation. Please keep this order number.";
