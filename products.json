@@ -1008,5 +1008,25 @@
     "description": "US PlayStation Network account only. Provisional Eldorado listed supplier price USD 93.30; 8% + USD 0.30 cost allowance at Rs47/USD. Confirm live listing, code region, stock and final checkout total before accepting payment. Digital code delivered after supplier fulfillment. No account passwords required.",
     "badge": "US Account Only",
     "image": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=900"
+  },
+  {
+    "id": "xbox-us-5-gift-card",
+    "name": "Xbox US $5 Gift Card",
+    "category": "Xbox",
+    "price": 330,
+    "priceLabel": "Rs330",
+    "description": "Provisional price based on Eldorado Xbox listed starting price USD 4.86 plus 8% and USD 0.30 allowance at Rs47/USD. US-region Microsoft/Xbox accounts only. Confirm seller's live price, code region, availability and final checkout total before payment.",
+    "badge": "US Account Only",
+    "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=900"
+  },
+  {
+    "id": "xbox-us-10-gift-card",
+    "name": "Xbox US $10 Gift Card",
+    "category": "Xbox",
+    "price": 600,
+    "priceLabel": "Rs600",
+    "description": "Provisional price based on Eldorado Xbox listed starting price USD 9.11 plus 8% and USD 0.30 allowance at Rs47/USD. US-region Microsoft/Xbox accounts only. Confirm seller's live price, code region, availability and final checkout total before payment.",
+    "badge": "US Account Only",
+    "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=900"
   }
 ]
