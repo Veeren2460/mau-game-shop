@@ -1378,5 +1378,25 @@
     "description": "Turkey Google Play gift card, 250 TRY. Redeemable only in Turkey with an eligible Turkey-region Google Play account; verify seller offer and checkout price before payment. Provisional price.",
     "badge": "Turkey Accounts Only",
     "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=900"
+  },
+  {
+    "id": "google-play-tr-500-try",
+    "name": "Google Play Turkey 500 TRY Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 880,
+    "priceLabel": "Rs880",
+    "description": "Turkey Google Play gift card, 500 TRY. Turkey-region redemption only; verify seller, availability and final checkout before payment. Provisional price.",
+    "badge": "Turkey Accounts Only",
+    "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=900"
+  },
+  {
+    "id": "google-play-tr-1000-try",
+    "name": "Google Play Turkey 1000 TRY Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 1740,
+    "priceLabel": "Rs1,740",
+    "description": "Turkey Google Play gift card, 1000 TRY. Turkey-region redemption only; verify seller, availability and final checkout before payment. Provisional price.",
+    "badge": "Turkey Accounts Only",
+    "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=900"
   }
 ]
