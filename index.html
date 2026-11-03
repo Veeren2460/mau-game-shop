@@ -37,6 +37,16 @@
 <section class="trust-strip"><div><b>01</b><span>Choose a product</span></div><div><b>02</b><span>Send your order</span></div><div><b>03</b><span>Confirm price & payment</span></div><div><b>04</b><span>Receive your order</span></div></section>
 
 <section class="section" id="shop">
+  <div class="marketplace-intro"><p class="eyebrow">EXPLORE THE MARKETPLACE</p><h2>Shop by <span>product type.</span></h2><p class="muted">Pick what you need, then browse by game or platform.</p></div>
+  <div class="marketplace-types" id="typeFilters" aria-label="Shop by product type">
+    <button class="type-tile active" data-type="All" aria-pressed="true"><span class="type-icon">✦</span><strong>All products</strong><small>Browse everything</small></button>
+    <button class="type-tile" data-type="Top-Ups" aria-pressed="false"><span class="type-icon">⚡</span><strong>Top-Ups</strong><small>Game currencies</small></button>
+    <button class="type-tile" data-type="Gift Cards" aria-pressed="false"><span class="type-icon">🎁</span><strong>Gift Cards</strong><small>Wallet codes</small></button>
+    <button class="type-tile" data-type="Accounts" aria-pressed="false"><span class="type-icon">👤</span><strong>Accounts</strong><small>Coming soon</small></button>
+    <button class="type-tile" data-type="Subscriptions" aria-pressed="false"><span class="type-icon">★</span><strong>Subscriptions</strong><small>Memberships & plans</small></button>
+    <button class="type-tile" data-type="Services" aria-pressed="false"><span class="type-icon">🛠</span><strong>Services & gear</strong><small>Support & accessories</small></button>
+  </div>
+  <div class="browse-context" id="browseContext" aria-live="polite">Browsing all products</div>
   <div class="section-heading"><div><p class="eyebrow">THE STORE</p><h2>Find your <span>next level.</span></h2><p class="muted">Browse categories and add items to your order list.</p></div><div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Search products..." aria-label="Search products"></div></div>
   <div class="category-row" id="categoryFilters">
     <button class="filter active" data-category="All">All</button>
