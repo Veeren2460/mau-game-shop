@@ -1198,5 +1198,85 @@
     "description": "UK-region Xbox/Microsoft account only. Provisional Eldorado displayed USD 117.99; cost allowance 8% plus USD 0.30 at Rs47/USD. Confirm live supplier price, account region, code availability and final checkout cost before accepting payment.",
     "badge": "UK Account Only",
     "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=900"
+  },
+  {
+    "id": "steam-usd-5-wallet",
+    "name": "Steam Wallet 5 USD Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 370,
+    "priceLabel": "Rs370",
+    "description": "Steam wallet card denominated in USD; currency and redemption eligibility must match Steam account rules and seller terms. Provisional Eldorado listed starting price USD 5.51; cost allowance 8% plus USD 0.30 at Rs47/USD. Confirm seller offer, redeemability, availability and final checkout cost before accepting payment.",
+    "badge": "Confirm Steam Compatibility",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "steam-usd-10-wallet",
+    "name": "Steam Wallet 10 USD Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 700,
+    "priceLabel": "Rs700",
+    "description": "Steam wallet card denominated in USD; currency and redemption eligibility must match Steam account rules and seller terms. Provisional Eldorado listed starting price USD 10.63; cost allowance 8% plus USD 0.30 at Rs47/USD. Confirm seller offer, redeemability, availability and final checkout cost before accepting payment.",
+    "badge": "Confirm Steam Compatibility",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "steam-eur-5-wallet",
+    "name": "Steam Wallet 5 EUR Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 400,
+    "priceLabel": "Rs400",
+    "description": "Steam wallet card denominated in EUR; currency and redemption eligibility must match Steam account rules and seller terms. Provisional Eldorado listed starting price USD 5.91; cost allowance 8% plus USD 0.30 at Rs47/USD. Confirm seller offer, redeemability, availability and final checkout cost before accepting payment.",
+    "badge": "Confirm Steam Compatibility",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "steam-gbp-5-wallet",
+    "name": "Steam Wallet 5 GBP Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 490,
+    "priceLabel": "Rs490",
+    "description": "Steam wallet card denominated in GBP; currency and redemption eligibility must match Steam account rules and seller terms. Provisional Eldorado listed starting price USD 7.30; cost allowance 8% plus USD 0.30 at Rs47/USD. Confirm seller offer, redeemability, availability and final checkout cost before accepting payment.",
+    "badge": "Confirm Steam Compatibility",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "steam-idr-12000-wallet",
+    "name": "Steam Wallet 12,000 IDR Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 70,
+    "priceLabel": "Rs70",
+    "description": "Steam wallet card denominated in IDR; currency and redemption eligibility must match Steam account rules and seller terms. Provisional Eldorado listed starting price USD 0.70; cost allowance 8% plus USD 0.30 at Rs47/USD. Confirm seller offer, redeemability, availability and final checkout cost before accepting payment.",
+    "badge": "Confirm Steam Compatibility",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "steam-inr-100-wallet",
+    "name": "Steam Wallet 100 INR Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 120,
+    "priceLabel": "Rs120",
+    "description": "Steam wallet card denominated in INR; currency and redemption eligibility must match Steam account rules and seller terms. Provisional Eldorado listed starting price USD 1.47; cost allowance 8% plus USD 0.30 at Rs47/USD. Confirm seller offer, redeemability, availability and final checkout cost before accepting payment.",
+    "badge": "Confirm Steam Compatibility",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "steam-brl-10-wallet",
+    "name": "Steam Wallet 10 BRL Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 210,
+    "priceLabel": "Rs210",
+    "description": "Steam wallet card denominated in BRL; currency and redemption eligibility must match Steam account rules and seller terms. Provisional Eldorado listed starting price USD 2.99; cost allowance 8% plus USD 0.30 at Rs47/USD. Confirm seller offer, redeemability, availability and final checkout cost before accepting payment.",
+    "badge": "Confirm Steam Compatibility",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "steam-php-100-wallet",
+    "name": "Steam Wallet 100 PHP Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 120,
+    "priceLabel": "Rs120",
+    "description": "Steam wallet card denominated in PHP; currency and redemption eligibility must match Steam account rules and seller terms. Provisional Eldorado listed starting price USD 1.60; cost allowance 8% plus USD 0.30 at Rs47/USD. Confirm seller offer, redeemability, availability and final checkout cost before accepting payment.",
+    "badge": "Confirm Steam Compatibility",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
   }
 ]
