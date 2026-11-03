@@ -1,6 +1,17 @@
 let products = [];
 let config = {};
 let activeCategory = "All";
+let activeType = "All";
+function productType(p){
+  const n=String(p.name||"").toLowerCase(), c=String(p.category||"").toLowerCase();
+  if(c==="gaming accessories"||c==="digital services")return "Services";
+  if(/\baccount\b|\baccounts\b/.test(n))return "Accounts";
+  if(/subscription|membership|playstation plus|ps plus|game pass|nintendo switch online|iptv|premium plan/.test(n))return "Subscriptions";
+  if(/gift card|wallet|voucher|psn card|steam card|razer gold|google play card|itunes card/.test(n)||c==="steam & gift cards")return "Gift Cards";
+  return "Top-Ups";
+}
+function updateBrowseContext(count){const el=$("#browseContext");if(el)el.textContent=`${activeType==="All"?"All products":activeType==="Services"?"Services & gear":activeType} · ${count} item${count===1?"":"s"}`;}
+function setType(type){activeType=type;activeCategory="All";$("#searchInput").value="";document.querySelectorAll("[data-type]").forEach(b=>{const on=b.dataset.type===type;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on))});document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category==="All"));renderProducts();}
 let cart = JSON.parse(localStorage.getItem("mauGameShopCart") || "[]");
 const $ = (s) => document.querySelector(s);
 const money = (n) => "Rs" + Number(n).toLocaleString("en-MU");
@@ -13,13 +24,14 @@ function whatsappUrl(message){
 }
 function renderProducts(){
   const query=$("#searchInput").value.trim().toLowerCase();
-  const filtered=products.filter(p=>(activeCategory==="All"||p.category===activeCategory)&&(`${p.name} ${p.category} ${p.description}`.toLowerCase().includes(query)));
+  const filtered=products.filter(p=>(activeType==="All"||productType(p)===activeType)&&(activeCategory==="All"||p.category===activeCategory)&&(`${p.name} ${p.category} ${p.description}`.toLowerCase().includes(query)));
+  updateBrowseContext(filtered.length);
   $("#productGrid").innerHTML=filtered.length?filtered.map(p=>`
     <article class="product-card">
       <div class="product-image"><img src="${safeText(p.image)}" alt="${safeText(p.name)}" loading="lazy" onerror="this.style.display='none'"><span class="product-badge">${safeText(p.badge||p.category)}</span></div>
       <div class="product-info"><span class="product-category">${safeText(p.category)}</span><h3>${safeText(p.name)}</h3><p>${safeText(p.description)}</p>
       <div class="product-bottom"><span class="price">${safeText(p.priceLabel || (p.price==null?"Request price":money(p.price)))}</span><button class="add-button" data-add="${safeText(p.id)}">+ Add</button></div></div>
-    </article>`).join(""):`<div class="empty-state">No products found. Try another search or category.</div>`;
+    </article>`).join(""):`<div class="empty-state">${activeType==="Accounts"?"No account listings available yet. Please check back later.":"No products found. Try another search or category."}</div>`;
 }
 function saveCart(){localStorage.setItem("mauGameShopCart",JSON.stringify(cart));renderCart()}
 function addToCart(id){const p=products.find(x=>x.id===id);if(!p)return;const existing=cart.find(x=>x.id===id);if(existing)existing.qty++;else cart.push({id,qty:1});saveCart();toast(`${p.name} added to your order`)}
@@ -46,11 +58,12 @@ async function init(){
   renderProducts();renderCart();
 }
 document.addEventListener("click",e=>{
+  const type=e.target.closest("[data-type]");if(type)setType(type.dataset.type);
   const add=e.target.closest("[data-add]");if(add)addToCart(add.dataset.add);
   const filter=e.target.closest("[data-category]");if(filter){activeCategory=filter.dataset.category;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b===filter));renderProducts()}
   const qty=e.target.closest("[data-qty]");if(qty){const item=cart.find(x=>x.id===qty.dataset.qty);if(item){item.qty+=Number(qty.dataset.delta);if(item.qty<1)cart=cart.filter(x=>x.id!==item.id);saveCart()}}
   const remove=e.target.closest("[data-remove]");if(remove){cart=cart.filter(x=>x.id!==remove.dataset.remove);saveCart()}
-  const service=e.target.closest("[data-service-filter]");if(service){activeCategory=service.dataset.serviceFilter;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category===activeCategory));renderProducts()}
+  const service=e.target.closest("[data-service-filter]");if(service){activeType="All";document.querySelectorAll("[data-type]").forEach(b=>{b.classList.toggle("active",b.dataset.type==="All");b.setAttribute("aria-pressed",String(b.dataset.type==="All"))});activeCategory=service.dataset.serviceFilter;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category===activeCategory));renderProducts()}
 });
 $("#searchInput").addEventListener("input",renderProducts);
 $("#cartOpen").addEventListener("click",openCart);$("#cartClose").addEventListener("click",closeCart);$("#cartOverlay").addEventListener("click",closeCart);
