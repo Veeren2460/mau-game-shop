@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070914">
+  <meta name="description" content="MAU GAME SHOP Mauritius — gaming top-ups, console products, accessories and digital services.">
+  <title>MAU GAME SHOP | Mauritius</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#home" aria-label="MAU GAME SHOP home"><span class="brand-mark">M</span><span>MAU <b>GAME</b><em>SHOP</em></span></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+  <nav id="mainNav">
+    <a href="#home">Home</a><a href="#shop">Shop</a><a href="#services">Services</a><a href="#payment">Payment</a><a href="#contact">Contact</a>
+  </nav>
+  <button class="cart-button" id="cartOpen">Cart <span id="cartCount">0</span></button>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <p class="eyebrow">YOUR GAMING & DIGITAL STORE • MAURITIUS</p>
+    <h1>LEVEL UP YOUR<br><span>GAMING EXPERIENCE</span></h1>
+    <p class="hero-copy">Game top-ups, console products, gaming accessories and digital services — all in one place.</p>
+    <div class="hero-actions"><a class="btn primary" href="#shop">Explore shop <span>↗</span></a><a class="btn ghost" href="#contact">Message us</a></div>
+    <div class="hero-points"><span>✦ Mauritius based</span><span>✦ Order on WhatsApp</span><span>✦ Friendly service</span></div>
+  </div>
+  <div class="hero-art" aria-hidden="true"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="controller">🎮</div><div class="hero-stamp">MAU<br><b>GAME SHOP</b></div></div>
+</section>
+
+<section class="trust-strip"><div><b>01</b><span>Choose a product</span></div><div><b>02</b><span>Send your order</span></div><div><b>03</b><span>Confirm price & payment</span></div><div><b>04</b><span>Receive your order</span></div></section>
+
+<section class="section" id="shop">
+  <div class="section-heading"><div><p class="eyebrow">THE STORE</p><h2>Find your <span>next level.</span></h2><p class="muted">Browse categories and add items to your order list.</p></div><div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Search products..." aria-label="Search products"></div></div>
+  <div class="category-row" id="categoryFilters">
+    <button class="filter active" data-category="All">All</button>
+    <button class="filter" data-category="Free Fire">Free Fire</button>
+    <button class="filter" data-category="PUBG Mobile">PUBG</button>
+    <button class="filter" data-category="Mobile Legends">Mobile Legends</button>
+    <button class="filter" data-category="Roblox">Roblox</button>
+    <button class="filter" data-category="PlayStation">PlayStation</button>
+    <button class="filter" data-category="Xbox">Xbox</button>
+    <button class="filter" data-category="Nintendo">Nintendo</button>
+    <button class="filter" data-category="Gaming Accessories">Accessories</button>
+    <button class="filter" data-category="Digital Services">Digital services</button>
+  </div>
+  <div class="product-grid" id="productGrid"><div class="loading">Loading products...</div></div>
+</section>
+
+<section class="services-section section" id="services">
+  <div class="section-heading"><div><p class="eyebrow">MORE THAN GAMING</p><h2>Digital <span>services.</span></h2><p class="muted">Need help promoting or launching your business? Let's make it happen.</p></div></div>
+  <div class="service-grid">
+    <article class="service-card"><div class="service-icon">✦</div><h3>Graphic design</h3><p>Promotional posters, social media designs, simple logos and digital invitations.</p><a href="#shop" data-service-filter="Digital Services">View design prices ↗</a></article>
+    <article class="service-card"><div class="service-icon">⌘</div><h3>Website creation</h3><p>Mobile-friendly one-page and small business websites with clear contact options.</p><a href="#shop" data-service-filter="Digital Services">View website prices ↗</a></article>
+    <article class="service-card"><div class="service-icon">⌁</div><h3>Gaming support</h3><p>Ask about top-ups, subscriptions, accessories and controller repair bookings.</p><a href="#contact">Ask a question ↗</a></article>
+  </div>
+</section>
+
+<section class="how-section section">
+  <div class="section-heading"><div><p class="eyebrow">SIMPLE ORDERING</p><h2>How to <span>order.</span></h2></div></div>
+  <div class="steps"><div><b>01</b><h3>Choose</h3><p>Select products or services and add them to your cart.</p></div><div><b>02</b><h3>WhatsApp</h3><p>Send your order list to us. We'll confirm availability and total.</p></div><div><b>03</b><h3>Pay safely</h3><p>Use the confirmed payment instructions. Never share your PIN or card security code.</p></div><div><b>04</b><h3>Delivery</h3><p>We process your confirmed order and keep you updated.</p></div></div>
+</section>
+
+<section class="payment-section section" id="payment">
+  <div class="section-heading"><div><p class="eyebrow">PAYMENT OPTIONS</p><h2>Pay with <span>confidence.</span></h2><p class="muted">Payment details are confirmed directly with MAU GAME SHOP before you transfer.</p></div></div>
+  <div class="payment-grid">
+    <article class="payment-card"><div class="pay-symbol">J</div><h3>MCB Juice</h3><p>Ask us for the verified Juice number and account holder name before paying.</p><small id="juiceDetails">Juice details to be added by the shop owner.</small></article>
+    <article class="payment-card"><div class="pay-symbol">M</div><h3>MCB bank transfer</h3><p>Use the bank details supplied with your confirmed order.</p><small id="bankDetails">Bank account details to be added by the shop owner.</small></article>
+    <article class="payment-card"><div class="pay-symbol">▣</div><h3>Bank card</h3><p>Card payment is available only if the shop confirms an approved payment link or gateway.</p><small>Never send card number, expiry date, CVV or banking password in chat.</small></article>
+  </div>
+  <p class="payment-note">Always check the recipient name and amount before confirming a transfer. Keep your payment receipt.</p>
+</section>
+
+<section class="contact-section section" id="contact">
+  <div class="contact-panel"><div><p class="eyebrow">LET'S TALK</p><h2>Ready to <span>level up?</span></h2><p>Tell us what you're looking for. We'll check availability and get back to you.</p></div><a class="btn primary" id="contactWhatsApp" href="#">Chat on WhatsApp ↗</a></div>
+</section>
+</main>
+
+<footer class="footer"><a class="brand" href="#home"><span class="brand-mark">M</span><span>MAU <b>GAME</b><em>SHOP</em></span></a><p>LEVEL UP YOUR GAMING EXPERIENCE!</p><small>© <span id="year"></span> MAU GAME SHOP · Mauritius</small><small class="footer-note">Product availability, prices and delivery times are confirmed before payment.</small></footer>
+
+<div class="cart-overlay" id="cartOverlay" hidden></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+  <div class="cart-head"><div><p class="eyebrow">YOUR ORDER</p><h2>Shopping cart</h2></div><button id="cartClose" class="icon-button" aria-label="Close cart">×</button></div>
+  <div id="cartItems" class="cart-items"><p class="muted">Your cart is empty.</p></div>
+  <div class="cart-bottom"><div class="cart-total"><span>Known-price subtotal</span><b id="cartTotal">Rs0</b></div><p class="muted tiny">Items marked “Request price” will be quoted after we check availability. Final total is confirmed on WhatsApp.</p><button id="whatsappOrder" class="btn primary full">Send order on WhatsApp ↗</button><button id="clearCart" class="text-button">Clear cart</button></div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>

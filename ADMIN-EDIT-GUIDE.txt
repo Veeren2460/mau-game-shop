@@ -1,0 +1,16 @@
+MAU GAME SHOP — QUICK ADMIN GUIDE
+
+To change products:
+1. Open products.json.
+2. Find the product.
+3. Change name, description, priceLabel or image.
+4. For a fixed price, set "price" to a number, e.g. 450.
+5. For supplier-quote products, set "price": null.
+6. Save and upload the changed file to your host.
+
+To change WhatsApp/payment:
+1. Open store-config.json.
+2. Replace placeholder values with your real details.
+3. Save and upload the changed file.
+
+Keep the JSON format valid: use double quotes around text, commas between fields, and no trailing comma after the last field.

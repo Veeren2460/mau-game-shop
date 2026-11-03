@@ -1,0 +1,172 @@
+[
+  {
+    "id": "ff-diamonds",
+    "name": "Free Fire Diamonds",
+    "category": "Free Fire",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Tell us your player ID and the diamond package you need. Availability and region are confirmed before payment.",
+    "badge": "Popular",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "pubg-uc",
+    "name": "PUBG Mobile UC",
+    "category": "PUBG Mobile",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Request your UC package. We confirm stock, region and final price before payment.",
+    "badge": "Top-up",
+    "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"
+  },
+  {
+    "id": "ml-diamonds",
+    "name": "Mobile Legends Diamonds",
+    "category": "Mobile Legends",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Send your game ID and server details so we can check the available top-up options.",
+    "badge": "Top-up",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "roblox-credit",
+    "name": "Roblox Gift Card / Credit",
+    "category": "Roblox",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Ask for available denominations and region compatibility before ordering.",
+    "badge": "Digital",
+    "image": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=900"
+  },
+  {
+    "id": "ps-gift-card",
+    "name": "PlayStation Gift Card",
+    "category": "PlayStation",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Specify the wallet currency and region. Gift cards must match the customer's account region.",
+    "badge": "Digital",
+    "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=900"
+  },
+  {
+    "id": "ps-plus",
+    "name": "PlayStation Plus",
+    "category": "PlayStation",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Ask about Essential, Extra or Deluxe and the available duration. Region and account eligibility must be checked.",
+    "badge": "Subscription",
+    "image": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=900"
+  },
+  {
+    "id": "xbox-gift",
+    "name": "Xbox Gift Card",
+    "category": "Xbox",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Ask for available values and confirm account region compatibility.",
+    "badge": "Digital",
+    "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=900"
+  },
+  {
+    "id": "nintendo-gift",
+    "name": "Nintendo eShop Card",
+    "category": "Nintendo",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Ask for available region and denomination before placing your order.",
+    "badge": "Digital",
+    "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=900"
+  },
+  {
+    "id": "controller-accessory",
+    "name": "Controller Accessories",
+    "category": "Gaming Accessories",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Ask about thumb grips, charging accessories, protective items and other available stock.",
+    "badge": "Accessories",
+    "image": "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=900"
+  },
+  {
+    "id": "headset",
+    "name": "Gaming Headset",
+    "category": "Gaming Accessories",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Ask for current models, compatibility and availability.",
+    "badge": "Accessories",
+    "image": "https://images.unsplash.com/photo-1599669454699-248893623440?w=900"
+  },
+  {
+    "id": "poster-basic",
+    "name": "Simple Advertising Poster",
+    "category": "Digital Services",
+    "price": 250,
+    "priceLabel": "Rs250",
+    "description": "One simple promotional poster for social media. Includes one small revision.",
+    "badge": "Design",
+    "image": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=900"
+  },
+  {
+    "id": "poster-premium",
+    "name": "Premium Advertising Poster",
+    "category": "Digital Services",
+    "price": 400,
+    "priceLabel": "Rs400",
+    "description": "A more detailed promotional design for your business or product. Includes one small revision.",
+    "badge": "Design",
+    "image": "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=900"
+  },
+  {
+    "id": "poster-pack",
+    "name": "5 Social Media Posters",
+    "category": "Digital Services",
+    "price": 1000,
+    "priceLabel": "Rs1,000",
+    "description": "A matching set of five social media promotional designs.",
+    "badge": "Bundle",
+    "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900"
+  },
+  {
+    "id": "logo",
+    "name": "Simple Logo Design",
+    "category": "Digital Services",
+    "price": 500,
+    "priceLabel": "Rs500",
+    "description": "A simple starter logo concept for a small business. Confirm requirements before work begins.",
+    "badge": "Design",
+    "image": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=900"
+  },
+  {
+    "id": "website-one",
+    "name": "One-page Website",
+    "category": "Digital Services",
+    "price": 1500,
+    "priceLabel": "From Rs1,500",
+    "description": "A simple mobile-friendly one-page website. Domain, paid hosting and extra features are not included.",
+    "badge": "Web",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900"
+  },
+  {
+    "id": "website-business",
+    "name": "Business Website (3–5 pages)",
+    "category": "Digital Services",
+    "price": 3000,
+    "priceLabel": "From Rs3,000",
+    "description": "A basic multi-page business website. Final quote depends on content and features. Domain and paid hosting are extra.",
+    "badge": "Web",
+    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900"
+  },
+  {
+    "id": "website-update",
+    "name": "Website Updates",
+    "category": "Digital Services",
+    "price": 300,
+    "priceLabel": "From Rs300",
+    "description": "Small content or image updates to an existing website. Final price depends on the work.",
+    "badge": "Web",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900"
+  }
+]

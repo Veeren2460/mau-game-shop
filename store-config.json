@@ -1,0 +1,20 @@
+{
+  "businessName": "MAU GAME SHOP",
+  "tagline": "LEVEL UP YOUR GAMING EXPERIENCE!",
+  "country": "Mauritius",
+  "currency": "MUR",
+  "whatsappNumber": "23058444395",
+  "contactEmail": "YOUR_EMAIL@example.com",
+  "payment": {
+    "juiceNumber": "59268389",
+    "juiceName": "ADD_ACCOUNT_HOLDER_NAME",
+    "bankName": "MCB",
+    "accountName": "nagaven veeren",
+    "accountNumber": "ADD_BANK_ACCOUNT_NUMBER",
+    "cardPaymentNote": "Contact us to confirm whether card payment is available. Do not send card details by WhatsApp."
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/",
+    "instagram": "https://www.instagram.com/"
+  }
+}
