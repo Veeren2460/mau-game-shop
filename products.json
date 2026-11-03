@@ -1028,5 +1028,25 @@
     "description": "Provisional price based on Eldorado Xbox listed starting price USD 9.11 plus 8% and USD 0.30 allowance at Rs47/USD. US-region Microsoft/Xbox accounts only. Confirm seller's live price, code region, availability and final checkout total before payment.",
     "badge": "US Account Only",
     "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=900"
+  },
+  {
+    "id": "nintendo-us-10-eshop",
+    "name": "Nintendo eShop US $10 Gift Card",
+    "category": "Nintendo",
+    "price": 600,
+    "priceLabel": "Rs600",
+    "description": "US Nintendo account only. Provisional listed Eldorado USD 9.16; confirm final seller checkout price and account region before payment.",
+    "badge": "US Account Only",
+    "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=900"
+  },
+  {
+    "id": "nintendo-us-20-eshop",
+    "name": "Nintendo eShop US $20 Gift Card",
+    "category": "Nintendo",
+    "price": 1190,
+    "priceLabel": "Rs1190",
+    "description": "US Nintendo account only. Provisional listed Eldorado USD 18.39; confirm final seller checkout price and account region before payment.",
+    "badge": "US Account Only",
+    "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=900"
   }
 ]
