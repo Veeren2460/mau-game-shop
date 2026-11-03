@@ -488,5 +488,15 @@
     "description": "Gnostic Chorus Battle Pass for Asia server and the current Battle Pass period. Includes premium Battle Pass rewards and a 10-level advancement, with period-specific bonuses. Requires eligible Battle Pass access; confirm Adventure Rank, current pass status, purchase window and supplier fulfillment method before paying. Do not share account passwords. Subject to supplier availability and final confirmation.",
     "badge": "Asia Battle Pass",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "genshin-gnostic-hymn-asia",
+    "name": "Genshin Impact Gnostic Hymn Battle Pass (Asia)",
+    "category": "Genshin Impact",
+    "price": 560,
+    "priceLabel": "Rs560",
+    "description": "Gnostic Hymn premium Battle Pass for Asia server and the current Battle Pass period. Unlocks premium Battle Pass rewards as levels are earned; requires Adventure Rank 20 or higher. Confirm current Battle Pass eligibility, purchase window, prior ownership and supplier fulfillment method before paying. Never share account passwords. Subject to supplier availability and final confirmation.",
+    "badge": "Asia Battle Pass",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
   }
 ]
