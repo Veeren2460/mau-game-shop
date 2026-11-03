@@ -598,5 +598,55 @@
     "description": "PROVISIONAL price calculated from Eldorado advertised USD 93.59 plus 8% + USD 0.30 at Rs47/USD. Confirm current seller price, delivery method, exact amount received after any platform deductions, account compatibility, availability and terms before accepting payment. Never request passwords or login codes. Seller delivery methods vary.",
     "badge": "Confirm Before Payment",
     "image": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=900"
+  },
+  {
+    "id": "pubg-uc-60-global",
+    "name": "PUBG Mobile 60 UC (Global)",
+    "category": "PUBG Mobile",
+    "price": 80,
+    "priceLabel": "Rs80",
+    "description": "PROVISIONAL price based on Eldorado advertised USD 0.90, plus 8% and USD 0.30 at Rs47/USD. Confirm current seller checkout price, Global region eligibility, PUBG player UID, exact UC quantity and delivery method before accepting payment. Never request account passwords or login codes. Subject to seller availability and final confirmation.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"
+  },
+  {
+    "id": "pubg-uc-325-global",
+    "name": "PUBG Mobile 325 UC (Global)",
+    "category": "PUBG Mobile",
+    "price": 320,
+    "priceLabel": "Rs320",
+    "description": "PROVISIONAL price based on Eldorado advertised USD 4.65, plus 8% and USD 0.30 at Rs47/USD. Confirm current seller checkout price, Global region eligibility, PUBG player UID, exact UC quantity and delivery method before accepting payment. Never request account passwords or login codes. Subject to seller availability and final confirmation.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"
+  },
+  {
+    "id": "pubg-uc-660-global",
+    "name": "PUBG Mobile 660 UC (Global)",
+    "category": "PUBG Mobile",
+    "price": 610,
+    "priceLabel": "Rs610",
+    "description": "PROVISIONAL price based on Eldorado advertised USD 9.31, plus 8% and USD 0.30 at Rs47/USD. Confirm current seller checkout price, Global region eligibility, PUBG player UID, exact UC quantity and delivery method before accepting payment. Never request account passwords or login codes. Subject to seller availability and final confirmation.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"
+  },
+  {
+    "id": "pubg-uc-1800-global",
+    "name": "PUBG Mobile 1,800 UC (Global)",
+    "category": "PUBG Mobile",
+    "price": 1490,
+    "priceLabel": "Rs1,490",
+    "description": "PROVISIONAL price based on Eldorado advertised USD 23.20, plus 8% and USD 0.30 at Rs47/USD. Confirm current seller checkout price, Global region eligibility, PUBG player UID, exact UC quantity and delivery method before accepting payment. Never request account passwords or login codes. Subject to seller availability and final confirmation.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"
+  },
+  {
+    "id": "pubg-uc-3850-global",
+    "name": "PUBG Mobile 3,850 UC (Global)",
+    "category": "PUBG Mobile",
+    "price": 2950,
+    "priceLabel": "Rs2,950",
+    "description": "PROVISIONAL price based on Eldorado advertised USD 46.07, plus 8% and USD 0.30 at Rs47/USD. Confirm current seller checkout price, Global region eligibility, PUBG player UID, exact UC quantity and delivery method before accepting payment. Never request account passwords or login codes. Subject to seller availability and final confirmation.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"
   }
 ]
