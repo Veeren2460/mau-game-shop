@@ -478,5 +478,15 @@
     "description": "Bundle for Asia server: one 30-day Blessing of the Welkin Moon plus the 8,080 Genesis Crystals package. Welkin grants 300 Genesis Crystals upon activation and 90 Primogems daily with login for 30 days; missed daily rewards are not recoverable. Check existing Welkin duration (180-day stacking limit). Provide Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation.",
     "badge": "Asia Bundle",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "genshin-gnostic-chorus-asia",
+    "name": "Genshin Impact Gnostic Chorus Battle Pass (Asia)",
+    "category": "Genshin Impact",
+    "price": 950,
+    "priceLabel": "Rs950",
+    "description": "Gnostic Chorus Battle Pass for Asia server and the current Battle Pass period. Includes premium Battle Pass rewards and a 10-level advancement, with period-specific bonuses. Requires eligible Battle Pass access; confirm Adventure Rank, current pass status, purchase window and supplier fulfillment method before paying. Do not share account passwords. Subject to supplier availability and final confirmation.",
+    "badge": "Asia Battle Pass",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
   }
 ]
