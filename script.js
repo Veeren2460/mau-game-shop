@@ -55,7 +55,7 @@ document.addEventListener("click",e=>{
 $("#searchInput").addEventListener("input",renderProducts);
 $("#cartOpen").addEventListener("click",openCart);$("#cartClose").addEventListener("click",closeCart);$("#cartOverlay").addEventListener("click",closeCart);
 $("#clearCart").addEventListener("click",()=>{cart=[];saveCart()});
-$("#whatsappOrder").addEventListener("click",()=>{if(!cart.length){toast("Your cart is empty.");return}const url=whatsappUrl(orderMessage());if(url!=="#")window.open(url,"_blank","noopener")});
+$("#whatsappOrder").addEventListener("click",()=>{if(!cart.length){toast("Your cart is empty.");return}closeCart();$("#checkout").scrollIntoView({behavior:"smooth"});});
 $("#menuToggle").addEventListener("click",()=>$("#mainNav").classList.toggle("open"));
 document.querySelectorAll("#mainNav a").forEach(a=>a.addEventListener("click",()=>$("#mainNav").classList.remove("open")));
 init();
@@ -70,13 +70,10 @@ document.querySelector("#checkoutForm").addEventListener("submit",async e=>{
  try{
   const response=await fetch("https://czncneyrbtepheyuwett.supabase.co/functions/v1/create-order",{method:"POST",headers:{"Content-Type":"application/json","apikey":"sb_publishable_57CYWH5ZetDxyEx8fLD8hg_wuJNw9om"},body:JSON.stringify({name,phone,player_id:player,payment_method:methods[payment],note,items:cart.map(x=>({id:x.id,qty:x.qty}))})});
   const result=await response.json();if(!response.ok)throw Error(result.error||"Order could not be saved");
-  const msg="Order #"+result.order_number+"\n"+orderMessage()+" "+name+"\nPhone: "+phone+"\nPlayer ID: "+(player||"Not provided")+"\nPayment preference: "+payment+"\nNotes: "+(note||"None");
-  const url=whatsappUrl(msg);
   const status=document.querySelector("#checkoutStatus");
-  if(status)status.textContent="Order #"+result.order_number+" saved! Please send the order on WhatsApp to confirm payment and availability.";
-  button.disabled=false;button.type="button";button.textContent="Order saved — open WhatsApp";
-  button.onclick=()=>{if(url!=="#")window.open(url,"_blank","noopener")};
-  if(url!=="#")window.open(url,"_blank","noopener");
+  if(status)status.textContent="Order #"+result.order_number+" placed successfully! Your order is pending confirmation. Please keep this order number.";
+  button.disabled=false;button.type="button";button.textContent="Order #"+result.order_number+" placed";
+  form.reset();
   cart=[];saveCart();
- }catch(err){toast(err.message||"Could not save order. Try again.");button.disabled=false;button.textContent="Save order and continue to WhatsApp ↗"}
+ }catch(err){toast(err.message||"Could not save order. Try again.");button.disabled=false;button.textContent="Place order"}
 });
