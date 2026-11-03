@@ -1068,5 +1068,45 @@
     "description": "Canadian-region Nintendo account only. Provisional Eldorado listed starting price USD 13.76 plus 8% and USD 0.30 cost allowance at Rs47/USD. Card denomination is CAD, not USD. Confirm live seller offer, code region and final checkout total before accepting payment.",
     "badge": "Canada Account Only",
     "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=900"
+  },
+  {
+    "id": "nintendo-uk-15-eshop",
+    "name": "Nintendo eShop UK 15 GBP Gift Card",
+    "category": "Nintendo",
+    "price": 1290,
+    "priceLabel": "Rs1,290",
+    "description": "Provisional Eldorado starting price USD 19.96 with 8% and USD 0.30 fee allowance at Rs47/USD. UK account compatibility must be verified; eShop codes are country-specific. Confirm exact country, final supplier price, availability and delivery before payment.",
+    "badge": "Confirm Region Before Payment",
+    "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=900"
+  },
+  {
+    "id": "nintendo-uk-25-eshop",
+    "name": "Nintendo eShop UK 25 GBP Gift Card",
+    "category": "Nintendo",
+    "price": 2380,
+    "priceLabel": "Rs2,380",
+    "description": "Provisional Eldorado starting price USD 37.14 with 8% and USD 0.30 fee allowance at Rs47/USD. UK account compatibility must be verified; eShop codes are country-specific. Confirm exact country, final supplier price, availability and delivery before payment.",
+    "badge": "Confirm Region Before Payment",
+    "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=900"
+  },
+  {
+    "id": "nintendo-eu-15-eshop",
+    "name": "Nintendo eShop Europe 15 EUR Gift Card",
+    "category": "Nintendo",
+    "price": 1100,
+    "priceLabel": "Rs1,100",
+    "description": "Provisional Eldorado starting price USD 17.00 with 8% and USD 0.30 fee allowance at Rs47/USD. European country account compatibility must be verified; eShop codes are country-specific. Confirm exact country, final supplier price, availability and delivery before payment.",
+    "badge": "Confirm Region Before Payment",
+    "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=900"
+  },
+  {
+    "id": "nintendo-eu-25-eshop",
+    "name": "Nintendo eShop Europe 25 EUR Gift Card",
+    "category": "Nintendo",
+    "price": 1780,
+    "priceLabel": "Rs1,780",
+    "description": "Provisional Eldorado starting price USD 27.63 with 8% and USD 0.30 fee allowance at Rs47/USD. European country account compatibility must be verified; eShop codes are country-specific. Confirm exact country, final supplier price, availability and delivery before payment.",
+    "badge": "Confirm Region Before Payment",
+    "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=900"
   }
 ]
