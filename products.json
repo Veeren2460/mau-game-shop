@@ -338,5 +338,15 @@
     "description": "330 Genesis Crystals for Asia server only. Provide your Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation.",
     "badge": "Asia Top-up",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "genshin-1090-asia",
+    "name": "Genshin Impact 1,090 Genesis Crystals (Asia)",
+    "category": "Genshin Impact",
+    "price": 620,
+    "priceLabel": "Rs620",
+    "description": "1,090 Genesis Crystals for Asia server only. Provide your Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation.",
+    "badge": "Asia Top-up",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
   }
 ]
