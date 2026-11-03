@@ -698,5 +698,55 @@
     "description": "PROVISIONAL price from Eldorado listed USD 3.48, plus 8% and USD 0.30 at Rs47/USD. Global region excludes US accounts. Confirm seller checkout price, game ID, zone/server ID, region compatibility, exact quantity and UID-only delivery before accepting payment. Never request account passwords or verification codes. Subject to supplier availability.",
     "badge": "Confirm Before Payment",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-diamonds-279-global",
+    "name": "Mobile Legends 279 Diamonds (Global)",
+    "category": "Mobile Legends",
+    "price": 330,
+    "priceLabel": "Rs330",
+    "description": "PROVISIONAL price based on retrieved Eldorado listed USD 4.88 (may be stale), plus 8% and USD 0.30 at Rs47/USD. Global region excludes US accounts. Confirm current seller listing and final checkout price, game ID, zone/server ID, region eligibility, quantity and delivery method before accepting payment. Never request passwords or verification codes.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-diamonds-284-global",
+    "name": "Mobile Legends 284 Diamonds (Global)",
+    "category": "Mobile Legends",
+    "price": 330,
+    "priceLabel": "Rs330",
+    "description": "PROVISIONAL price based on retrieved Eldorado listed USD 4.88 (may be stale), plus 8% and USD 0.30 at Rs47/USD. Global region excludes US accounts. Confirm current seller listing and final checkout price, game ID, zone/server ID, region eligibility, quantity and delivery method before accepting payment. Never request passwords or verification codes.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-diamonds-336-global",
+    "name": "Mobile Legends 336 Diamonds (Global)",
+    "category": "Mobile Legends",
+    "price": 360,
+    "priceLabel": "Rs360",
+    "description": "PROVISIONAL price based on retrieved Eldorado listed USD 5.24 (may be stale), plus 8% and USD 0.30 at Rs47/USD. Global region excludes US accounts. Confirm current seller listing and final checkout price, game ID, zone/server ID, region eligibility, quantity and delivery method before accepting payment. Never request passwords or verification codes.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-diamonds-518-global",
+    "name": "Mobile Legends 518 Diamonds (Global)",
+    "category": "Mobile Legends",
+    "price": 520,
+    "priceLabel": "Rs520",
+    "description": "PROVISIONAL price based on retrieved Eldorado listed USD 7.79 (may be stale), plus 8% and USD 0.30 at Rs47/USD. Global region excludes US accounts. Confirm current seller listing and final checkout price, game ID, zone/server ID, region eligibility, quantity and delivery method before accepting payment. Never request passwords or verification codes.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-diamonds-570-global",
+    "name": "Mobile Legends 570 Diamonds (Global)",
+    "category": "Mobile Legends",
+    "price": 630,
+    "priceLabel": "Rs630",
+    "description": "PROVISIONAL price based on retrieved Eldorado listed USD 9.50 (may be stale), plus 8% and USD 0.30 at Rs47/USD. Global region excludes US accounts. Confirm current seller listing and final checkout price, game ID, zone/server ID, region eligibility, quantity and delivery method before accepting payment. Never request passwords or verification codes.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
   }
 ]
