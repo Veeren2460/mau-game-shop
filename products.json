@@ -918,5 +918,45 @@
     "description": "Provisional supplier price USD 163.26. Confirm current checkout cost, region, player ID, zone ID and delivery before payment.",
     "badge": "Confirm Before Payment",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-diamonds-18576-global",
+    "name": "Mobile Legends 18,576 Diamonds (Global)",
+    "category": "Mobile Legends",
+    "price": 15630,
+    "priceLabel": "Rs15,630",
+    "description": "Provisional Eldorado listed price USD 245.98; includes 8% and USD 0.30 supplier cost allowance at Rs47/USD. Confirm current price, exact contents, duration, eligibility, player ID, zone ID and delivery method before payment.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-monthly-elite-pack-global",
+    "name": "Mobile Legends Monthly Elite Pack (Global)",
+    "category": "Mobile Legends",
+    "price": 300,
+    "priceLabel": "Rs300",
+    "description": "Provisional Eldorado listed price USD 4.42; includes 8% and USD 0.30 supplier cost allowance at Rs47/USD. Confirm current price, exact contents, duration, eligibility, player ID, zone ID and delivery method before payment.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-weekly-diamond-pass-global",
+    "name": "Mobile Legends Weekly Diamond Pass (Global)",
+    "category": "Mobile Legends",
+    "price": 120,
+    "priceLabel": "Rs120",
+    "description": "Provisional Eldorado listed price USD 1.55; includes 8% and USD 0.30 supplier cost allowance at Rs47/USD. Confirm current price, exact contents, duration, eligibility, player ID, zone ID and delivery method before payment.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-weekly-elite-pack-global",
+    "name": "Mobile Legends Weekly Elite Pack (Global)",
+    "category": "Mobile Legends",
+    "price": 80,
+    "priceLabel": "Rs80",
+    "description": "Provisional Eldorado listed price USD 0.84; includes 8% and USD 0.30 supplier cost allowance at Rs47/USD. Confirm current price, exact contents, duration, eligibility, player ID, zone ID and delivery method before payment.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
   }
 ]
