@@ -498,5 +498,55 @@
     "description": "Gnostic Hymn premium Battle Pass for Asia server and the current Battle Pass period. Unlocks premium Battle Pass rewards as levels are earned; requires Adventure Rank 20 or higher. Confirm current Battle Pass eligibility, purchase window, prior ownership and supplier fulfillment method before paying. Never share account passwords. Subject to supplier availability and final confirmation.",
     "badge": "Asia Battle Pass",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "fortnite-vbucks-800",
+    "name": "Fortnite 800 V-Bucks (Region & delivery confirmation required)",
+    "category": "Fortnite",
+    "price": 310,
+    "priceLabel": "Rs310",
+    "description": "PROVISIONAL price based on Eldorado advertised offer plus estimated 8% + US$0.30 checkout fees at Rs47/USD. Confirm current seller total, Fortnite account region/platform compatibility, legitimate delivery method and availability before accepting payment. Never share account passwords. Not guaranteed instant or UID-only delivery.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "fortnite-vbucks-2400",
+    "name": "Fortnite 2,400 V-Bucks (Region & delivery confirmation required)",
+    "category": "Fortnite",
+    "price": 1160,
+    "priceLabel": "Rs1,160",
+    "description": "PROVISIONAL price based on Eldorado advertised offer plus estimated 8% + US$0.30 checkout fees at Rs47/USD. Confirm current seller total, Fortnite account region/platform compatibility, legitimate delivery method and availability before accepting payment. Never share account passwords. Not guaranteed instant or UID-only delivery.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "fortnite-vbucks-4500",
+    "name": "Fortnite 4,500 V-Bucks (Region & delivery confirmation required)",
+    "category": "Fortnite",
+    "price": 900,
+    "priceLabel": "Rs900",
+    "description": "PROVISIONAL price based on Eldorado advertised offer plus estimated 8% + US$0.30 checkout fees at Rs47/USD. Confirm current seller total, Fortnite account region/platform compatibility, legitimate delivery method and availability before accepting payment. Never share account passwords. Not guaranteed instant or UID-only delivery.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "fortnite-vbucks-9000",
+    "name": "Fortnite 9,000 V-Bucks (Region & delivery confirmation required)",
+    "category": "Fortnite",
+    "price": 1700,
+    "priceLabel": "Rs1,700",
+    "description": "PROVISIONAL price based on Eldorado advertised offer plus estimated 8% + US$0.30 checkout fees at Rs47/USD. Confirm current seller total, Fortnite account region/platform compatibility, legitimate delivery method and availability before accepting payment. Never share account passwords. Not guaranteed instant or UID-only delivery.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "fortnite-vbucks-12500",
+    "name": "Fortnite 12,500 V-Bucks (Region & delivery confirmation required)",
+    "category": "Fortnite",
+    "price": 2000,
+    "priceLabel": "Rs2,000",
+    "description": "PROVISIONAL price based on Eldorado advertised offer plus estimated 8% + US$0.30 checkout fees at Rs47/USD. Confirm current seller total, Fortnite account region/platform compatibility, legitimate delivery method and availability before accepting payment. Never share account passwords. Not guaranteed instant or UID-only delivery.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
   }
 ]
