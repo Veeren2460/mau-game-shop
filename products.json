@@ -958,5 +958,55 @@
     "description": "Provisional Eldorado listed price USD 0.84; includes 8% and USD 0.30 supplier cost allowance at Rs47/USD. Confirm current price, exact contents, duration, eligibility, player ID, zone ID and delivery method before payment.",
     "badge": "Confirm Before Payment",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "psn-us-5-gift-card",
+    "name": "PlayStation Store US $5 Gift Card",
+    "category": "PlayStation",
+    "price": 360,
+    "priceLabel": "Rs360",
+    "description": "US PlayStation Network account only. Provisional Eldorado listed supplier price USD 5.25; 8% + USD 0.30 cost allowance at Rs47/USD. Confirm live listing, code region, stock and final checkout total before accepting payment. Digital code delivered after supplier fulfillment. No account passwords required.",
+    "badge": "US Account Only",
+    "image": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=900"
+  },
+  {
+    "id": "psn-us-10-gift-card",
+    "name": "PlayStation Store US $10 Gift Card",
+    "category": "PlayStation",
+    "price": 680,
+    "priceLabel": "Rs680",
+    "description": "US PlayStation Network account only. Provisional Eldorado listed supplier price USD 10.41; 8% + USD 0.30 cost allowance at Rs47/USD. Confirm live listing, code region, stock and final checkout total before accepting payment. Digital code delivered after supplier fulfillment. No account passwords required.",
+    "badge": "US Account Only",
+    "image": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=900"
+  },
+  {
+    "id": "psn-us-25-gift-card",
+    "name": "PlayStation Store US $25 Gift Card",
+    "category": "PlayStation",
+    "price": 1520,
+    "priceLabel": "Rs1,520",
+    "description": "US PlayStation Network account only. Provisional Eldorado listed supplier price USD 23.58; 8% + USD 0.30 cost allowance at Rs47/USD. Confirm live listing, code region, stock and final checkout total before accepting payment. Digital code delivered after supplier fulfillment. No account passwords required.",
+    "badge": "US Account Only",
+    "image": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=900"
+  },
+  {
+    "id": "psn-us-50-gift-card",
+    "name": "PlayStation Store US $50 Gift Card",
+    "category": "PlayStation",
+    "price": 3090,
+    "priceLabel": "Rs3,090",
+    "description": "US PlayStation Network account only. Provisional Eldorado listed supplier price USD 48.30; 8% + USD 0.30 cost allowance at Rs47/USD. Confirm live listing, code region, stock and final checkout total before accepting payment. Digital code delivered after supplier fulfillment. No account passwords required.",
+    "badge": "US Account Only",
+    "image": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=900"
+  },
+  {
+    "id": "psn-us-100-gift-card",
+    "name": "PlayStation Store US $100 Gift Card",
+    "category": "PlayStation",
+    "price": 5940,
+    "priceLabel": "Rs5,940",
+    "description": "US PlayStation Network account only. Provisional Eldorado listed supplier price USD 93.30; 8% + USD 0.30 cost allowance at Rs47/USD. Confirm live listing, code region, stock and final checkout total before accepting payment. Digital code delivered after supplier fulfillment. No account passwords required.",
+    "badge": "US Account Only",
+    "image": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=900"
   }
 ]
