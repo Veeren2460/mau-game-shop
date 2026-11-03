@@ -1168,5 +1168,35 @@
     "description": "Provisional Eldorado advertised starting USD 10.72. Estimated supplier cost includes 8% plus USD 0.30 at Rs47/USD. Confirm the exact account country/region, seller's live listing, final checkout cost and code delivery before accepting payment.",
     "badge": "Confirm Region Before Payment",
     "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=900"
+  },
+  {
+    "id": "xbox-uk-5-gift-card",
+    "name": "Xbox UK £5 Gift Card",
+    "category": "Xbox",
+    "price": 440,
+    "priceLabel": "Rs440",
+    "description": "UK-region Xbox/Microsoft account only. Provisional Eldorado displayed USD 6.53; cost allowance 8% plus USD 0.30 at Rs47/USD. Confirm live supplier price, account region, code availability and final checkout cost before accepting payment.",
+    "badge": "UK Account Only",
+    "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=900"
+  },
+  {
+    "id": "xbox-uk-50-gift-card",
+    "name": "Xbox UK £50 Gift Card",
+    "category": "Xbox",
+    "price": 3830,
+    "priceLabel": "Rs3,830",
+    "description": "UK-region Xbox/Microsoft account only. Provisional Eldorado displayed USD 59.99; cost allowance 8% plus USD 0.30 at Rs47/USD. Confirm live supplier price, account region, code availability and final checkout cost before accepting payment.",
+    "badge": "UK Account Only",
+    "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=900"
+  },
+  {
+    "id": "xbox-uk-100-gift-card",
+    "name": "Xbox UK £100 Gift Card",
+    "category": "Xbox",
+    "price": 7510,
+    "priceLabel": "Rs7,510",
+    "description": "UK-region Xbox/Microsoft account only. Provisional Eldorado displayed USD 117.99; cost allowance 8% plus USD 0.30 at Rs47/USD. Confirm live supplier price, account region, code availability and final checkout cost before accepting payment.",
+    "badge": "UK Account Only",
+    "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=900"
   }
 ]
