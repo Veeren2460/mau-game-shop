@@ -418,5 +418,15 @@
     "description": "80,800 Genesis Crystals for Asia server only. Provide your Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation.",
     "badge": "Asia Top-up",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "genshin-all-in-one-asia",
+    "name": "Genshin Impact All-in-One Bundle (Asia)",
+    "category": "Genshin Impact",
+    "price": 7650,
+    "priceLabel": "Rs7,650",
+    "description": "All-in-One Bundle for Asia server only. Exact bundle contents must be confirmed before payment. Provide your Genshin UID and confirm Asia server. Subject to supplier availability and final confirmation.",
+    "badge": "Asia Bundle",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
   }
 ]
