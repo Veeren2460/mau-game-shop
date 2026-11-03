@@ -218,5 +218,105 @@
     "description": "Small content or image updates to an existing website. Final price depends on the work.",
     "badge": "Web",
     "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900"
+  },
+  {
+    "id": "codm-cp",
+    "name": "Call of Duty: Mobile CP",
+    "category": "Call of Duty: Mobile",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Request a CP package quote. Confirm Activision or Garena version and account region before payment.",
+    "badge": "Top-up",
+    "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"
+  },
+  {
+    "id": "genshin-crystals",
+    "name": "Genshin Impact Genesis Crystals",
+    "category": "Genshin Impact",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Request a Genesis Crystals package. Provide UID and server; region and availability must be checked.",
+    "badge": "Top-up",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "genshin-welkin",
+    "name": "Genshin Impact Welkin Moon",
+    "category": "Genshin Impact",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Request a Blessing of the Welkin Moon quote. Confirm UID, server and eligibility.",
+    "badge": "Monthly Pass",
+    "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"
+  },
+  {
+    "id": "valorant-vp",
+    "name": "Valorant Points",
+    "category": "Valorant",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Request a VP denomination and specify Riot account region. Gift codes are region restricted.",
+    "badge": "Digital Credit",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "efootball-coins",
+    "name": "eFootball Coins",
+    "category": "eFootball",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Request a coin package and specify platform and account region. Never share account passwords.",
+    "badge": "Top-up",
+    "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"
+  },
+  {
+    "id": "bloodstrike-gold",
+    "name": "Blood Strike Gold",
+    "category": "Blood Strike",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Request a Gold package. Confirm player ID, server, region and supplier availability.",
+    "badge": "Top-up",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "honkai-shards",
+    "name": "Honkai: Star Rail Oneiric Shards",
+    "category": "Honkai: Star Rail",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Request a Oneiric Shards package. Confirm UID and server before payment.",
+    "badge": "Top-up",
+    "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"
+  },
+  {
+    "id": "honkai-pass",
+    "name": "Honkai: Star Rail Express Supply Pass",
+    "category": "Honkai: Star Rail",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Request an Express Supply Pass quote. Confirm UID, server and eligibility.",
+    "badge": "Monthly Pass",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "steam-wallet",
+    "name": "Steam Wallet Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Request a denomination and specify Steam account country/currency. Region compatibility must be verified.",
+    "badge": "Gift Card",
+    "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"
+  },
+  {
+    "id": "gaming-gift-cards",
+    "name": "Gaming Gift Cards",
+    "category": "Steam & Gift Cards",
+    "price": null,
+    "priceLabel": "Request price",
+    "description": "Ask about available gaming gift cards, denominations and redemption regions before payment.",
+    "badge": "Gift Card",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
   }
 ]
