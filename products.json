@@ -798,5 +798,55 @@
     "description": "Provisional seller price USD 22.42. Confirm current checkout cost, region and player delivery details before accepting payment.",
     "badge": "Confirm Before Payment",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-diamonds-1733-global",
+    "name": "Mobile Legends 1733 Diamonds (Global)",
+    "category": "Mobile Legends",
+    "price": 1520,
+    "priceLabel": "Rs1,520",
+    "description": "Provisional price from listed USD 23.65. Confirm supplier checkout price, player ID, zone ID, region and delivery before payment.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-diamonds-2195-global",
+    "name": "Mobile Legends 2195 Diamonds (Global)",
+    "category": "Mobile Legends",
+    "price": 1830,
+    "priceLabel": "Rs1,830",
+    "description": "Provisional price from listed USD 28.45. Confirm supplier checkout price, player ID, zone ID, region and delivery before payment.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-diamonds-2855-global",
+    "name": "Mobile Legends 2855 Diamonds (Global)",
+    "category": "Mobile Legends",
+    "price": 2490,
+    "priceLabel": "Rs2,490",
+    "description": "Provisional price from listed USD 38.86. Confirm supplier checkout price, player ID, zone ID, region and delivery before payment.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-diamonds-2976-global",
+    "name": "Mobile Legends 2976 Diamonds (Global)",
+    "category": "Mobile Legends",
+    "price": 2560,
+    "priceLabel": "Rs2,560",
+    "description": "Provisional price from listed USD 39.93. Confirm supplier checkout price, player ID, zone ID, region and delivery before payment.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-diamonds-7502-global",
+    "name": "Mobile Legends 7502 Diamonds (Global)",
+    "category": "Mobile Legends",
+    "price": 6340,
+    "priceLabel": "Rs6,340",
+    "description": "Provisional price from listed USD 99.63. Confirm supplier checkout price, player ID, zone ID, region and delivery before payment.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
   }
 ]
