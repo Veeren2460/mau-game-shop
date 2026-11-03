@@ -1278,5 +1278,75 @@
     "description": "Steam wallet card denominated in PHP; currency and redemption eligibility must match Steam account rules and seller terms. Provisional Eldorado listed starting price USD 1.60; cost allowance 8% plus USD 0.30 at Rs47/USD. Confirm seller offer, redeemability, availability and final checkout cost before accepting payment.",
     "badge": "Confirm Steam Compatibility",
     "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "razer-gold-global-1-usd",
+    "name": "Razer Gold Global $1 Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 90,
+    "priceLabel": "Rs90",
+    "description": "Razer Gold Global gift card, denomination USD 1. Provisional Eldorado listed price USD 0.99, estimated supplier cost includes 8% and USD 0.30 at Rs47/USD. Confirm region eligibility, seller availability and final checkout before payment.",
+    "badge": "Confirm Redemption Region",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "razer-gold-global-5-usd",
+    "name": "Razer Gold Global $5 Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 340,
+    "priceLabel": "Rs340",
+    "description": "Razer Gold Global gift card, denomination USD 5. Provisional Eldorado listed price USD 5.05, estimated supplier cost includes 8% and USD 0.30 at Rs47/USD. Confirm region eligibility, seller availability and final checkout before payment.",
+    "badge": "Confirm Redemption Region",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "razer-gold-global-10-usd",
+    "name": "Razer Gold Global $10 Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 660,
+    "priceLabel": "Rs660",
+    "description": "Razer Gold Global gift card, denomination USD 10. Provisional Eldorado listed price USD 10.10, estimated supplier cost includes 8% and USD 0.30 at Rs47/USD. Confirm region eligibility, seller availability and final checkout before payment.",
+    "badge": "Confirm Redemption Region",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "razer-gold-global-20-usd",
+    "name": "Razer Gold Global $20 Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 1310,
+    "priceLabel": "Rs1,310",
+    "description": "Razer Gold Global gift card, denomination USD 20. Provisional Eldorado listed price USD 20.29, estimated supplier cost includes 8% and USD 0.30 at Rs47/USD. Confirm region eligibility, seller availability and final checkout before payment.",
+    "badge": "Confirm Redemption Region",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "razer-gold-global-25-usd",
+    "name": "Razer Gold Global $25 Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 1640,
+    "priceLabel": "Rs1,640",
+    "description": "Razer Gold Global gift card, denomination USD 25. Provisional Eldorado listed price USD 25.44, estimated supplier cost includes 8% and USD 0.30 at Rs47/USD. Confirm region eligibility, seller availability and final checkout before payment.",
+    "badge": "Confirm Redemption Region",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "razer-gold-global-50-usd",
+    "name": "Razer Gold Global $50 Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 3190,
+    "priceLabel": "Rs3,190",
+    "description": "Razer Gold Global gift card, denomination USD 50. Provisional Eldorado listed price USD 49.99, estimated supplier cost includes 8% and USD 0.30 at Rs47/USD. Confirm region eligibility, seller availability and final checkout before payment.",
+    "badge": "Confirm Redemption Region",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "razer-gold-global-100-usd",
+    "name": "Razer Gold Global $100 Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 6530,
+    "priceLabel": "Rs6,530",
+    "description": "Razer Gold Global gift card, denomination USD 100. Provisional Eldorado listed price USD 102.50, estimated supplier cost includes 8% and USD 0.30 at Rs47/USD. Confirm region eligibility, seller availability and final checkout before payment.",
+    "badge": "Confirm Redemption Region",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
   }
 ]
