@@ -1385,8 +1385,8 @@
     "category": "Steam & Gift Cards",
     "price": 880,
     "priceLabel": "Rs880",
-    "description": "Turkey Google Play gift card, 500 TRY. Turkey-region redemption only; verify seller, availability and final checkout before payment. Provisional price.",
-    "badge": "Turkey Accounts Only",
+    "description": "UNVERIFIED denomination: Google's published Turkey gift card range ends at TRY 250. Do not take payment until an authorized, redeemable Turkey code of TRY 500 is independently confirmed. Existing listed price is provisional.",
+    "badge": "Unverified — Do Not Pay",
     "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=900"
   },
   {
@@ -1395,8 +1395,48 @@
     "category": "Steam & Gift Cards",
     "price": 1740,
     "priceLabel": "Rs1,740",
-    "description": "Turkey Google Play gift card, 1000 TRY. Turkey-region redemption only; verify seller, availability and final checkout before payment. Provisional price.",
-    "badge": "Turkey Accounts Only",
+    "description": "UNVERIFIED denomination: Google's published Turkey gift card range ends at TRY 250. Do not take payment until an authorized, redeemable Turkey code of TRY 1000 is independently confirmed. Existing listed price is provisional.",
+    "badge": "Unverified — Do Not Pay",
     "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=900"
+  },
+  {
+    "id": "razer-gold-5-eur",
+    "name": "Razer Gold 5 EUR Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 470,
+    "priceLabel": "Rs470",
+    "description": "Eldorado advertised starting price USD 7.04. Razer Gold 5 EUR denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional.",
+    "badge": "Confirm Region & Stock",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "razer-gold-20-cad",
+    "name": "Razer Gold 20 CAD Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 1020,
+    "priceLabel": "Rs1,020",
+    "description": "Eldorado advertised starting price USD 15.68. Razer Gold 20 CAD denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional.",
+    "badge": "Confirm Region & Stock",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "razer-gold-40-pln",
+    "name": "Razer Gold 40 PLN Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 760,
+    "priceLabel": "Rs760",
+    "description": "Eldorado advertised starting price USD 11.63. Razer Gold 40 PLN denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional.",
+    "badge": "Confirm Region & Stock",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "razer-gold-5-try",
+    "name": "Razer Gold 5 TRY Gift Card",
+    "category": "Steam & Gift Cards",
+    "price": 50,
+    "priceLabel": "Rs50",
+    "description": "Eldorado advertised starting price USD 0.50. Razer Gold 5 TRY denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional.",
+    "badge": "Confirm Region & Stock",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
   }
 ]
