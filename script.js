@@ -59,3 +59,17 @@ $("#whatsappOrder").addEventListener("click",()=>{if(!cart.length){toast("Your c
 $("#menuToggle").addEventListener("click",()=>$("#mainNav").classList.toggle("open"));
 document.querySelectorAll("#mainNav a").forEach(a=>a.addEventListener("click",()=>$("#mainNav").classList.remove("open")));
 init();
+
+document.querySelector("#checkoutForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ if(!cart.length){toast("Add at least one product to your cart first.");document.querySelector("#shop").scrollIntoView();return}
+ const name=document.querySelector("#customerName").value.trim();
+ const phone=document.querySelector("#customerPhone").value.trim();
+ if(!name||!phone){toast("Please enter your name and phone.");return}
+ const player=document.querySelector("#customerPlayer").value.trim();
+ const payment=document.querySelector("#customerPayment").value;
+ const note=document.querySelector("#customerNote").value.trim();
+ const message=orderMessage()+" "+name+"\nPhone: "+phone+"\nPlayer ID: "+(player||"Not provided")+"\nPayment preference: "+payment+"\nNotes: "+(note||"None");
+ const url=whatsappUrl(message);
+ if(url!=="#")window.open(url,"_blank","noopener");
+});
