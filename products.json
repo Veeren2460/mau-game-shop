@@ -438,5 +438,15 @@
     "description": "Blessing of the Welkin Moon for 180 days on Asia server (six 30-day blessings). Check existing Welkin duration before ordering: duration stacking is limited to 180 days. Daily Primogems require daily login. Provide your Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation.",
     "badge": "Asia Welkin",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "genshin-welkin-30-asia",
+    "name": "Genshin Impact Blessing of the Welkin Moon 30 Days (Asia)",
+    "category": "Genshin Impact",
+    "price": 230,
+    "priceLabel": "Rs230",
+    "description": "Blessing of the Welkin Moon for 30 days on Asia server. Includes 300 Genesis Crystals upon activation and 90 Primogems per day claimed by logging in. Missed daily claims are not recoverable. Check remaining Welkin duration before ordering (180-day stacking limit). Provide your Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation.",
+    "badge": "Asia Welkin",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
   }
 ]
