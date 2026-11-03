@@ -848,5 +848,55 @@
     "description": "Provisional price from listed USD 99.63. Confirm supplier checkout price, player ID, zone ID, region and delivery before payment.",
     "badge": "Confirm Before Payment",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-diamonds-3688-global",
+    "name": "Mobile Legends 3,688 Diamonds (Global)",
+    "category": "Mobile Legends",
+    "price": 3050,
+    "priceLabel": "Rs3,050",
+    "description": "Provisional: Eldorado advertised USD 47.64, with 8% and USD 0.30 cost allowance at Rs47/USD. Confirm seller checkout cost, game ID, zone ID, region and delivery before payment. US accounts are excluded from Global offers. Never share passwords or verification codes.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-diamonds-3976-global",
+    "name": "Mobile Legends 3,976 Diamonds (Global)",
+    "category": "Mobile Legends",
+    "price": 3350,
+    "priceLabel": "Rs3,350",
+    "description": "Provisional: Eldorado advertised USD 52.45, with 8% and USD 0.30 cost allowance at Rs47/USD. Confirm seller checkout cost, game ID, zone ID, region and delivery before payment. US accounts are excluded from Global offers. Never share passwords or verification codes.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-diamonds-5532-global",
+    "name": "Mobile Legends 5,532 Diamonds (Global)",
+    "category": "Mobile Legends",
+    "price": 4570,
+    "priceLabel": "Rs4,570",
+    "description": "Provisional: Eldorado advertised USD 71.64, with 8% and USD 0.30 cost allowance at Rs47/USD. Confirm seller checkout cost, game ID, zone ID, region and delivery before payment. US accounts are excluded from Global offers. Never share passwords or verification codes.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-diamonds-6042-global",
+    "name": "Mobile Legends 6,042 Diamonds (Global)",
+    "category": "Mobile Legends",
+    "price": 5130,
+    "priceLabel": "Rs5,130",
+    "description": "Provisional: Eldorado advertised USD 80.46, with 8% and USD 0.30 cost allowance at Rs47/USD. Confirm seller checkout cost, game ID, zone ID, region and delivery before payment. US accounts are excluded from Global offers. Never share passwords or verification codes.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
+  },
+  {
+    "id": "ml-diamonds-6288-global",
+    "name": "Mobile Legends 6,288 Diamonds (Global)",
+    "category": "Mobile Legends",
+    "price": 5420,
+    "priceLabel": "Rs5,420",
+    "description": "Provisional: Eldorado advertised USD 85.01, with 8% and USD 0.30 cost allowance at Rs47/USD. Confirm seller checkout cost, game ID, zone ID, region and delivery before payment. US accounts are excluded from Global offers. Never share passwords or verification codes.",
+    "badge": "Confirm Before Payment",
+    "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"
   }
 ]
