@@ -1,12 +1,62 @@
 [
   {
-    "id": "ff-diamonds",
-    "name": "Free Fire Diamonds",
+    "id": "ff-51",
+    "name": "Free Fire 51 Diamonds",
     "category": "Free Fire",
-    "price": null,
-    "priceLabel": "Request price",
-    "description": "Tell us your player ID and the diamond package you need. Availability and region are confirmed before payment.",
-    "badge": "Popular",
+    "price": 100,
+    "priceLabel": "Rs100",
+    "description": "51 diamonds. Global region. Confirm the player UID and nickname before ordering.",
+    "badge": "Global Top-up",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "ff-100",
+    "name": "Free Fire 100 Diamonds",
+    "category": "Free Fire",
+    "price": 90,
+    "priceLabel": "Rs90",
+    "description": "100 diamonds. Global region. Confirm the player UID and nickname before ordering.",
+    "badge": "Global Top-up",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "ff-210",
+    "name": "Free Fire 210 Diamonds",
+    "category": "Free Fire",
+    "price": 150,
+    "priceLabel": "Rs150",
+    "description": "210 diamonds. Global region. Confirm the player UID and nickname before ordering.",
+    "badge": "Global Top-up",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "ff-310",
+    "name": "Free Fire 310 Diamonds",
+    "category": "Free Fire",
+    "price": 200,
+    "priceLabel": "Rs200",
+    "description": "310 diamonds. Global region. Confirm the player UID and nickname before ordering.",
+    "badge": "Global Top-up",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "ff-520",
+    "name": "Free Fire 520 Diamonds",
+    "category": "Free Fire",
+    "price": 290,
+    "priceLabel": "Rs290",
+    "description": "520 diamonds. Global region. Confirm the player UID and nickname before ordering.",
+    "badge": "Global Top-up",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
+  },
+  {
+    "id": "ff-1060",
+    "name": "Free Fire 1,060 Diamonds",
+    "category": "Free Fire",
+    "price": 580,
+    "priceLabel": "Rs580",
+    "description": "1,060 diamonds. Global region. Confirm the player UID and nickname before ordering.",
+    "badge": "Global Top-up",
     "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"
   },
   {
