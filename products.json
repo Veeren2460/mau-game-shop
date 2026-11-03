@@ -1048,5 +1048,25 @@
     "description": "US Nintendo account only. Provisional listed Eldorado USD 18.39; confirm final seller checkout price and account region before payment.",
     "badge": "US Account Only",
     "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=900"
+  },
+  {
+    "id": "nintendo-ca-10-eshop",
+    "name": "Nintendo eShop Canada CAD $10 Gift Card",
+    "category": "Nintendo",
+    "price": 460,
+    "priceLabel": "Rs460",
+    "description": "Canadian-region Nintendo account only. Provisional Eldorado listed starting price USD 6.86 plus 8% and USD 0.30 cost allowance at Rs47/USD. Card denomination is CAD, not USD. Confirm live seller offer, code region and final checkout total before accepting payment.",
+    "badge": "Canada Account Only",
+    "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=900"
+  },
+  {
+    "id": "nintendo-ca-20-eshop",
+    "name": "Nintendo eShop Canada CAD $20 Gift Card",
+    "category": "Nintendo",
+    "price": 900,
+    "priceLabel": "Rs900",
+    "description": "Canadian-region Nintendo account only. Provisional Eldorado listed starting price USD 13.76 plus 8% and USD 0.30 cost allowance at Rs47/USD. Card denomination is CAD, not USD. Confirm live seller offer, code region and final checkout total before accepting payment.",
+    "badge": "Canada Account Only",
+    "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=900"
   }
 ]
