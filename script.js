@@ -74,9 +74,9 @@ document.querySelector("#checkoutForm").addEventListener("submit",async e=>{
   const url=whatsappUrl(msg);
   const status=document.querySelector("#checkoutStatus");
   if(status)status.textContent="Order #"+result.order_number+" saved! Please send the order on WhatsApp to confirm payment and availability.";
-  button.textContent="Order saved — send WhatsApp";
+  button.disabled=false;button.type="button";button.textContent="Order saved — open WhatsApp";
   button.onclick=()=>{if(url!=="#")window.open(url,"_blank","noopener")};
   if(url!=="#")window.open(url,"_blank","noopener");
   cart=[];saveCart();
- }catch(err){toast(err.message||"Could not save order. Try again.");button.disabled=false;button.textContent="Send checkout on WhatsApp ↗"}
+ }catch(err){toast(err.message||"Could not save order. Try again.");button.disabled=false;button.textContent="Save order and continue to WhatsApp ↗"}
 });
