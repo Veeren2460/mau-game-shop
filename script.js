@@ -102,7 +102,7 @@ function showProduct(id,updateUrl=true){
  trackRecentlyViewed(id);
  const warning=/unverified|do not pay/i.test(String(p.badge||"")+" "+String(p.description||""));
  $("#productDetail").innerHTML=`<div class="detail-layout">${productArt(p,true)}<div class="detail-copy"><span class="product-category">${safeText(p.category)} · ${safeText(productType(p))}</span><h2>${safeText(p.name)}</h2><p>${safeText(p.description)}</p><div class="detail-price">${safeText(p.priceLabel||(p.price==null?"Request price":money(p.price)))}</div><p class="detail-disclaimer">Region, stock, delivery method and final price must be confirmed before payment.</p>${warning?'<p class="detail-warning">This listing needs independent verification before payment.</p>':""}<div class="detail-actions"><button class="btn primary" data-add="${safeText(p.id)}">Add to cart</button><button class="btn ghost" type="button" data-favorite="${safeText(p.id)}" aria-pressed="${favorites.has(p.id)}">${favorites.has(p.id)?"♥ Saved":"♡ Save product"}</button><button class="btn ghost" type="button" data-share="${safeText(p.id)}">Share product ↗</button></div></div></div>`;
- if(updateUrl){const url=new URL(window.location.href);url.searchParams.set("product",p.id);history.pushState({product:p.id},"",url);}
+ if(updateUrl){const url=new URL(window.location.href);if(url.searchParams.get("product")!==p.id){url.searchParams.set("product",p.id);history.pushState({product:p.id},"",url);}}
  if(!$("#productDialog").open)$("#productDialog").showModal();
 }
 function saveCart(){localStorage.setItem("mauGameShopCart",JSON.stringify(cart));renderCart()}
@@ -201,11 +201,12 @@ document.addEventListener("click",e=>{
   const remove=e.target.closest("[data-remove]");if(remove){cart=cart.filter(x=>x.id!==remove.dataset.remove);saveCart()}
   const service=e.target.closest("[data-service-filter]");if(service){activeType="All";document.querySelectorAll("[data-type]").forEach(b=>{b.classList.toggle("active",b.dataset.type==="All");b.setAttribute("aria-pressed",String(b.dataset.type==="All"))});activeCategory=service.dataset.serviceFilter;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category===activeCategory));renderProducts()}
 });
-function clearProductUrl(){const url=new URL(window.location.href);if(url.searchParams.has("product")){url.searchParams.delete("product");history.replaceState(null,"",url);}}
+let syncingProductHistory=false;
+function clearProductUrl(){if(syncingProductHistory)return;const url=new URL(window.location.href);if(url.searchParams.has("product")){url.searchParams.delete("product");history.replaceState(null,"",url);}}
 $("#closeProduct").addEventListener("click",()=>$("#productDialog").close());
 $("#productDialog").addEventListener("click",e=>{if(e.target===$("#productDialog"))$("#productDialog").close()});
 $("#productDialog").addEventListener("close",clearProductUrl);
-window.addEventListener("popstate",()=>{const id=new URLSearchParams(window.location.search).get("product");if(id&&products.some(p=>p.id===id))showProduct(id,false);else if($("#productDialog").open)$("#productDialog").close();});
+window.addEventListener("popstate",()=>{const id=new URLSearchParams(window.location.search).get("product");if(id&&products.some(p=>p.id===id)){showProduct(id,false);}else if($("#productDialog").open){syncingProductHistory=true;$("#productDialog").close();syncingProductHistory=false;}});
 $("#loadMoreProducts").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;renderProducts();});
 $("#clearRecentlyViewed").addEventListener("click",()=>{recentlyViewed=[];localStorage.removeItem("mauGameShopRecentlyViewed");renderRecentlyViewed();});
 $("#favoritesFilter").addEventListener("click",()=>{favoritesOnly=!favoritesOnly;renderProducts();});
