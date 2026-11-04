@@ -119,7 +119,22 @@ function showProduct(id,updateUrl=true){
  if(!$("#productDialog").open)$("#productDialog").showModal();
 }
 function saveCart(){localStorage.setItem("mauGameShopCart",JSON.stringify(cart));renderCart()}
-function addToCart(id){const status=$("#checkoutStatus");if(status){status.classList.remove("order-success");status.textContent="";}const p=products.find(x=>x.id===id);if(!p)return;const existing=cart.find(x=>x.id===id);if(existing){if(existing.qty>=99){toast("Maximum 99 of each product per order.");return;}existing.qty++;}else cart.push({id,qty:1});saveCart();toast(`${p.name} added to your order`)}
+const MAX_ITEM_QTY=20,MAX_CART_LINES=30,MAX_ORDER_SUBTOTAL=100000;
+function cartLimitError(items){
+ if(items.length>MAX_CART_LINES)return "Maximum 30 different products per order. Please split your order.";
+ if(items.some(x=>!Number.isInteger(x.qty)||x.qty<1||x.qty>MAX_ITEM_QTY))return "Maximum 20 of each product per order. Please reduce the quantity.";
+ const subtotal=items.reduce((sum,x)=>{const p=products.find(p=>p.id===x.id);return sum+(p&&p.price!=null?p.price*x.qty:0)},0);
+ if(subtotal>MAX_ORDER_SUBTOTAL)return "Priced items cannot exceed Rs100,000 per order. Please split your order.";
+ return "";
+}
+function addToCart(id){
+ const p=products.find(x=>x.id===id);if(!p)return;
+ const next=cart.map(x=>({...x})),existing=next.find(x=>x.id===id);
+ if(existing)existing.qty++;else next.push({id,qty:1});
+ const error=cartLimitError(next);if(error){toast(error);return;}
+ const status=$("#checkoutStatus");if(status){status.classList.remove("order-success");status.textContent="";}
+ cart=next;saveCart();toast(`${p.name} added to your order`);
+}
 function isStartingPrice(p){return /^from\b/i.test(String(p.priceLabel||""));}
 function linePrice(p,qty=1){return p.price==null?"Quote needed":(isStartingPrice(p)?"From ":"")+money(p.price*qty);}
 function cartSummary(){
@@ -206,13 +221,14 @@ async function init(){
   const validIds=new Set(products.map(p=>p.id));
   recentlyViewed=recentlyViewed.filter(id=>typeof id==="string"&&validIds.has(id)).slice(0,6);
   favorites=new Set([...favorites].filter(id=>typeof id==="string"&&validIds.has(id)));
-  cart=cart.filter(item=>item&&typeof item.id==="string"&&validIds.has(item.id)&&Number.isInteger(item.qty)&&item.qty>0).map(item=>({id:item.id,qty:Math.min(item.qty,99)}));
+  cart=cart.filter(item=>item&&typeof item.id==="string"&&validIds.has(item.id)&&Number.isInteger(item.qty)&&item.qty>0).map(item=>({id:item.id,qty:item.qty}));
   localStorage.setItem("mauGameShopCart",JSON.stringify(cart));
   $("#year").textContent=new Date().getFullYear();
   $("#juiceDetails").textContent=(config.payment.juiceNumber||"").includes("ADD_")?"Juice details to be added by the shop owner.":`${config.payment.juiceName} · ${config.payment.juiceNumber}`;
   $("#bankDetails").textContent=(config.payment.accountNumber||"").includes("ADD_")?"Bank account details to be added by the shop owner.":`${config.payment.bankName} · ${config.payment.accountName} · ${config.payment.accountNumber}`;
   $("#contactWhatsApp").addEventListener("click",e=>{e.preventDefault();const url=whatsappUrl("Hello MAU GAME SHOP! I would like to ask about your products and services.");if(url!=="#")window.open(url,"_blank","noopener")});
   renderProducts();renderCart();renderRecentlyViewed();
+  const savedCartError=cartLimitError(cart);if(savedCartError)toast(savedCartError);
   const linkedProduct=new URLSearchParams(window.location.search).get("product");
   if(linkedProduct && products.some(p=>p.id===linkedProduct))showProduct(linkedProduct,false);
 }
@@ -239,7 +255,13 @@ document.addEventListener("click",e=>{
   const type=e.target.closest("[data-type]");if(type)setType(type.dataset.type);
   const add=e.target.closest("[data-add]");if(add)addToCart(add.dataset.add);
   const filter=e.target.closest("button.filter[data-category]");if(filter&&!filter.disabled){activeCategory=filter.dataset.category;syncCategoryButtons();renderProducts()}
-  const qty=e.target.closest("[data-qty]");if(qty){const item=cart.find(x=>x.id===qty.dataset.qty);if(item){const next=item.qty+Number(qty.dataset.delta);if(next>99){toast("Maximum 99 of each product per order.");}else{item.qty=next;if(item.qty<1)cart=cart.filter(x=>x.id!==item.id);saveCart()}}}
+  const qty=e.target.closest("[data-qty]");if(qty){
+   const next=cart.map(x=>({...x})),item=next.find(x=>x.id===qty.dataset.qty);
+   if(item){item.qty+=Number(qty.dataset.delta);const remaining=next.filter(x=>x.qty>0);
+    const error=cartLimitError(remaining);
+    if(error&&Number(qty.dataset.delta)>0)toast(error);else{cart=remaining;saveCart();}
+   }
+  }
   const remove=e.target.closest("[data-remove]");if(remove){cart=cart.filter(x=>x.id!==remove.dataset.remove);saveCart()}
   const service=e.target.closest("[data-service-filter]");if(service)browseSection("Services",service.dataset.serviceFilter);
 });
@@ -292,6 +314,7 @@ document.querySelector("#checkoutForm").addEventListener("submit",async e=>{
  e.preventDefault();
  if(catalogState!=="ready"){toast("Wait for products to load before placing your order.");return;}
  if(!cart.length){toast("Add a product to your cart first.");document.querySelector("#shop").scrollIntoView();return}
+ const limitError=cartLimitError(cart);if(limitError){toast(limitError);return;}
  const form=e.currentTarget,button=form.querySelector('button[type="submit"]');
  const name=$("#customerName").value.trim(),phone=$("#customerPhone").value.trim(),player=$("#customerPlayer").value.trim(),payment=$("#customerPayment").value,note=$("#customerNote").value.trim();
  const methods={"Juice":"juice","MCB":"mcb","Card inquiry":"card"};
