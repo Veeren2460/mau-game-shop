@@ -68,7 +68,7 @@ function showProduct(id,updateUrl=true){
  if(!$("#productDialog").open)$("#productDialog").showModal();
 }
 function saveCart(){localStorage.setItem("mauGameShopCart",JSON.stringify(cart));renderCart()}
-function addToCart(id){const p=products.find(x=>x.id===id);if(!p)return;const existing=cart.find(x=>x.id===id);if(existing)existing.qty++;else cart.push({id,qty:1});saveCart();toast(`${p.name} added to your order`)}
+function addToCart(id){const status=$("#checkoutStatus");if(status){status.classList.remove("order-success");status.textContent="";}const p=products.find(x=>x.id===id);if(!p)return;const existing=cart.find(x=>x.id===id);if(existing)existing.qty++;else cart.push({id,qty:1});saveCart();toast(`${p.name} added to your order`)}
 function renderCheckoutReview(){
  const el=$("#checkoutReview");if(!el)return;
  const valid=cart.map(item=>({item,p:products.find(p=>p.id===item.id)})).filter(x=>x.p);
@@ -105,6 +105,7 @@ async function init(){
 document.addEventListener("click",e=>{
   const heroCategory=e.target.closest("[data-hero-category]");if(heroCategory){activeType="All";activeCategory=heroCategory.dataset.heroCategory;$("#searchInput").value="";document.querySelectorAll("[data-type]").forEach(b=>{const on=b.dataset.type==="All";b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on))});document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category===activeCategory));renderProducts();}
   const favorite=e.target.closest("[data-favorite]");if(favorite){const id=favorite.dataset.favorite;if(favorites.has(id))favorites.delete(id);else favorites.add(id);localStorage.setItem("mauGameShopFavorites",JSON.stringify([...favorites]));renderProducts();toast(favorites.has(id)?"Product saved":"Removed from saved products");}
+  const copyOrder=e.target.closest("[data-copy-order]");if(copyOrder){const number=copyOrder.dataset.copyOrder;if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(number).then(()=>toast("Order number copied")).catch(()=>toast("Could not copy order number"));}else{window.prompt("Copy your order number:",number);}}
   const detail=e.target.closest("[data-detail]");if(detail)showProduct(detail.dataset.detail);
   const share=e.target.closest("[data-share]");if(share){const p=products.find(x=>x.id===share.dataset.share);if(p){const url=new URL(window.location.href);url.searchParams.set("product",p.id);url.hash="shop";const link=url.toString();if(navigator.share){navigator.share({title:p.name,text:p.name+" — MAU GAME SHOP",url:link}).catch(()=>{});}else if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(link).then(()=>toast("Product link copied!")).catch(()=>toast("Could not copy link"));}else{window.prompt("Copy this product link:",link);}}}
   const type=e.target.closest("[data-type]");if(type)setType(type.dataset.type);
@@ -147,8 +148,8 @@ document.querySelector("#checkoutForm").addEventListener("submit",async e=>{
   const response=await fetch("https://czncneyrbtepheyuwett.supabase.co/functions/v1/create-order",{method:"POST",headers:{"apikey":"sb_publishable_57CYWH5ZetDxyEx8fLD8hg_wuJNw9om"},body});
   const result=await response.json();if(!response.ok)throw Error(result.error||"Order could not be saved");
   const status=document.querySelector("#checkoutStatus");
-  if(status)status.textContent="Order #"+result.order_number+" placed successfully! Your order is pending confirmation. Please keep this order number.";
-  button.disabled=false;button.type="button";button.textContent="Order #"+result.order_number+" placed";
+  if(status){status.classList.add("order-success");status.innerHTML=`<strong>✓ Order submitted successfully</strong><p>Order number: <b>${safeText(result.order_number)}</b></p><p>Your order is pending shop confirmation. Keep this number and wait for payment instructions.</p><button type="button" class="copy-order-button" data-copy-order="${safeText(result.order_number)}">Copy order number</button>`;}
+  button.disabled=false;button.textContent="Place another order";
   form.reset();
   cart=[];saveCart();
  }catch(err){toast(err.message||"Could not save order. Try again.");button.disabled=false;button.textContent="Place order"}
