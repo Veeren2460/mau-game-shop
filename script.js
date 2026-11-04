@@ -19,6 +19,10 @@ function whatsappUrl(message){
 function renderProducts(){
   const query=$("#searchInput").value.trim().toLowerCase();
   const filtered=products.filter(p=>(activeType==="All"||productType(p)===activeType)&&(activeCategory==="All"||p.category===activeCategory)&&(`${p.name} ${p.category} ${p.description}`.toLowerCase().includes(query)));
+  const sort=$("#sortProducts").value;
+  if(sort==="price-asc")filtered.sort((a,b)=>(a.price==null?Infinity:a.price)-(b.price==null?Infinity:b.price));
+  if(sort==="price-desc")filtered.sort((a,b)=>(b.price==null?-Infinity:b.price)-(a.price==null?-Infinity:a.price));
+  if(sort==="name")filtered.sort((a,b)=>a.name.localeCompare(b.name));
   updateBrowseContext(filtered.length);
   $("#productGrid").innerHTML=filtered.length?filtered.map(p=>`
     <article class="product-card">
@@ -60,6 +64,8 @@ document.addEventListener("click",e=>{
   const service=e.target.closest("[data-service-filter]");if(service){activeType="All";document.querySelectorAll("[data-type]").forEach(b=>{b.classList.toggle("active",b.dataset.type==="All");b.setAttribute("aria-pressed",String(b.dataset.type==="All"))});activeCategory=service.dataset.serviceFilter;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category===activeCategory));renderProducts()}
 });
 $("#searchInput").addEventListener("input",renderProducts);
+$("#sortProducts").addEventListener("change",renderProducts);
+$("#resetBrowse").addEventListener("click",()=>{setType("All");$("#sortProducts").value="default";renderProducts();});
 $("#cartOpen").addEventListener("click",openCart);$("#cartClose").addEventListener("click",closeCart);$("#cartOverlay").addEventListener("click",closeCart);
 $("#clearCart").addEventListener("click",()=>{cart=[];saveCart()});
 $("#whatsappOrder").addEventListener("click",()=>{if(!cart.length){toast("Your cart is empty.");return}closeCart();$("#checkout").scrollIntoView({behavior:"smooth"});});
