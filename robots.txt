@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://veeren2460.github.io/mau-game-shop/sitemap.xml
