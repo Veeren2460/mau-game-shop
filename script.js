@@ -5,6 +5,8 @@ let activeType = "All";
 const PAGE_SIZE = 24;
 let visibleCount = PAGE_SIZE;
 let browseKey = "";
+let favoritesOnly = false;
+let favorites = new Set(JSON.parse(localStorage.getItem("mauGameShopFavorites") || "[]"));
 function productType(p){return p.productType || "Top-Ups";}
 
 function updateBrowseContext(count){const el=$("#browseContext");if(el)el.textContent=`${activeType==="All"?"All products":activeType==="Services"?"Services & gear":activeType} · ${count} item${count===1?"":"s"}`;}
@@ -36,20 +38,23 @@ function productArt(p,large=false){
   </div>`;
 }
 function renderProducts(){
+  $("#favoritesCount").textContent=favorites.size;
+  $("#favoritesFilter").setAttribute("aria-pressed",String(favoritesOnly));
   const query=$("#searchInput").value.trim().toLowerCase();
-  const filtered=products.filter(p=>(activeType==="All"||productType(p)===activeType)&&(activeCategory==="All"||p.category===activeCategory)&&(`${p.name} ${p.category} ${p.description}`.toLowerCase().includes(query)));
+  const filtered=products.filter(p=>(!favoritesOnly||favorites.has(p.id))&&(activeType==="All"||productType(p)===activeType)&&(activeCategory==="All"||p.category===activeCategory)&&(`${p.name} ${p.category} ${p.description}`.toLowerCase().includes(query)));
   const sort=$("#sortProducts").value;
   if(sort==="price-asc")filtered.sort((a,b)=>(a.price==null?Infinity:a.price)-(b.price==null?Infinity:b.price));
   if(sort==="price-desc")filtered.sort((a,b)=>(b.price==null?-Infinity:b.price)-(a.price==null?-Infinity:a.price));
   if(sort==="name")filtered.sort((a,b)=>a.name.localeCompare(b.name));
   updateBrowseContext(filtered.length);
-  const nextKey=JSON.stringify([activeType,activeCategory,query,sort]);
+  const nextKey=JSON.stringify([activeType,activeCategory,query,sort,favoritesOnly]);
   if(nextKey!==browseKey){visibleCount=PAGE_SIZE;browseKey=nextKey;}
   const visible=filtered.slice(0,visibleCount);
   const moreWrap=$("#loadMoreWrap");
   if(moreWrap){moreWrap.hidden=filtered.length<=visibleCount;$("#catalogProgress").textContent=`Showing ${visible.length} of ${filtered.length} products`;}
   $("#productGrid").innerHTML=filtered.length?visible.map(p=>`
     <article class="product-card">
+      <button type="button" class="favorite-button ${favorites.has(p.id)?"is-saved":""}" data-favorite="${safeText(p.id)}" aria-label="${favorites.has(p.id)?"Remove from":"Save to"} saved products: ${safeText(p.name)}" aria-pressed="${favorites.has(p.id)}">${favorites.has(p.id)?"♥":"♡"}</button>
       ${productArt(p)}
       <div class="product-info"><span class="product-category">${safeText(p.category)}</span><h3>${safeText(p.name)}</h3><p>${safeText(p.description)}</p>
       <div class="product-bottom"><span class="price">${safeText(p.priceLabel || (p.price==null?"Request price":money(p.price)))}</span><button class="add-button" data-add="${safeText(p.id)}">+ Add</button></div><button class="detail-button" data-detail="${safeText(p.id)}" aria-label="View details for ${safeText(p.name)}">View details ↗</button></div>
@@ -90,6 +95,7 @@ async function init(){
 }
 document.addEventListener("click",e=>{
   const heroCategory=e.target.closest("[data-hero-category]");if(heroCategory){activeType="All";activeCategory=heroCategory.dataset.heroCategory;$("#searchInput").value="";document.querySelectorAll("[data-type]").forEach(b=>{const on=b.dataset.type==="All";b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on))});document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category===activeCategory));renderProducts();}
+  const favorite=e.target.closest("[data-favorite]");if(favorite){const id=favorite.dataset.favorite;if(favorites.has(id))favorites.delete(id);else favorites.add(id);localStorage.setItem("mauGameShopFavorites",JSON.stringify([...favorites]));renderProducts();toast(favorites.has(id)?"Product saved":"Removed from saved products");}
   const detail=e.target.closest("[data-detail]");if(detail)showProduct(detail.dataset.detail);
   const share=e.target.closest("[data-share]");if(share){const p=products.find(x=>x.id===share.dataset.share);if(p){const url=new URL(window.location.href);url.searchParams.set("product",p.id);url.hash="shop";const link=url.toString();if(navigator.share){navigator.share({title:p.name,text:p.name+" — MAU GAME SHOP",url:link}).catch(()=>{});}else if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(link).then(()=>toast("Product link copied!")).catch(()=>toast("Could not copy link"));}else{window.prompt("Copy this product link:",link);}}}
   const type=e.target.closest("[data-type]");if(type)setType(type.dataset.type);
@@ -105,9 +111,10 @@ $("#productDialog").addEventListener("click",e=>{if(e.target===$("#productDialog
 $("#productDialog").addEventListener("close",clearProductUrl);
 window.addEventListener("popstate",()=>{const id=new URLSearchParams(window.location.search).get("product");if(id&&products.some(p=>p.id===id))showProduct(id,false);else if($("#productDialog").open)$("#productDialog").close();});
 $("#loadMoreProducts").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;renderProducts();});
+$("#favoritesFilter").addEventListener("click",()=>{favoritesOnly=!favoritesOnly;renderProducts();});
 $("#searchInput").addEventListener("input",renderProducts);
 $("#sortProducts").addEventListener("change",renderProducts);
-$("#resetBrowse").addEventListener("click",()=>{setType("All");$("#sortProducts").value="default";renderProducts();});
+$("#resetBrowse").addEventListener("click",()=>{favoritesOnly=false;setType("All");$("#sortProducts").value="default";renderProducts();});
 $("#cartOpen").addEventListener("click",openCart);$("#cartClose").addEventListener("click",closeCart);$("#cartOverlay").addEventListener("click",closeCart);
 $("#clearCart").addEventListener("click",()=>{cart=[];saveCart()});
 $("#whatsappOrder").addEventListener("click",()=>{if(!cart.length){toast("Your cart is empty.");return}closeCart();$("#checkout").scrollIntoView({behavior:"smooth"});});
