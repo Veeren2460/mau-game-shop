@@ -44,7 +44,7 @@ function productArt(p,large=false){
   return `<div class="${large?"detail-image":"product-image"} game-art" data-category="${category}" role="img" aria-label="${title} product artwork">
     <span class="art-grid" aria-hidden="true"></span>
     <span class="art-top" aria-hidden="true">MAU GAME SHOP <span>✦</span> ${type}</span>
-    <span class="art-emblem" aria-hidden="true">${safeText(({ "Free Fire":"⚡","PUBG Mobile":"◎","Mobile Legends":"◆","Roblox":"◇","Fortnite":"✦","PlayStation":"△","Xbox":"✕","Nintendo":"●","Genshin Impact":"✧","Valorant":"Ⅴ","Call of Duty: Mobile":"⌖","Honkai: Star Rail":"✶","eFootball":"◉","Blood Strike":"⚔","Razer Gold":"◆","Google Play":"▶","Steam & Gift Cards":"▣","Gaming Accessories":"🎮","Digital Services":"⌘" })[p.category]||"✦")}</span>
+    <span class="art-emblem" aria-hidden="true">${safeText(({ "Free Fire":"⚡","PUBG Mobile":"◎","Mobile Legends":"◆","Roblox":"◇","Fortnite":"✦","PlayStation":"△","Xbox":"✕","Nintendo":"●","Genshin Impact":"✧","Zenless Zone Zero":"Z","Valorant":"Ⅴ","Call of Duty: Mobile":"⌖","Honkai: Star Rail":"✶","eFootball":"◉","Blood Strike":"⚔","Razer Gold":"◆","Google Play":"▶","Steam & Gift Cards":"▣","Gaming Accessories":"🎮","Digital Services":"⌘" })[p.category]||"✦")}</span>
     <span class="art-title" aria-hidden="true">${title}</span>
     <span class="art-footer" aria-hidden="true">DIGITAL GAMING MARKETPLACE</span>
     ${badge}
