@@ -106,7 +106,7 @@ function showProduct(id,updateUrl=true){
  if(!$("#productDialog").open)$("#productDialog").showModal();
 }
 function saveCart(){localStorage.setItem("mauGameShopCart",JSON.stringify(cart));renderCart()}
-function addToCart(id){const status=$("#checkoutStatus");if(status){status.classList.remove("order-success");status.textContent="";}const p=products.find(x=>x.id===id);if(!p)return;const existing=cart.find(x=>x.id===id);if(existing)existing.qty++;else cart.push({id,qty:1});saveCart();toast(`${p.name} added to your order`)}
+function addToCart(id){const status=$("#checkoutStatus");if(status){status.classList.remove("order-success");status.textContent="";}const p=products.find(x=>x.id===id);if(!p)return;const existing=cart.find(x=>x.id===id);if(existing){if(existing.qty>=99){toast("Maximum 99 of each product per order.");return;}existing.qty++;}else cart.push({id,qty:1});saveCart();toast(`${p.name} added to your order`)}
 function renderCheckoutReview(){
  const el=$("#checkoutReview");if(!el)return;
  const valid=cart.map(item=>({item,p:products.find(p=>p.id===item.id)})).filter(x=>x.p);
@@ -196,7 +196,7 @@ document.addEventListener("click",e=>{
   const type=e.target.closest("[data-type]");if(type)setType(type.dataset.type);
   const add=e.target.closest("[data-add]");if(add)addToCart(add.dataset.add);
   const filter=e.target.closest("[data-category]");if(filter){activeCategory=filter.dataset.category;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b===filter));renderProducts()}
-  const qty=e.target.closest("[data-qty]");if(qty){const item=cart.find(x=>x.id===qty.dataset.qty);if(item){item.qty+=Number(qty.dataset.delta);if(item.qty<1)cart=cart.filter(x=>x.id!==item.id);saveCart()}}
+  const qty=e.target.closest("[data-qty]");if(qty){const item=cart.find(x=>x.id===qty.dataset.qty);if(item){const next=item.qty+Number(qty.dataset.delta);if(next>99){toast("Maximum 99 of each product per order.");}else{item.qty=next;if(item.qty<1)cart=cart.filter(x=>x.id!==item.id);saveCart()}}}
   const remove=e.target.closest("[data-remove]");if(remove){cart=cart.filter(x=>x.id!==remove.dataset.remove);saveCart()}
   const service=e.target.closest("[data-service-filter]");if(service){activeType="All";document.querySelectorAll("[data-type]").forEach(b=>{b.classList.toggle("active",b.dataset.type==="All");b.setAttribute("aria-pressed",String(b.dataset.type==="All"))});activeCategory=service.dataset.serviceFilter;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category===activeCategory));renderProducts()}
 });
@@ -213,7 +213,7 @@ $("#sortProducts").addEventListener("change",renderProducts);
 $("#priceFilter").addEventListener("change",renderProducts);
 $("#resetBrowse").addEventListener("click",()=>{favoritesOnly=false;$("#priceFilter").value="all";$("#sortProducts").value="default";setType("All");renderProducts();});
 $("#cartOpen").addEventListener("click",openCart);$("#cartClose").addEventListener("click",closeCart);$("#cartOverlay").addEventListener("click",closeCart);
-$("#clearCart").addEventListener("click",()=>{cart=[];saveCart()});
+$("#clearCart").addEventListener("click",()=>{if(!cart.length){toast("Your cart is already empty.");return;}if(!window.confirm("Remove all products from your cart?"))return;cart=[];saveCart();toast("Cart cleared.");});
 $("#whatsappOrder").addEventListener("click",()=>{if(!cart.length){toast("Your cart is empty.");return}closeCart();$("#checkout").scrollIntoView({behavior:"smooth"});});
 $("#menuToggle").addEventListener("click",()=>$("#mainNav").classList.toggle("open"));
 document.querySelectorAll("#mainNav a").forEach(a=>a.addEventListener("click",()=>$("#mainNav").classList.remove("open")));
