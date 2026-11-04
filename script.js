@@ -38,6 +38,22 @@ function productArt(p,large=false){
     ${large?"":`<span class="product-badge">${safeText(p.badge||p.category)}</span>`}
   </div>`;
 }
+function syncCategoryButtons(){
+ document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category===activeCategory));
+ document.querySelectorAll("[data-type]").forEach(b=>{const active=b.dataset.type===activeType;b.classList.toggle("active",active);b.setAttribute("aria-pressed",String(active));});
+}
+function renderActiveFilters(query,sort,budget){
+ const el=$("#activeFilterChips");if(!el)return;
+ const chips=[];
+ if(activeType!=="All")chips.push(["type","Type: "+activeType]);
+ if(activeCategory!=="All")chips.push(["category",activeCategory]);
+ if(query)chips.push(["search","Search: "+query]);
+ if(budget!=="all")chips.push(["budget",budget==="quote"?"Quote only":"Up to Rs"+Number(budget).toLocaleString("en-MU")]);
+ if(sort!=="default")chips.push(["sort","Custom sort"]);
+ if(favoritesOnly)chips.push(["favorites","Saved only"]);
+ el.hidden=!chips.length;
+ el.innerHTML=chips.map(([key,label])=>`<button type="button" data-clear-filter="${key}" aria-label="Remove ${safeText(label)} filter">${safeText(label)} <span aria-hidden="true">×</span></button>`).join("");
+}
 function renderProducts(){
   $("#favoritesCount").textContent=favorites.size;
   $("#favoritesFilter").setAttribute("aria-pressed",String(favoritesOnly));
@@ -45,6 +61,7 @@ function renderProducts(){
   const budget=$("#priceFilter").value;
   const filtered=products.filter(p=>(budget==="all"||(budget==="quote"?p.price==null:(p.price!=null&&Number.isFinite(Number(p.price))&&Number(p.price)<=Number(budget))))&&(!favoritesOnly||favorites.has(p.id))&&(activeType==="All"||productType(p)===activeType)&&(activeCategory==="All"||p.category===activeCategory)&&(`${p.name} ${p.category} ${p.description}`.toLowerCase().includes(query)));
   const sort=$("#sortProducts").value;
+  renderActiveFilters(query,sort,budget);
   if(sort==="price-asc")filtered.sort((a,b)=>(a.price==null?Infinity:a.price)-(b.price==null?Infinity:b.price));
   if(sort==="price-desc")filtered.sort((a,b)=>(b.price==null?-Infinity:b.price)-(a.price==null?-Infinity:a.price));
   if(sort==="name")filtered.sort((a,b)=>a.name.localeCompare(b.name));
@@ -119,6 +136,18 @@ async function init(){
 }
 document.addEventListener("click",e=>{
   const heroCategory=e.target.closest("[data-hero-category]");if(heroCategory){activeType="All";activeCategory=heroCategory.dataset.heroCategory;$("#searchInput").value="";document.querySelectorAll("[data-type]").forEach(b=>{const on=b.dataset.type==="All";b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on))});document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category===activeCategory));renderProducts();}
+  const clearFilter=e.target.closest("[data-clear-filter]");
+  if(clearFilter){
+    switch(clearFilter.dataset.clearFilter){
+      case "type":activeType="All";break;
+      case "category":activeCategory="All";break;
+      case "search":$("#searchInput").value="";break;
+      case "budget":$("#priceFilter").value="all";break;
+      case "sort":$("#sortProducts").value="default";break;
+      case "favorites":favoritesOnly=false;break;
+    }
+    syncCategoryButtons();renderProducts();
+  }
   const favorite=e.target.closest("[data-favorite]");if(favorite){const id=favorite.dataset.favorite;if(favorites.has(id))favorites.delete(id);else favorites.add(id);localStorage.setItem("mauGameShopFavorites",JSON.stringify([...favorites]));renderProducts();toast(favorites.has(id)?"Product saved":"Removed from saved products");}
   const copyOrder=e.target.closest("[data-copy-order]");if(copyOrder){const number=copyOrder.dataset.copyOrder;if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(number).then(()=>toast("Order number copied")).catch(()=>toast("Could not copy order number"));}else{window.prompt("Copy your order number:",number);}}
   const detail=e.target.closest("[data-detail]");if(detail)showProduct(detail.dataset.detail);
