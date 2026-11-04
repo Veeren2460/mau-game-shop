@@ -48,3 +48,39 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .hero-shortcuts a:hover{background:#182f5a;border-color:#24c0ff;transform:translateY(-2px)}
 .hero-shortcuts a:focus-visible{outline:2px solid #18bfff;outline-offset:3px}
 @media(max-width:720px){.hero-shortcuts{gap:7px;margin-top:22px}.hero-shortcuts a{padding:8px 10px;font-size:10px}.hero{padding-bottom:55px}}
+
+/* Original, game-themed catalog artwork (no third-party stock photos) */
+.game-art{--art-a:#087dca;--art-b:#321879;--art-glow:rgba(56,200,255,.45);position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;gap:4px;padding:17px;overflow:hidden;background:radial-gradient(circle at 77% 35%,var(--art-glow),transparent 40%),linear-gradient(130deg,var(--art-a),var(--art-b) 78%);color:#fff}
+.game-art::before{content:"";position:absolute;inset:0;background:linear-gradient(155deg,rgba(255,255,255,.09),transparent 37%),radial-gradient(circle at 84% 22%,transparent 0 40px,rgba(255,255,255,.12) 41px 42px,transparent 43px 73px,rgba(255,255,255,.08) 74px 75px,transparent 76px);pointer-events:none}
+.game-art::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(2,5,19,.72),transparent 68%);z-index:0;pointer-events:none}
+.art-grid{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 35px,rgba(255,255,255,.035) 36px 37px),repeating-linear-gradient(0deg,transparent 0 35px,rgba(255,255,255,.035) 36px 37px);transform:perspective(160px) rotateX(10deg);pointer-events:none}
+.art-top,.art-title,.art-footer,.art-emblem,.art-caution{position:relative;z-index:2}
+.art-top{position:absolute;top:12px;left:15px;right:15px;display:flex;justify-content:space-between;gap:8px;font-size:8px;letter-spacing:1.5px;font-weight:800;color:rgba(255,255,255,.78);text-transform:uppercase}
+.art-emblem{position:absolute;right:16px;top:32px;font-size:68px;line-height:1;font-family:var(--display);font-weight:800;opacity:.42;transform:rotate(-10deg);text-shadow:0 0 30px rgba(255,255,255,.25)}
+.art-title{max-width:94%;font-family:var(--display);font-size:clamp(12px,1.15vw,16px);line-height:1.28;letter-spacing:.2px;font-weight:800;text-wrap:balance;overflow-wrap:anywhere;text-shadow:0 3px 10px #0008}
+.art-footer{font-size:8px;letter-spacing:1.25px;font-weight:800;color:rgba(225,238,255,.7)}
+.game-art .product-badge{top:35px;left:14px;max-width:65%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:8px;padding:4px 7px}
+.art-caution{position:absolute;top:63px;left:14px;max-width:75%;font-size:9px;font-weight:800;letter-spacing:.4px;color:#fff0bd;background:#80380c;border:1px solid #f2ad55;border-radius:5px;padding:4px 7px}
+.game-art[data-category="Free Fire"]{--art-a:#b84b0a;--art-b:#49142c;--art-glow:#ffb34670}
+.game-art[data-category="PUBG Mobile"]{--art-a:#766018;--art-b:#172a30;--art-glow:#e8bb5770}
+.game-art[data-category="Mobile Legends"]{--art-a:#143b8b;--art-b:#32216d;--art-glow:#6aa9ff80}
+.game-art[data-category="Roblox"]{--art-a:#b92d45;--art-b:#40152e;--art-glow:#ff768078}
+.game-art[data-category="Fortnite"]{--art-a:#5932b5;--art-b:#112f74;--art-glow:#a476ff80}
+.game-art[data-category="PlayStation"]{--art-a:#0c4fbc;--art-b:#0b1a59;--art-glow:#43a9ff80}
+.game-art[data-category="Xbox"]{--art-a:#177647;--art-b:#0a2d2c;--art-glow:#4fff9870}
+.game-art[data-category="Nintendo"]{--art-a:#b92436;--art-b:#61152c;--art-glow:#ff7c8d78}
+.game-art[data-category="Genshin Impact"]{--art-a:#4a6d8b;--art-b:#373c73;--art-glow:#c7eaff88}
+.game-art[data-category="Honkai: Star Rail"]{--art-a:#62438d;--art-b:#182a64;--art-glow:#c6a2ff77}
+.game-art[data-category="Valorant"]{--art-a:#b72e4d;--art-b:#25223f;--art-glow:#ff6e7d78}
+.game-art[data-category="Call of Duty: Mobile"]{--art-a:#585e46;--art-b:#1d2930;--art-glow:#beca7280}
+.game-art[data-category="eFootball"]{--art-a:#195f9e;--art-b:#173d76;--art-glow:#47e0fc80}
+.game-art[data-category="Blood Strike"]{--art-a:#9c2533;--art-b:#321b2e;--art-glow:#f06b6770}
+.game-art[data-category="Steam & Gift Cards"]{--art-a:#1a5b75;--art-b:#182b53;--art-glow:#61c9f070}
+.game-art[data-category="Gaming Accessories"]{--art-a:#43516d;--art-b:#1b1e3c;--art-glow:#9faee080}
+.game-art[data-category="Digital Services"]{--art-a:#643c9e;--art-b:#1a335e;--art-glow:#c1a2ff70}
+.detail-image.game-art{min-height:290px;justify-content:flex-end;padding:28px}
+.detail-image.game-art .art-top{top:20px;left:25px;right:25px;font-size:10px}
+.detail-image.game-art .art-title{font-size:clamp(19px,2.2vw,29px);max-width:95%}
+.detail-image.game-art .art-emblem{font-size:125px;right:32px;top:50px}
+.detail-image.game-art .art-footer{font-size:10px}
+@media(max-width:720px){.game-art{padding:12px}.art-top{top:9px;left:10px;right:10px;font-size:7px}.game-art .product-badge{top:27px;left:10px;font-size:7px}.art-emblem{right:8px;top:34px;font-size:47px}.art-title{font-size:11px}.art-footer{font-size:7px;letter-spacing:.5px}.art-caution{top:53px;left:10px;font-size:7px}.detail-image.game-art{min-height:220px;padding:20px}}
