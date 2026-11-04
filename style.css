@@ -40,3 +40,11 @@
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 @media(max-width:720px){.product-info h3{min-height:34px}.product-info p{min-height:44px}.product-art-label{font-size:12px;padding:18px}}
 @media(prefers-reduced-motion:reduce){.product-card,.product-image img{transition:none}.product-card:hover{transform:none}.product-card:hover .product-image img{transform:none}}
+
+/* Homepage quick-shop navigation */
+.hero-shortcuts{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:26px;max-width:690px}
+.hero-shortcuts-title{width:100%;font-size:10px;font-weight:800;letter-spacing:2px;color:#8ca6d3}
+.hero-shortcuts a{display:inline-flex;align-items:center;gap:6px;padding:9px 13px;border:1px solid rgba(104,163,255,.3);border-radius:100px;background:rgba(13,23,51,.76);color:#e4eeff;font-size:11px;font-weight:700;backdrop-filter:blur(8px);transition:background .2s,border-color .2s,transform .2s}
+.hero-shortcuts a:hover{background:#182f5a;border-color:#24c0ff;transform:translateY(-2px)}
+.hero-shortcuts a:focus-visible{outline:2px solid #18bfff;outline-offset:3px}
+@media(max-width:720px){.hero-shortcuts{gap:7px;margin-top:22px}.hero-shortcuts a{padding:8px 10px;font-size:10px}.hero{padding-bottom:55px}}
