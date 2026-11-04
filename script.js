@@ -216,8 +216,17 @@ $("#resetBrowse").addEventListener("click",()=>{favoritesOnly=false;$("#priceFil
 $("#cartOpen").addEventListener("click",openCart);$("#cartClose").addEventListener("click",closeCart);$("#cartOverlay").addEventListener("click",closeCart);
 $("#clearCart").addEventListener("click",()=>{if(!cart.length){toast("Your cart is already empty.");return;}if(!window.confirm("Remove all products from your cart?"))return;cart=[];saveCart();toast("Cart cleared.");});
 $("#whatsappOrder").addEventListener("click",()=>{if(!cart.length){toast("Your cart is empty.");return}closeCart();$("#checkout").scrollIntoView({behavior:"smooth"});});
-$("#menuToggle").addEventListener("click",()=>$("#mainNav").classList.toggle("open"));
-document.querySelectorAll("#mainNav a").forEach(a=>a.addEventListener("click",()=>$("#mainNav").classList.remove("open")));
+function setMobileMenu(open){
+ const nav=$("#mainNav"),button=$("#menuToggle");
+ nav.classList.toggle("open",open);
+ button.setAttribute("aria-expanded",String(open));
+ button.setAttribute("aria-label",open?"Close menu":"Open menu");
+}
+$("#menuToggle").addEventListener("click",()=>setMobileMenu(!$("#mainNav").classList.contains("open")));
+document.querySelectorAll("#mainNav a").forEach(a=>a.addEventListener("click",()=>setMobileMenu(false)));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#mainNav").classList.contains("open")){setMobileMenu(false);$("#menuToggle").focus();}});
+document.addEventListener("click",e=>{if($("#mainNav").classList.contains("open")&&!e.target.closest("#mainNav")&&!e.target.closest("#menuToggle"))setMobileMenu(false);});
+window.addEventListener("resize",()=>{if(window.innerWidth>800&&$("#mainNav").classList.contains("open"))setMobileMenu(false);});
 init();
 
 document.querySelector("#checkoutForm").addEventListener("submit",async e=>{
