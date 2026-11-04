@@ -5,6 +5,7 @@ function readStoredArray(key){
  }catch(error){return [];}
 }
 let products = [];
+let catalogState = "loading";
 let config = {};
 let activeCategory = "All";
 let activeType = "All";
@@ -71,6 +72,7 @@ function renderActiveFilters(query,sort,budget){
  el.innerHTML=chips.map(([key,label])=>`<button type="button" data-clear-filter="${key}" aria-label="Remove ${safeText(label)} filter">${safeText(label)} <span aria-hidden="true">×</span></button>`).join("");
 }
 function renderProducts(){
+  if(catalogState!=="ready")return;
   syncCategoryButtons();
   $("#favoritesCount").textContent=favorites.size;
   $("#favoritesFilter").setAttribute("aria-pressed",String(favoritesOnly));
@@ -183,7 +185,23 @@ document.addEventListener("keydown",e=>{
  else if(!e.shiftKey&&(document.activeElement===last||!drawer.contains(document.activeElement))){e.preventDefault();first.focus();}
 });
 async function init(){
-  try{const [p,c]=await Promise.all([fetch("products.json"),fetch("store-config.json")]);if(!p.ok||!c.ok)throw new Error("Could not load store files");products=await p.json();config=await c.json();}catch(e){$("#productGrid").innerHTML='<div class="empty-state">Could not load products. Please make sure index.html, products.json and store-config.json are in the same folder and open the site through a web host or local server.</div>';return}
+  if(catalogState==="loading"&&init.pending)return;
+  init.pending=true;catalogState="loading";
+  $("#productGrid").innerHTML='<div class="loading" role="status">Loading products...</div>';
+  $("#loadMoreWrap").hidden=true;
+  const controller=new AbortController();
+  const timer=setTimeout(()=>controller.abort(),15000);
+  try{
+    const [p,c]=await Promise.all([fetch("products.json",{signal:controller.signal,cache:"no-cache"}),fetch("store-config.json",{signal:controller.signal,cache:"no-cache"})]);
+    if(!p.ok||!c.ok)throw new Error("Could not load store files");
+    const [catalog,settings]=await Promise.all([p.json(),c.json()]);
+    if(!Array.isArray(catalog)||!settings||!settings.payment)throw new Error("Invalid store files");
+    products=catalog;config=settings;catalogState="ready";
+  }catch(e){
+    catalogState="error";
+    $("#productGrid").innerHTML='<div class="empty-state"><h3>Products could not load</h3><p>Please check your connection and try again.</p><button type="button" class="btn ghost" id="retryCatalog">Try again</button></div>';
+    return;
+  }finally{clearTimeout(timer);init.pending=false;}
   $("#heroProductCount").textContent=`${products.length.toLocaleString("en-MU")} products`;
   const validIds=new Set(products.map(p=>p.id));
   recentlyViewed=recentlyViewed.filter(id=>typeof id==="string"&&validIds.has(id)).slice(0,6);
@@ -199,6 +217,7 @@ async function init(){
   if(linkedProduct && products.some(p=>p.id===linkedProduct))showProduct(linkedProduct,false);
 }
 document.addEventListener("click",e=>{
+  if(e.target.closest("#retryCatalog")){init();return;}
   const heroCategory=e.target.closest("[data-hero-category]");if(heroCategory)browseSection("All",heroCategory.dataset.heroCategory);
   const emptyReset=e.target.closest("#emptyResetFilters");if(emptyReset){favoritesOnly=false;$("#priceFilter").value="all";$("#sortProducts").value="default";setType("All");}
   const clearFilter=e.target.closest("[data-clear-filter]");
@@ -271,6 +290,7 @@ init();
 
 document.querySelector("#checkoutForm").addEventListener("submit",async e=>{
  e.preventDefault();
+ if(catalogState!=="ready"){toast("Wait for products to load before placing your order.");return;}
  if(!cart.length){toast("Add a product to your cart first.");document.querySelector("#shop").scrollIntoView();return}
  const form=e.currentTarget,button=form.querySelector('button[type="submit"]');
  const name=$("#customerName").value.trim(),phone=$("#customerPhone").value.trim(),player=$("#customerPlayer").value.trim(),payment=$("#customerPayment").value,note=$("#customerNote").value.trim();
