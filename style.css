@@ -95,3 +95,10 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .detail-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:18px}
 .detail-actions .btn{min-height:43px}
 @media(max-width:650px){.detail-actions .btn{flex:1;white-space:nowrap}}
+
+/* Saved product controls */
+.favorite-button{position:absolute;right:11px;top:11px;z-index:6;display:grid;place-items:center;width:35px;height:35px;border:1px solid rgba(255,255,255,.38);border-radius:50%;background:rgba(6,12,31,.78);backdrop-filter:blur(9px);color:#fff;font-size:23px;line-height:1;cursor:pointer;transition:background .2s,transform .2s}
+.favorite-button:hover{background:#26365d;transform:scale(1.07)}
+.favorite-button.is-saved{color:#ff6d9a;border-color:#ff6d9a;background:rgba(60,15,48,.88)}
+#favoritesFilter[aria-pressed="true"]{border-color:#ff6d9a;background:#42213c;color:#ffd5e5}
+#favoritesCount{display:inline-grid;place-items:center;margin-left:4px;min-width:19px;height:19px;padding:0 4px;border-radius:10px;background:#283656;color:#fff;font-size:10px}
