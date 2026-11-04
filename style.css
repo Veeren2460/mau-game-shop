@@ -125,3 +125,18 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .copy-order-button{margin-top:7px;border:1px solid rgba(185,255,231,.55);border-radius:9px;padding:10px 14px;background:#194b4b;color:#eafff7;font-size:12px;font-weight:800;cursor:pointer}
 .copy-order-button:hover{background:#24645e}
 .copy-order-button:focus-visible{outline:2px solid #b5ffe5;outline-offset:3px}
+
+/* Recently viewed product shortcuts */
+.recently-viewed{margin:0 0 24px;padding:19px;border:1px solid rgba(122,157,224,.24);border-radius:15px;background:rgba(13,24,49,.6)}
+.recently-viewed[hidden]{display:none}
+.recently-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px}
+.recently-head h3{margin:0;font-size:16px;color:#edf5ff}
+.recently-head button{border:0;background:none;color:#9eb5d8;font-size:11px;cursor:pointer;text-decoration:underline}
+.recently-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.recent-item{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:0;min-height:100px;padding:12px 14px;text-align:left;border:1px solid rgba(132,165,221,.2);border-radius:11px;background:linear-gradient(125deg,#182f56,#1d1c3c);color:#fff;cursor:pointer}
+.recent-item:hover{border-color:#37b9fa;background:linear-gradient(125deg,#21416f,#292353)}
+.recent-category{color:#91d9ff;font-size:10px;font-weight:700}
+.recent-item strong{font-size:12px;line-height:1.4;overflow-wrap:anywhere}
+.recent-price{margin-top:auto;font-size:11px;color:#d3e4ff}
+@media(max-width:800px){.recently-items{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.recently-viewed{padding:12px}.recently-items{grid-template-columns:1fr}.recent-item{min-height:0}}
