@@ -83,7 +83,7 @@ function renderProducts(){
       ${productArt(p)}
       <div class="product-info"><span class="product-category">${safeText(p.category)}</span><h3>${safeText(p.name)}</h3><p>${safeText(p.description)}</p>
       <div class="product-bottom"><span class="price">${safeText(p.priceLabel || (p.price==null?"Request price":money(p.price)))}</span><button class="add-button" data-add="${safeText(p.id)}">+ Add</button></div><button class="detail-button" data-detail="${safeText(p.id)}" aria-label="View details for ${safeText(p.name)}">View details ↗</button></div>
-    </article>`).join(""):`<div class="empty-state">${activeType==="Accounts"?"No account listings available yet. Please check back later.":"No products found. Try another search or category."}</div>`;
+    </article>`).join(""):`<div class="empty-state"><h3>${activeType==="Accounts"?"No account listings yet":"No matching products"}</h3><p>${activeType==="Accounts"?"Account listings are not available yet. Explore other products in the meantime.":"Try a different search, category or budget to find more products."}</p><button type="button" class="btn ghost" id="emptyResetFilters">Show all products</button></div>`;
 }
 function renderRecentlyViewed(){
  const panel=$("#recentlyViewed"),items=$("#recentlyViewedItems");
@@ -177,6 +177,7 @@ async function init(){
 }
 document.addEventListener("click",e=>{
   const heroCategory=e.target.closest("[data-hero-category]");if(heroCategory){activeType="All";activeCategory=heroCategory.dataset.heroCategory;$("#searchInput").value="";document.querySelectorAll("[data-type]").forEach(b=>{const on=b.dataset.type==="All";b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on))});document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category===activeCategory));renderProducts();}
+  const emptyReset=e.target.closest("#emptyResetFilters");if(emptyReset){favoritesOnly=false;$("#priceFilter").value="all";$("#sortProducts").value="default";setType("All");}
   const clearFilter=e.target.closest("[data-clear-filter]");
   if(clearFilter){
     switch(clearFilter.dataset.clearFilter){
