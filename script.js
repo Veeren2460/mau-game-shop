@@ -2,14 +2,8 @@ let products = [];
 let config = {};
 let activeCategory = "All";
 let activeType = "All";
-function productType(p){
-  const n=String(p.name||"").toLowerCase(), c=String(p.category||"").toLowerCase();
-  if(c==="gaming accessories"||c==="digital services")return "Services";
-  if(/\baccount\b|\baccounts\b/.test(n))return "Accounts";
-  if(/subscription|membership|playstation plus|ps plus|game pass|nintendo switch online|iptv|premium plan/.test(n))return "Subscriptions";
-  if(/gift card|wallet|voucher|psn card|steam card|razer gold|google play card|itunes card/.test(n)||c==="steam & gift cards")return "Gift Cards";
-  return "Top-Ups";
-}
+function productType(p){return p.productType || "Top-Ups";}
+
 function updateBrowseContext(count){const el=$("#browseContext");if(el)el.textContent=`${activeType==="All"?"All products":activeType==="Services"?"Services & gear":activeType} · ${count} item${count===1?"":"s"}`;}
 function setType(type){activeType=type;activeCategory="All";$("#searchInput").value="";document.querySelectorAll("[data-type]").forEach(b=>{const on=b.dataset.type===type;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on))});document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category==="All"));renderProducts();}
 let cart = JSON.parse(localStorage.getItem("mauGameShopCart") || "[]");
