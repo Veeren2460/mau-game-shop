@@ -1,3 +1,9 @@
+function readStoredArray(key){
+ try{
+  const value=JSON.parse(localStorage.getItem(key)||"[]");
+  return Array.isArray(value)?value:[];
+ }catch(error){return [];}
+}
 let products = [];
 let config = {};
 let activeCategory = "All";
@@ -5,14 +11,14 @@ let activeType = "All";
 const PAGE_SIZE = 24;
 let visibleCount = PAGE_SIZE;
 let browseKey = "";
-let recentlyViewed = JSON.parse(localStorage.getItem("mauGameShopRecentlyViewed") || "[]");
+let recentlyViewed = readStoredArray("mauGameShopRecentlyViewed");
 let favoritesOnly = false;
-let favorites = new Set(JSON.parse(localStorage.getItem("mauGameShopFavorites") || "[]"));
+let favorites = new Set(readStoredArray("mauGameShopFavorites"));
 function productType(p){return p.productType || "Top-Ups";}
 
 function updateBrowseContext(count){const el=$("#browseContext");if(el)el.textContent=`${activeType==="All"?"All products":activeType==="Services"?"Services & gear":activeType} · ${count} item${count===1?"":"s"}`;}
 function setType(type){activeType=type;activeCategory="All";$("#searchInput").value="";document.querySelectorAll("[data-type]").forEach(b=>{const on=b.dataset.type===type;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on))});document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category==="All"));renderProducts();}
-let cart = JSON.parse(localStorage.getItem("mauGameShopCart") || "[]");
+let cart = readStoredArray("mauGameShopCart");
 const $ = (s) => document.querySelector(s);
 const money = (n) => "Rs" + Number(n).toLocaleString("en-MU");
 function toast(message){const el=$("#toast");el.textContent=message;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),2300)}
@@ -126,6 +132,11 @@ function openCart(){$("#cartDrawer").classList.add("open");$("#cartDrawer").setA
 function closeCart(){$("#cartDrawer").classList.remove("open");$("#cartDrawer").setAttribute("aria-hidden","true");$("#cartOverlay").hidden=true}
 async function init(){
   try{const [p,c]=await Promise.all([fetch("products.json"),fetch("store-config.json")]);if(!p.ok||!c.ok)throw new Error("Could not load store files");products=await p.json();config=await c.json();}catch(e){$("#productGrid").innerHTML='<div class="empty-state">Could not load products. Please make sure index.html, products.json and store-config.json are in the same folder and open the site through a web host or local server.</div>';return}
+  const validIds=new Set(products.map(p=>p.id));
+  recentlyViewed=recentlyViewed.filter(id=>typeof id==="string"&&validIds.has(id)).slice(0,6);
+  favorites=new Set([...favorites].filter(id=>typeof id==="string"&&validIds.has(id)));
+  cart=cart.filter(item=>item&&typeof item.id==="string"&&validIds.has(item.id)&&Number.isInteger(item.qty)&&item.qty>0).map(item=>({id:item.id,qty:Math.min(item.qty,99)}));
+  localStorage.setItem("mauGameShopCart",JSON.stringify(cart));
   $("#year").textContent=new Date().getFullYear();
   $("#juiceDetails").textContent=(config.payment.juiceNumber||"").includes("ADD_")?"Juice details to be added by the shop owner.":`${config.payment.juiceName} · ${config.payment.juiceNumber}`;
   $("#bankDetails").textContent=(config.payment.accountNumber||"").includes("ADD_")?"Bank account details to be added by the shop owner.":`${config.payment.bankName} · ${config.payment.accountName} · ${config.payment.accountNumber}`;
