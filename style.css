@@ -102,3 +102,17 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .favorite-button.is-saved{color:#ff6d9a;border-color:#ff6d9a;background:rgba(60,15,48,.88)}
 #favoritesFilter[aria-pressed="true"]{border-color:#ff6d9a;background:#42213c;color:#ffd5e5}
 #favoritesCount{display:inline-grid;place-items:center;margin-left:4px;min-width:19px;height:19px;padding:0 4px;border-radius:10px;background:#283656;color:#fff;font-size:10px}
+
+/* Checkout review summary */
+.checkout-review{margin:0 0 20px;padding:20px 22px;border:1px solid rgba(115,157,224,.3);border-radius:16px;background:linear-gradient(135deg,rgba(18,38,77,.9),rgba(18,21,48,.85));color:#eaf3ff}
+.checkout-review h3{margin:0 0 14px;font-size:17px}
+.checkout-review>p{font-size:13px;color:#b9c7df}
+.checkout-review ul{list-style:none;padding:0;margin:0}
+.checkout-review li{display:flex;justify-content:space-between;gap:18px;padding:11px 0;border-bottom:1px solid rgba(154,180,225,.14);font-size:13px;line-height:1.5}
+.checkout-review li span{min-width:0;overflow-wrap:anywhere}
+.checkout-review li strong{flex-shrink:0;font-size:12px;white-space:nowrap}
+.checkout-review li b{color:#8dd7ff}
+.review-total{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:17px;font-size:14px}
+.review-total strong{font-size:21px;color:#fff}
+.checkout-review .review-note{margin:12px 0 0;color:#a9bbd9;font-size:11px}
+@media(max-width:600px){.checkout-review{padding:16px}.checkout-review li{gap:8px}}
