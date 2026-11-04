@@ -201,12 +201,12 @@ document.addEventListener("click",e=>{
   const remove=e.target.closest("[data-remove]");if(remove){cart=cart.filter(x=>x.id!==remove.dataset.remove);saveCart()}
   const service=e.target.closest("[data-service-filter]");if(service){activeType="All";document.querySelectorAll("[data-type]").forEach(b=>{b.classList.toggle("active",b.dataset.type==="All");b.setAttribute("aria-pressed",String(b.dataset.type==="All"))});activeCategory=service.dataset.serviceFilter;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category===activeCategory));renderProducts()}
 });
-let syncingProductHistory=false;
-function clearProductUrl(){if(syncingProductHistory)return;const url=new URL(window.location.href);if(url.searchParams.has("product")){url.searchParams.delete("product");history.replaceState(null,"",url);}}
+let suppressProductUrlCleanup=false;
+function clearProductUrl(){if(suppressProductUrlCleanup){suppressProductUrlCleanup=false;return;}const url=new URL(window.location.href);if(url.searchParams.has("product")){url.searchParams.delete("product");history.replaceState(null,"",url);}}
 $("#closeProduct").addEventListener("click",()=>$("#productDialog").close());
 $("#productDialog").addEventListener("click",e=>{if(e.target===$("#productDialog"))$("#productDialog").close()});
 $("#productDialog").addEventListener("close",clearProductUrl);
-window.addEventListener("popstate",()=>{const id=new URLSearchParams(window.location.search).get("product");if(id&&products.some(p=>p.id===id)){showProduct(id,false);}else if($("#productDialog").open){syncingProductHistory=true;$("#productDialog").close();syncingProductHistory=false;}});
+window.addEventListener("popstate",()=>{const id=new URLSearchParams(window.location.search).get("product");if(id&&products.some(p=>p.id===id)){showProduct(id,false);}else if($("#productDialog").open){suppressProductUrlCleanup=true;$("#productDialog").close();}});
 $("#loadMoreProducts").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;renderProducts();});
 $("#clearRecentlyViewed").addEventListener("click",()=>{recentlyViewed=[];localStorage.removeItem("mauGameShopRecentlyViewed");renderRecentlyViewed();});
 $("#favoritesFilter").addEventListener("click",()=>{favoritesOnly=!favoritesOnly;renderProducts();});
