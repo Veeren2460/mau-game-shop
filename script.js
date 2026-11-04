@@ -2,6 +2,9 @@ let products = [];
 let config = {};
 let activeCategory = "All";
 let activeType = "All";
+const PAGE_SIZE = 24;
+let visibleCount = PAGE_SIZE;
+let browseKey = "";
 function productType(p){return p.productType || "Top-Ups";}
 
 function updateBrowseContext(count){const el=$("#browseContext");if(el)el.textContent=`${activeType==="All"?"All products":activeType==="Services"?"Services & gear":activeType} · ${count} item${count===1?"":"s"}`;}
@@ -40,7 +43,12 @@ function renderProducts(){
   if(sort==="price-desc")filtered.sort((a,b)=>(b.price==null?-Infinity:b.price)-(a.price==null?-Infinity:a.price));
   if(sort==="name")filtered.sort((a,b)=>a.name.localeCompare(b.name));
   updateBrowseContext(filtered.length);
-  $("#productGrid").innerHTML=filtered.length?filtered.map(p=>`
+  const nextKey=JSON.stringify([activeType,activeCategory,query,sort]);
+  if(nextKey!==browseKey){visibleCount=PAGE_SIZE;browseKey=nextKey;}
+  const visible=filtered.slice(0,visibleCount);
+  const moreWrap=$("#loadMoreWrap");
+  if(moreWrap){moreWrap.hidden=filtered.length<=visibleCount;$("#catalogProgress").textContent=`Showing ${visible.length} of ${filtered.length} products`;}
+  $("#productGrid").innerHTML=filtered.length?visible.map(p=>`
     <article class="product-card">
       ${productArt(p)}
       <div class="product-info"><span class="product-category">${safeText(p.category)}</span><h3>${safeText(p.name)}</h3><p>${safeText(p.description)}</p>
@@ -89,6 +97,7 @@ document.addEventListener("click",e=>{
 });
 $("#closeProduct").addEventListener("click",()=>$("#productDialog").close());
 $("#productDialog").addEventListener("click",e=>{if(e.target===$("#productDialog"))$("#productDialog").close()});
+$("#loadMoreProducts").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;renderProducts();});
 $("#searchInput").addEventListener("input",renderProducts);
 $("#sortProducts").addEventListener("change",renderProducts);
 $("#resetBrowse").addEventListener("click",()=>{setType("All");$("#sortProducts").value="default";renderProducts();});
