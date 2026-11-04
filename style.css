@@ -148,3 +148,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .active-filter-chips button:hover{background:#20517b;border-color:#77d7ff}
 .active-filter-chips button span{font-size:17px;line-height:10px;color:#a8dfff}
 @media(max-width:650px){.active-filter-chips{gap:6px}.active-filter-chips button{padding:7px 10px;font-size:10px}}
+
+.search-wrap .search-shortcut{margin-left:auto;border:1px solid var(--line);border-radius:5px;padding:2px 7px;font-size:12px;line-height:1.4;color:var(--muted);background:rgba(255,255,255,.04);pointer-events:none}
+.search-wrap:focus-within .search-shortcut{opacity:.45}
