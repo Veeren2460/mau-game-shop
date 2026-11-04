@@ -162,6 +162,7 @@ document.addEventListener("keydown",e=>{
 });
 async function init(){
   try{const [p,c]=await Promise.all([fetch("products.json"),fetch("store-config.json")]);if(!p.ok||!c.ok)throw new Error("Could not load store files");products=await p.json();config=await c.json();}catch(e){$("#productGrid").innerHTML='<div class="empty-state">Could not load products. Please make sure index.html, products.json and store-config.json are in the same folder and open the site through a web host or local server.</div>';return}
+  $("#heroProductCount").textContent=`${products.length.toLocaleString("en-MU")} products`;
   const validIds=new Set(products.map(p=>p.id));
   recentlyViewed=recentlyViewed.filter(id=>typeof id==="string"&&validIds.has(id)).slice(0,6);
   favorites=new Set([...favorites].filter(id=>typeof id==="string"&&validIds.has(id)));
