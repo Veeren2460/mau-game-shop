@@ -69,7 +69,16 @@ function showProduct(id,updateUrl=true){
 }
 function saveCart(){localStorage.setItem("mauGameShopCart",JSON.stringify(cart));renderCart()}
 function addToCart(id){const p=products.find(x=>x.id===id);if(!p)return;const existing=cart.find(x=>x.id===id);if(existing)existing.qty++;else cart.push({id,qty:1});saveCart();toast(`${p.name} added to your order`)}
+function renderCheckoutReview(){
+ const el=$("#checkoutReview");if(!el)return;
+ const valid=cart.map(item=>({item,p:products.find(p=>p.id===item.id)})).filter(x=>x.p);
+ if(!valid.length){el.innerHTML='<h3>Review your order</h3><p>Your cart is empty. Add products before checking out.</p>';return;}
+ const known=valid.reduce((sum,{item,p})=>sum+(p.price==null?0:p.price*item.qty),0);
+ const quote=valid.some(({p})=>p.price==null);
+ el.innerHTML='<h3>Review your order</h3><ul>'+valid.map(({item,p})=>'<li><span>'+safeText(p.name)+' <b>×'+item.qty+'</b></span><strong>'+(p.price==null?'Quote needed':money(p.price*item.qty))+'</strong></li>').join('')+'</ul><div class="review-total"><span>Known-price subtotal</span><strong>'+money(known)+'</strong></div>'+(quote?'<p class="review-note">Some items require a quote. The final amount will be confirmed before payment.</p>':'<p class="review-note">Prices and availability are confirmed by the shop before payment.</p>');
+}
 function renderCart(){
+  renderCheckoutReview();
   $("#cartCount").textContent=cart.reduce((n,x)=>n+x.qty,0);
   const knownTotal=cart.reduce((sum,item)=>{const p=products.find(x=>x.id===item.id);return sum+(p&&p.price!=null?p.price*item.qty:0)},0);
   $("#cartTotal").textContent=money(knownTotal);
