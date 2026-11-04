@@ -1538,7 +1538,7 @@
   {
     "id": "razer-gold-global-1-usd",
     "name": "Razer Gold Global $1 Gift Card",
-    "category": "Steam & Gift Cards",
+    "category": "Razer Gold",
     "price": 90,
     "priceLabel": "Rs90",
     "description": "WHAT YOU RECEIVE: Razer Gold Global $1 Gift Card, a digital Razer Gold redemption code subject to supplier stock. VALUE: The denomination and currency are shown in the product title. ACCOUNT REQUIREMENTS: Check that your Razer Gold account supports the specified currency and redemption country. DELIVERY: Code delivery method and estimated timing are confirmed before payment. IMPORTANT: Digital codes can be region restricted. We will verify the current seller price, availability and redemption eligibility before accepting payment. Do not share your account password.",
@@ -1550,7 +1550,7 @@
   {
     "id": "razer-gold-global-5-usd",
     "name": "Razer Gold Global $5 Gift Card",
-    "category": "Steam & Gift Cards",
+    "category": "Razer Gold",
     "price": 340,
     "priceLabel": "Rs340",
     "description": "WHAT YOU RECEIVE: Razer Gold Global $5 Gift Card, a digital Razer Gold redemption code subject to supplier stock. VALUE: The denomination and currency are shown in the product title. ACCOUNT REQUIREMENTS: Check that your Razer Gold account supports the specified currency and redemption country. DELIVERY: Code delivery method and estimated timing are confirmed before payment. IMPORTANT: Digital codes can be region restricted. We will verify the current seller price, availability and redemption eligibility before accepting payment. Do not share your account password.",
@@ -1562,7 +1562,7 @@
   {
     "id": "razer-gold-global-10-usd",
     "name": "Razer Gold Global $10 Gift Card",
-    "category": "Steam & Gift Cards",
+    "category": "Razer Gold",
     "price": 660,
     "priceLabel": "Rs660",
     "description": "WHAT YOU RECEIVE: Razer Gold Global $10 Gift Card, a digital Razer Gold redemption code subject to supplier stock. VALUE: The denomination and currency are shown in the product title. ACCOUNT REQUIREMENTS: Check that your Razer Gold account supports the specified currency and redemption country. DELIVERY: Code delivery method and estimated timing are confirmed before payment. IMPORTANT: Digital codes can be region restricted. We will verify the current seller price, availability and redemption eligibility before accepting payment. Do not share your account password.",
@@ -1574,7 +1574,7 @@
   {
     "id": "razer-gold-global-20-usd",
     "name": "Razer Gold Global $20 Gift Card",
-    "category": "Steam & Gift Cards",
+    "category": "Razer Gold",
     "price": 1310,
     "priceLabel": "Rs1,310",
     "description": "WHAT YOU RECEIVE: Razer Gold Global $20 Gift Card, a digital Razer Gold redemption code subject to supplier stock. VALUE: The denomination and currency are shown in the product title. ACCOUNT REQUIREMENTS: Check that your Razer Gold account supports the specified currency and redemption country. DELIVERY: Code delivery method and estimated timing are confirmed before payment. IMPORTANT: Digital codes can be region restricted. We will verify the current seller price, availability and redemption eligibility before accepting payment. Do not share your account password.",
@@ -1586,7 +1586,7 @@
   {
     "id": "razer-gold-global-25-usd",
     "name": "Razer Gold Global $25 Gift Card",
-    "category": "Steam & Gift Cards",
+    "category": "Razer Gold",
     "price": 1640,
     "priceLabel": "Rs1,640",
     "description": "WHAT YOU RECEIVE: Razer Gold Global $25 Gift Card, a digital Razer Gold redemption code subject to supplier stock. VALUE: The denomination and currency are shown in the product title. ACCOUNT REQUIREMENTS: Check that your Razer Gold account supports the specified currency and redemption country. DELIVERY: Code delivery method and estimated timing are confirmed before payment. IMPORTANT: Digital codes can be region restricted. We will verify the current seller price, availability and redemption eligibility before accepting payment. Do not share your account password.",
@@ -1598,7 +1598,7 @@
   {
     "id": "razer-gold-global-50-usd",
     "name": "Razer Gold Global $50 Gift Card",
-    "category": "Steam & Gift Cards",
+    "category": "Razer Gold",
     "price": 3190,
     "priceLabel": "Rs3,190",
     "description": "WHAT YOU RECEIVE: Razer Gold Global $50 Gift Card, a digital Razer Gold redemption code subject to supplier stock. VALUE: The denomination and currency are shown in the product title. ACCOUNT REQUIREMENTS: Check that your Razer Gold account supports the specified currency and redemption country. DELIVERY: Code delivery method and estimated timing are confirmed before payment. IMPORTANT: Digital codes can be region restricted. We will verify the current seller price, availability and redemption eligibility before accepting payment. Do not share your account password.",
@@ -1610,7 +1610,7 @@
   {
     "id": "razer-gold-global-100-usd",
     "name": "Razer Gold Global $100 Gift Card",
-    "category": "Steam & Gift Cards",
+    "category": "Razer Gold",
     "price": 6530,
     "priceLabel": "Rs6,530",
     "description": "WHAT YOU RECEIVE: Razer Gold Global $100 Gift Card, a digital Razer Gold redemption code subject to seller stock. VALUE: Use the denomination and currency shown in the title. REDEMPTION: Confirm your Razer Gold account and code region are compatible. DELIVERY: Code delivery timing and method are confirmed before payment. IMPORTANT: The supplier price and final checkout total may change. Razer Gold Global gift card, denomination USD 100. Provisional Eldorado listed price USD 102.50, estimated supplier cost includes 8% and USD 0.30 at Rs47/USD. Confirm region eligibility, seller availability and final checkout before payment.",
@@ -1622,7 +1622,7 @@
   {
     "id": "google-play-tr-25-try",
     "name": "Google Play Turkey 25 TRY Gift Card",
-    "category": "Steam & Gift Cards",
+    "category": "Google Play",
     "price": 90,
     "priceLabel": "Rs90",
     "description": "WHAT YOU RECEIVE: Google Play Turkey 25 TRY Gift Card, subject to authorized code availability. REGION: Redemption requires an eligible Google Play account and country compatibility in Turkey; being in another country may prevent redemption. DELIVERY: Code availability and delivery timing must be confirmed before payment. IMPORTANT: Turkey Google Play gift card, 25 TRY. Redeemable only in Turkey with an eligible Turkey-region Google Play account; verify seller offer and checkout price before payment. Provisional price.",
@@ -1634,7 +1634,7 @@
   {
     "id": "google-play-tr-100-try",
     "name": "Google Play Turkey 100 TRY Gift Card",
-    "category": "Steam & Gift Cards",
+    "category": "Google Play",
     "price": 180,
     "priceLabel": "Rs180",
     "description": "WHAT YOU RECEIVE: Google Play Turkey 100 TRY Gift Card, subject to authorized code availability. REGION: Redemption requires an eligible Google Play account and country compatibility in Turkey; being in another country may prevent redemption. DELIVERY: Code availability and delivery timing must be confirmed before payment. IMPORTANT: Turkey Google Play gift card, 100 TRY. Redeemable only in Turkey with an eligible Turkey-region Google Play account; verify seller offer and checkout price before payment. Provisional price.",
@@ -1646,7 +1646,7 @@
   {
     "id": "google-play-tr-250-try",
     "name": "Google Play Turkey 250 TRY Gift Card",
-    "category": "Steam & Gift Cards",
+    "category": "Google Play",
     "price": 460,
     "priceLabel": "Rs460",
     "description": "WHAT YOU RECEIVE: Google Play Turkey 250 TRY Gift Card, subject to authorized code availability. REGION: Redemption requires an eligible Google Play account and country compatibility in Turkey; being in another country may prevent redemption. DELIVERY: Code availability and delivery timing must be confirmed before payment. IMPORTANT: Turkey Google Play gift card, 250 TRY. Redeemable only in Turkey with an eligible Turkey-region Google Play account; verify seller offer and checkout price before payment. Provisional price.",
@@ -1658,7 +1658,7 @@
   {
     "id": "google-play-tr-500-try",
     "name": "Google Play Turkey 500 TRY Gift Card",
-    "category": "Steam & Gift Cards",
+    "category": "Google Play",
     "price": 880,
     "priceLabel": "Rs880",
     "description": "WHAT YOU RECEIVE: Google Play Turkey 500 TRY Gift Card, subject to authorized code availability. REGION: Redemption requires an eligible Google Play account and country compatibility in Turkey; being in another country may prevent redemption. DELIVERY: Code availability and delivery timing must be confirmed before payment. IMPORTANT: UNVERIFIED DENOMINATION — DO NOT PAY. An authorized, redeemable code has not been independently confirmed. UNVERIFIED denomination: Google's published Turkey gift card range ends at TRY 250. Do not take payment until an authorized, redeemable Turkey code of TRY 500 is independently confirmed. Existing listed price is provisional.",
@@ -1670,7 +1670,7 @@
   {
     "id": "google-play-tr-1000-try",
     "name": "Google Play Turkey 1000 TRY Gift Card",
-    "category": "Steam & Gift Cards",
+    "category": "Google Play",
     "price": 1740,
     "priceLabel": "Rs1,740",
     "description": "WHAT YOU RECEIVE: Google Play Turkey 1000 TRY Gift Card, subject to authorized code availability. REGION: Redemption requires an eligible Google Play account and country compatibility in Turkey; being in another country may prevent redemption. DELIVERY: Code availability and delivery timing must be confirmed before payment. IMPORTANT: UNVERIFIED DENOMINATION — DO NOT PAY. An authorized, redeemable code has not been independently confirmed. UNVERIFIED denomination: Google's published Turkey gift card range ends at TRY 250. Do not take payment until an authorized, redeemable Turkey code of TRY 1000 is independently confirmed. Existing listed price is provisional.",
@@ -1682,7 +1682,7 @@
   {
     "id": "razer-gold-5-eur",
     "name": "Razer Gold 5 EUR Gift Card",
-    "category": "Steam & Gift Cards",
+    "category": "Razer Gold",
     "price": 470,
     "priceLabel": "Rs470",
     "description": "WHAT YOU RECEIVE: Razer Gold 5 EUR Gift Card, a digital Razer Gold redemption code subject to seller stock. VALUE: Use the denomination and currency shown in the title. REDEMPTION: Confirm your Razer Gold account and code region are compatible. DELIVERY: Code delivery timing and method are confirmed before payment. IMPORTANT: The supplier price and final checkout total may change. Eldorado advertised starting price USD 7.04. Razer Gold 5 EUR denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional.",
@@ -1694,7 +1694,7 @@
   {
     "id": "razer-gold-20-cad",
     "name": "Razer Gold 20 CAD Gift Card",
-    "category": "Steam & Gift Cards",
+    "category": "Razer Gold",
     "price": 1020,
     "priceLabel": "Rs1,020",
     "description": "WHAT YOU RECEIVE: Razer Gold 20 CAD Gift Card, a digital Razer Gold redemption code subject to seller stock. VALUE: Use the denomination and currency shown in the title. REDEMPTION: Confirm your Razer Gold account and code region are compatible. DELIVERY: Code delivery timing and method are confirmed before payment. IMPORTANT: The supplier price and final checkout total may change. Eldorado advertised starting price USD 15.68. Razer Gold 20 CAD denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional.",
@@ -1706,7 +1706,7 @@
   {
     "id": "razer-gold-40-pln",
     "name": "Razer Gold 40 PLN Gift Card",
-    "category": "Steam & Gift Cards",
+    "category": "Razer Gold",
     "price": 760,
     "priceLabel": "Rs760",
     "description": "WHAT YOU RECEIVE: Razer Gold 40 PLN Gift Card, a digital Razer Gold redemption code subject to seller stock. VALUE: Use the denomination and currency shown in the title. REDEMPTION: Confirm your Razer Gold account and code region are compatible. DELIVERY: Code delivery timing and method are confirmed before payment. IMPORTANT: The supplier price and final checkout total may change. Eldorado advertised starting price USD 11.63. Razer Gold 40 PLN denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional.",
@@ -1718,7 +1718,7 @@
   {
     "id": "razer-gold-5-try",
     "name": "Razer Gold 5 TRY Gift Card",
-    "category": "Steam & Gift Cards",
+    "category": "Razer Gold",
     "price": 50,
     "priceLabel": "Rs50",
     "description": "WHAT YOU RECEIVE: Razer Gold 5 TRY Gift Card, a digital Razer Gold redemption code subject to seller stock. VALUE: Use the denomination and currency shown in the title. REDEMPTION: Confirm your Razer Gold account and code region are compatible. DELIVERY: Code delivery timing and method are confirmed before payment. IMPORTANT: The supplier price and final checkout total may change. Eldorado advertised starting price USD 0.50. Razer Gold 5 TRY denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional.",
