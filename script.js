@@ -42,13 +42,14 @@ function renderProducts(){
   $("#favoritesCount").textContent=favorites.size;
   $("#favoritesFilter").setAttribute("aria-pressed",String(favoritesOnly));
   const query=$("#searchInput").value.trim().toLowerCase();
-  const filtered=products.filter(p=>(!favoritesOnly||favorites.has(p.id))&&(activeType==="All"||productType(p)===activeType)&&(activeCategory==="All"||p.category===activeCategory)&&(`${p.name} ${p.category} ${p.description}`.toLowerCase().includes(query)));
+  const budget=$("#priceFilter").value;
+  const filtered=products.filter(p=>(budget==="all"||(budget==="quote"?p.price==null:(p.price!=null&&Number.isFinite(Number(p.price))&&Number(p.price)<=Number(budget))))&&(!favoritesOnly||favorites.has(p.id))&&(activeType==="All"||productType(p)===activeType)&&(activeCategory==="All"||p.category===activeCategory)&&(`${p.name} ${p.category} ${p.description}`.toLowerCase().includes(query)));
   const sort=$("#sortProducts").value;
   if(sort==="price-asc")filtered.sort((a,b)=>(a.price==null?Infinity:a.price)-(b.price==null?Infinity:b.price));
   if(sort==="price-desc")filtered.sort((a,b)=>(b.price==null?-Infinity:b.price)-(a.price==null?-Infinity:a.price));
   if(sort==="name")filtered.sort((a,b)=>a.name.localeCompare(b.name));
   updateBrowseContext(filtered.length);
-  const nextKey=JSON.stringify([activeType,activeCategory,query,sort,favoritesOnly]);
+  const nextKey=JSON.stringify([activeType,activeCategory,query,sort,favoritesOnly,budget]);
   if(nextKey!==browseKey){visibleCount=PAGE_SIZE;browseKey=nextKey;}
   const visible=filtered.slice(0,visibleCount);
   const moreWrap=$("#loadMoreWrap");
@@ -139,7 +140,8 @@ $("#clearRecentlyViewed").addEventListener("click",()=>{recentlyViewed=[];localS
 $("#favoritesFilter").addEventListener("click",()=>{favoritesOnly=!favoritesOnly;renderProducts();});
 $("#searchInput").addEventListener("input",renderProducts);
 $("#sortProducts").addEventListener("change",renderProducts);
-$("#resetBrowse").addEventListener("click",()=>{favoritesOnly=false;setType("All");$("#sortProducts").value="default";renderProducts();});
+$("#priceFilter").addEventListener("change",renderProducts);
+$("#resetBrowse").addEventListener("click",()=>{favoritesOnly=false;$("#priceFilter").value="all";$("#sortProducts").value="default";setType("All");renderProducts();});
 $("#cartOpen").addEventListener("click",openCart);$("#cartClose").addEventListener("click",closeCart);$("#cartOverlay").addEventListener("click",closeCart);
 $("#clearCart").addEventListener("click",()=>{cart=[];saveCart()});
 $("#whatsappOrder").addEventListener("click",()=>{if(!cart.length){toast("Your cart is empty.");return}closeCart();$("#checkout").scrollIntoView({behavior:"smooth"});});
