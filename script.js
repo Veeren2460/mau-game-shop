@@ -26,7 +26,7 @@ function renderProducts(){
   updateBrowseContext(filtered.length);
   $("#productGrid").innerHTML=filtered.length?filtered.map(p=>`
     <article class="product-card">
-      <div class="product-image"><img src="${safeText(p.image)}" alt="${safeText(p.name)}" loading="lazy" onerror="this.style.display='none'"><span class="product-badge">${safeText(p.badge||p.category)}</span></div>
+      <div class="product-image" data-category="${safeText(p.category)}"><img src="${safeText(p.image)}" alt="" loading="lazy" onerror="this.style.display='none'"><span class="product-art-label" aria-hidden="true">${safeText(p.category)}</span><span class="product-badge">${safeText(p.badge||p.category)}</span></div>
       <div class="product-info"><span class="product-category">${safeText(p.category)}</span><h3>${safeText(p.name)}</h3><p>${safeText(p.description)}</p>
       <div class="product-bottom"><span class="price">${safeText(p.priceLabel || (p.price==null?"Request price":money(p.price)))}</span><button class="add-button" data-add="${safeText(p.id)}">+ Add</button></div><button class="detail-button" data-detail="${safeText(p.id)}" aria-label="View details for ${safeText(p.name)}">View details ↗</button></div>
     </article>`).join(""):`<div class="empty-state">${activeType==="Accounts"?"No account listings available yet. Please check back later.":"No products found. Try another search or category."}</div>`;
@@ -34,7 +34,7 @@ function renderProducts(){
 function showProduct(id){
  const p=products.find(x=>x.id===id);if(!p)return;
  const warning=/unverified|do not pay/i.test(String(p.badge||"")+" "+String(p.description||""));
- $("#productDetail").innerHTML=`<div class="detail-layout"><div class="detail-image"><img src="${safeText(p.image)}" alt="${safeText(p.name)}" loading="lazy"></div><div class="detail-copy"><span class="product-category">${safeText(p.category)} · ${safeText(productType(p))}</span><h2>${safeText(p.name)}</h2><p>${safeText(p.description)}</p><div class="detail-price">${safeText(p.priceLabel||(p.price==null?"Request price":money(p.price)))}</div><p class="detail-disclaimer">Region, stock, delivery method and final price must be confirmed before payment.</p>${warning?'<p class="detail-warning">This listing needs independent verification before payment.</p>':""}<button class="btn primary" data-add="${safeText(p.id)}">Add to cart</button></div></div>`;
+ $("#productDetail").innerHTML=`<div class="detail-layout"><div class="detail-image" data-category="${safeText(p.category)}"><img src="${safeText(p.image)}" alt="" loading="lazy" onerror="this.style.display='none'"><span class="detail-art-label">${safeText(p.category)}</span></div><div class="detail-copy"><span class="product-category">${safeText(p.category)} · ${safeText(productType(p))}</span><h2>${safeText(p.name)}</h2><p>${safeText(p.description)}</p><div class="detail-price">${safeText(p.priceLabel||(p.price==null?"Request price":money(p.price)))}</div><p class="detail-disclaimer">Region, stock, delivery method and final price must be confirmed before payment.</p>${warning?'<p class="detail-warning">This listing needs independent verification before payment.</p>':""}<button class="btn primary" data-add="${safeText(p.id)}">Add to cart</button></div></div>`;
  $("#productDialog").showModal();
 }
 function saveCart(){localStorage.setItem("mauGameShopCart",JSON.stringify(cart));renderCart()}
