@@ -5,6 +5,7 @@ let activeType = "All";
 const PAGE_SIZE = 24;
 let visibleCount = PAGE_SIZE;
 let browseKey = "";
+let recentlyViewed = JSON.parse(localStorage.getItem("mauGameShopRecentlyViewed") || "[]");
 let favoritesOnly = false;
 let favorites = new Set(JSON.parse(localStorage.getItem("mauGameShopFavorites") || "[]"));
 function productType(p){return p.productType || "Top-Ups";}
@@ -60,8 +61,21 @@ function renderProducts(){
       <div class="product-bottom"><span class="price">${safeText(p.priceLabel || (p.price==null?"Request price":money(p.price)))}</span><button class="add-button" data-add="${safeText(p.id)}">+ Add</button></div><button class="detail-button" data-detail="${safeText(p.id)}" aria-label="View details for ${safeText(p.name)}">View details ↗</button></div>
     </article>`).join(""):`<div class="empty-state">${activeType==="Accounts"?"No account listings available yet. Please check back later.":"No products found. Try another search or category."}</div>`;
 }
+function renderRecentlyViewed(){
+ const panel=$("#recentlyViewed"),items=$("#recentlyViewedItems");
+ if(!panel||!items)return;
+ const found=recentlyViewed.map(id=>products.find(p=>p.id===id)).filter(Boolean);
+ panel.hidden=!found.length;
+ items.innerHTML=found.map(p=>`<button type="button" class="recent-item" data-detail="${safeText(p.id)}"><span class="recent-category">${safeText(p.category)}</span><strong>${safeText(p.name)}</strong><span class="recent-price">${safeText(p.priceLabel||(p.price==null?"Request price":money(p.price)))}</span></button>`).join("");
+}
+function trackRecentlyViewed(id){
+ recentlyViewed=[id,...recentlyViewed.filter(x=>x!==id)].slice(0,6);
+ localStorage.setItem("mauGameShopRecentlyViewed",JSON.stringify(recentlyViewed));
+ renderRecentlyViewed();
+}
 function showProduct(id,updateUrl=true){
  const p=products.find(x=>x.id===id);if(!p)return;
+ trackRecentlyViewed(id);
  const warning=/unverified|do not pay/i.test(String(p.badge||"")+" "+String(p.description||""));
  $("#productDetail").innerHTML=`<div class="detail-layout">${productArt(p,true)}<div class="detail-copy"><span class="product-category">${safeText(p.category)} · ${safeText(productType(p))}</span><h2>${safeText(p.name)}</h2><p>${safeText(p.description)}</p><div class="detail-price">${safeText(p.priceLabel||(p.price==null?"Request price":money(p.price)))}</div><p class="detail-disclaimer">Region, stock, delivery method and final price must be confirmed before payment.</p>${warning?'<p class="detail-warning">This listing needs independent verification before payment.</p>':""}<div class="detail-actions"><button class="btn primary" data-add="${safeText(p.id)}">Add to cart</button><button class="btn ghost" type="button" data-share="${safeText(p.id)}">Share product ↗</button></div></div></div>`;
  if(updateUrl){const url=new URL(window.location.href);url.searchParams.set("product",p.id);history.pushState({product:p.id},"",url);}
@@ -98,7 +112,7 @@ async function init(){
   $("#juiceDetails").textContent=(config.payment.juiceNumber||"").includes("ADD_")?"Juice details to be added by the shop owner.":`${config.payment.juiceName} · ${config.payment.juiceNumber}`;
   $("#bankDetails").textContent=(config.payment.accountNumber||"").includes("ADD_")?"Bank account details to be added by the shop owner.":`${config.payment.bankName} · ${config.payment.accountName} · ${config.payment.accountNumber}`;
   $("#contactWhatsApp").addEventListener("click",e=>{e.preventDefault();const url=whatsappUrl("Hello MAU GAME SHOP! I would like to ask about your products and services.");if(url!=="#")window.open(url,"_blank","noopener")});
-  renderProducts();renderCart();
+  renderProducts();renderCart();renderRecentlyViewed();
   const linkedProduct=new URLSearchParams(window.location.search).get("product");
   if(linkedProduct && products.some(p=>p.id===linkedProduct))showProduct(linkedProduct,false);
 }
@@ -121,6 +135,7 @@ $("#productDialog").addEventListener("click",e=>{if(e.target===$("#productDialog
 $("#productDialog").addEventListener("close",clearProductUrl);
 window.addEventListener("popstate",()=>{const id=new URLSearchParams(window.location.search).get("product");if(id&&products.some(p=>p.id===id))showProduct(id,false);else if($("#productDialog").open)$("#productDialog").close();});
 $("#loadMoreProducts").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;renderProducts();});
+$("#clearRecentlyViewed").addEventListener("click",()=>{recentlyViewed=[];localStorage.removeItem("mauGameShopRecentlyViewed");renderRecentlyViewed();});
 $("#favoritesFilter").addEventListener("click",()=>{favoritesOnly=!favoritesOnly;renderProducts();});
 $("#searchInput").addEventListener("input",renderProducts);
 $("#sortProducts").addEventListener("change",renderProducts);
