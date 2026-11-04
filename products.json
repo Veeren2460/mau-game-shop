@@ -101,10 +101,11 @@
     "category": "Roblox",
     "price": null,
     "priceLabel": "Request price",
-    "description": "Ask for available denominations and region compatibility before ordering.",
+    "description": "WHAT YOU RECEIVE: A digital Roblox Gift Card / Credit code or credit option, subject to confirmed denomination and stock. VALUE: Tell us the required card value and currency. REGION: Your account country and redemption eligibility must match the code. DELIVERY: We will confirm the available code, redemption method and estimated delivery time before payment. IMPORTANT: Codes may not be redeemable across regions; confirm the exact card and final price before ordering.",
     "badge": "Digital",
     "image": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=900",
-    "productType": "Gift Cards"
+    "productType": "Gift Cards",
+    "supplierNotes": "Ask for available denominations and region compatibility before ordering."
   },
   {
     "id": "ps-gift-card",
@@ -112,10 +113,11 @@
     "category": "PlayStation",
     "price": null,
     "priceLabel": "Request price",
-    "description": "Specify the wallet currency and region. Gift cards must match the customer's account region.",
+    "description": "WHAT YOU RECEIVE: A digital PlayStation Gift Card code or credit option, subject to confirmed denomination and stock. VALUE: Tell us the required card value and currency. REGION: Your account country and redemption eligibility must match the code. DELIVERY: We will confirm the available code, redemption method and estimated delivery time before payment. IMPORTANT: Codes may not be redeemable across regions; confirm the exact card and final price before ordering.",
     "badge": "Digital",
     "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=900",
-    "productType": "Gift Cards"
+    "productType": "Gift Cards",
+    "supplierNotes": "Specify the wallet currency and region. Gift cards must match the customer's account region."
   },
   {
     "id": "ps-plus",
@@ -123,10 +125,11 @@
     "category": "PlayStation",
     "price": null,
     "priceLabel": "Request price",
-    "description": "Ask about Essential, Extra or Deluxe and the available duration. Region and account eligibility must be checked.",
+    "description": "SUBSCRIPTION: PlayStation Plus. OPTIONS: Ask about Essential, Extra or Deluxe and the available membership duration. ACCOUNT REQUIREMENTS: Confirm your PlayStation account country, tier eligibility and existing subscription. DELIVERY: The supported activation method, duration, availability and timing will be confirmed before payment. IMPORTANT: Region restrictions and upgrade or renewal rules may apply. Never share your password.",
     "badge": "Subscription",
     "image": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=900",
-    "productType": "Subscriptions"
+    "productType": "Subscriptions",
+    "supplierNotes": "Ask about Essential, Extra or Deluxe and the available duration. Region and account eligibility must be checked."
   },
   {
     "id": "xbox-gift",
@@ -134,10 +137,11 @@
     "category": "Xbox",
     "price": null,
     "priceLabel": "Request price",
-    "description": "Ask for available values and confirm account region compatibility.",
+    "description": "WHAT YOU RECEIVE: A digital Xbox Gift Card code or credit option, subject to confirmed denomination and stock. VALUE: Tell us the required card value and currency. REGION: Your account country and redemption eligibility must match the code. DELIVERY: We will confirm the available code, redemption method and estimated delivery time before payment. IMPORTANT: Codes may not be redeemable across regions; confirm the exact card and final price before ordering.",
     "badge": "Digital",
     "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=900",
-    "productType": "Gift Cards"
+    "productType": "Gift Cards",
+    "supplierNotes": "Ask for available values and confirm account region compatibility."
   },
   {
     "id": "nintendo-gift",
@@ -145,10 +149,11 @@
     "category": "Nintendo",
     "price": null,
     "priceLabel": "Request price",
-    "description": "Ask for available region and denomination before placing your order.",
+    "description": "WHAT YOU RECEIVE: A digital Nintendo eShop Card code or credit option, subject to confirmed denomination and stock. VALUE: Tell us the required card value and currency. REGION: Your account country and redemption eligibility must match the code. DELIVERY: We will confirm the available code, redemption method and estimated delivery time before payment. IMPORTANT: Codes may not be redeemable across regions; confirm the exact card and final price before ordering.",
     "badge": "Digital",
     "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=900",
-    "productType": "Gift Cards"
+    "productType": "Gift Cards",
+    "supplierNotes": "Ask for available region and denomination before placing your order."
   },
   {
     "id": "controller-accessory",
@@ -156,10 +161,11 @@
     "category": "Gaming Accessories",
     "price": null,
     "priceLabel": "Request price",
-    "description": "Ask about thumb grips, charging accessories, protective items and other available stock.",
+    "description": "PRODUCT: Controller Accessories. OPTIONS: Ask about thumb grips, charging accessories, protective items and other available stock. BEFORE ORDERING: Tell us your console or device model and preferred accessory specifications. DELIVERY: We will confirm stock, item condition, compatibility, collection or shipping arrangements and final price before payment. IMPORTANT: No specific brand, model or warranty is promised until confirmed.",
     "badge": "Accessories",
     "image": "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=900",
-    "productType": "Services"
+    "productType": "Services",
+    "supplierNotes": "Ask about thumb grips, charging accessories, protective items and other available stock."
   },
   {
     "id": "headset",
@@ -167,10 +173,11 @@
     "category": "Gaming Accessories",
     "price": null,
     "priceLabel": "Request price",
-    "description": "Ask for current models, compatibility and availability.",
+    "description": "PRODUCT: Gaming Headset. OPTIONS: Ask for current models, compatibility and availability. BEFORE ORDERING: Tell us your console or device model and preferred accessory specifications. DELIVERY: We will confirm stock, item condition, compatibility, collection or shipping arrangements and final price before payment. IMPORTANT: No specific brand, model or warranty is promised until confirmed.",
     "badge": "Accessories",
     "image": "https://images.unsplash.com/photo-1599669454699-248893623440?w=900",
-    "productType": "Services"
+    "productType": "Services",
+    "supplierNotes": "Ask for current models, compatibility and availability."
   },
   {
     "id": "poster-basic",
@@ -178,10 +185,11 @@
     "category": "Digital Services",
     "price": 250,
     "priceLabel": "Rs250",
-    "description": "One simple promotional poster for social media. Includes one small revision.",
+    "description": "SERVICE: Simple Advertising Poster. WHAT IS INCLUDED: One simple promotional poster for social media. Includes one small revision. BEFORE ORDERING: Send your requirements, examples, preferred style, text, images and delivery deadline. DELIVERY: We will confirm the scope, estimated completion time, revision terms and final quote before payment. IMPORTANT: Additional requests or third-party costs may be quoted separately.",
     "badge": "Design",
     "image": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=900",
-    "productType": "Services"
+    "productType": "Services",
+    "supplierNotes": "One simple promotional poster for social media. Includes one small revision."
   },
   {
     "id": "poster-premium",
@@ -189,10 +197,11 @@
     "category": "Digital Services",
     "price": 400,
     "priceLabel": "Rs400",
-    "description": "A more detailed promotional design for your business or product. Includes one small revision.",
+    "description": "SERVICE: Premium Advertising Poster. WHAT IS INCLUDED: A more detailed promotional design for your business or product. Includes one small revision. BEFORE ORDERING: Send your requirements, examples, preferred style, text, images and delivery deadline. DELIVERY: We will confirm the scope, estimated completion time, revision terms and final quote before payment. IMPORTANT: Additional requests or third-party costs may be quoted separately.",
     "badge": "Design",
     "image": "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=900",
-    "productType": "Services"
+    "productType": "Services",
+    "supplierNotes": "A more detailed promotional design for your business or product. Includes one small revision."
   },
   {
     "id": "poster-pack",
@@ -200,10 +209,11 @@
     "category": "Digital Services",
     "price": 1000,
     "priceLabel": "Rs1,000",
-    "description": "A matching set of five social media promotional designs.",
+    "description": "SERVICE: 5 Social Media Posters. WHAT IS INCLUDED: A matching set of five social media promotional designs. BEFORE ORDERING: Send your requirements, examples, preferred style, text, images and delivery deadline. DELIVERY: We will confirm the scope, estimated completion time, revision terms and final quote before payment. IMPORTANT: Additional requests or third-party costs may be quoted separately.",
     "badge": "Bundle",
     "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900",
-    "productType": "Services"
+    "productType": "Services",
+    "supplierNotes": "A matching set of five social media promotional designs."
   },
   {
     "id": "logo",
@@ -211,10 +221,11 @@
     "category": "Digital Services",
     "price": 500,
     "priceLabel": "Rs500",
-    "description": "A simple starter logo concept for a small business. Confirm requirements before work begins.",
+    "description": "SERVICE: Simple Logo Design. WHAT IS INCLUDED: A simple starter logo concept for a small business. Confirm requirements before work begins. BEFORE ORDERING: Send your requirements, examples, preferred style, text, images and delivery deadline. DELIVERY: We will confirm the scope, estimated completion time, revision terms and final quote before payment. IMPORTANT: Additional requests or third-party costs may be quoted separately.",
     "badge": "Design",
     "image": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=900",
-    "productType": "Services"
+    "productType": "Services",
+    "supplierNotes": "A simple starter logo concept for a small business. Confirm requirements before work begins."
   },
   {
     "id": "website-one",
@@ -222,10 +233,11 @@
     "category": "Digital Services",
     "price": 1500,
     "priceLabel": "From Rs1,500",
-    "description": "A simple mobile-friendly one-page website. Domain, paid hosting and extra features are not included.",
+    "description": "SERVICE: One-page Website. WHAT IS INCLUDED: A simple mobile-friendly one-page website. Domain, paid hosting and extra features are not included. BEFORE ORDERING: Send your requirements, examples, preferred style, text, images and delivery deadline. DELIVERY: We will confirm the scope, estimated completion time, revision terms and final quote before payment. IMPORTANT: Additional requests or third-party costs may be quoted separately.",
     "badge": "Web",
     "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900",
-    "productType": "Services"
+    "productType": "Services",
+    "supplierNotes": "A simple mobile-friendly one-page website. Domain, paid hosting and extra features are not included."
   },
   {
     "id": "website-business",
@@ -233,10 +245,11 @@
     "category": "Digital Services",
     "price": 3000,
     "priceLabel": "From Rs3,000",
-    "description": "A basic multi-page business website. Final quote depends on content and features. Domain and paid hosting are extra.",
+    "description": "SERVICE: Business Website (3–5 pages). WHAT IS INCLUDED: A basic multi-page business website. Final quote depends on content and features. Domain and paid hosting are extra. BEFORE ORDERING: Send your requirements, examples, preferred style, text, images and delivery deadline. DELIVERY: We will confirm the scope, estimated completion time, revision terms and final quote before payment. IMPORTANT: Additional requests or third-party costs may be quoted separately.",
     "badge": "Web",
     "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900",
-    "productType": "Services"
+    "productType": "Services",
+    "supplierNotes": "A basic multi-page business website. Final quote depends on content and features. Domain and paid hosting are extra."
   },
   {
     "id": "website-update",
@@ -244,10 +257,11 @@
     "category": "Digital Services",
     "price": 300,
     "priceLabel": "From Rs300",
-    "description": "Small content or image updates to an existing website. Final price depends on the work.",
+    "description": "SERVICE: Website Updates. WHAT IS INCLUDED: Small content or image updates to an existing website. Final price depends on the work. BEFORE ORDERING: Send your requirements, examples, preferred style, text, images and delivery deadline. DELIVERY: We will confirm the scope, estimated completion time, revision terms and final quote before payment. IMPORTANT: Additional requests or third-party costs may be quoted separately.",
     "badge": "Web",
     "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900",
-    "productType": "Services"
+    "productType": "Services",
+    "supplierNotes": "Small content or image updates to an existing website. Final price depends on the work."
   },
   {
     "id": "codm-cp",
@@ -351,10 +365,11 @@
     "category": "Steam & Gift Cards",
     "price": null,
     "priceLabel": "Request price",
-    "description": "Request a denomination and specify Steam account country/currency. Region compatibility must be verified.",
+    "description": "WHAT YOU RECEIVE: A digital Steam Wallet Gift Card code or credit option, subject to confirmed denomination and stock. VALUE: Tell us the required card value and currency. REGION: Your account country and redemption eligibility must match the code. DELIVERY: We will confirm the available code, redemption method and estimated delivery time before payment. IMPORTANT: Codes may not be redeemable across regions; confirm the exact card and final price before ordering.",
     "badge": "Gift Card",
     "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900",
-    "productType": "Gift Cards"
+    "productType": "Gift Cards",
+    "supplierNotes": "Request a denomination and specify Steam account country/currency. Region compatibility must be verified."
   },
   {
     "id": "gaming-gift-cards",
@@ -362,10 +377,11 @@
     "category": "Steam & Gift Cards",
     "price": null,
     "priceLabel": "Request price",
-    "description": "Ask about available gaming gift cards, denominations and redemption regions before payment.",
+    "description": "WHAT YOU RECEIVE: A digital Gaming Gift Cards code or credit option, subject to confirmed denomination and stock. VALUE: Tell us the required card value and currency. REGION: Your account country and redemption eligibility must match the code. DELIVERY: We will confirm the available code, redemption method and estimated delivery time before payment. IMPORTANT: Codes may not be redeemable across regions; confirm the exact card and final price before ordering.",
     "badge": "Gift Card",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900",
-    "productType": "Gift Cards"
+    "productType": "Gift Cards",
+    "supplierNotes": "Ask about available gaming gift cards, denominations and redemption regions before payment."
   },
   {
     "id": "genshin-60-asia",
@@ -481,10 +497,11 @@
     "category": "Genshin Impact",
     "price": 37500,
     "priceLabel": "Rs37,500",
-    "description": "80,800 Genesis Crystals for Asia server only. Provide your Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation.",
+    "description": "WHAT YOU RECEIVE: Genshin Impact 80,800 Genesis Crystals (Asia). PACKAGE DETAILS: 80,800 Genesis Crystals for Asia server only. Provide your Genshin UID and confirm Asia server before paying. ACCOUNT REQUIREMENTS: Provide your Genshin Impact UID and confirm the Asia server. DELIVERY: We will confirm the fulfillment method, availability and timing before payment. IMPORTANT: Verify package eligibility, current subscription or Battle Pass status where applicable. Never share passwords or login codes. Final supplier price and stock require confirmation.",
     "badge": "Asia Top-up",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900",
-    "productType": "Top-Ups"
+    "productType": "Top-Ups",
+    "supplierNotes": "80,800 Genesis Crystals for Asia server only. Provide your Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation."
   },
   {
     "id": "genshin-all-in-one-asia",
@@ -492,10 +509,11 @@
     "category": "Genshin Impact",
     "price": 7650,
     "priceLabel": "Rs7,650",
-    "description": "All-in-One Bundle for Asia server only. Exact bundle contents must be confirmed before payment. Provide your Genshin UID and confirm Asia server. Subject to supplier availability and final confirmation.",
+    "description": "WHAT YOU RECEIVE: Genshin Impact All-in-One Bundle (Asia). PACKAGE DETAILS: All-in-One Bundle for Asia server only. Exact bundle contents must be confirmed before payment. Provide your Genshin UID and confirm Asia server. ACCOUNT REQUIREMENTS: Provide your Genshin Impact UID and confirm the Asia server. DELIVERY: We will confirm the fulfillment method, availability and timing before payment. IMPORTANT: Verify package eligibility, current subscription or Battle Pass status where applicable. Never share passwords or login codes. Final supplier price and stock require confirmation.",
     "badge": "Asia Bundle",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900",
-    "productType": "Top-Ups"
+    "productType": "Top-Ups",
+    "supplierNotes": "All-in-One Bundle for Asia server only. Exact bundle contents must be confirmed before payment. Provide your Genshin UID and confirm Asia server. Subject to supplier availability and final confirmation."
   },
   {
     "id": "genshin-welkin-180-asia",
@@ -503,10 +521,11 @@
     "category": "Genshin Impact",
     "price": 1250,
     "priceLabel": "Rs1,250",
-    "description": "Blessing of the Welkin Moon for 180 days on Asia server (six 30-day blessings). Check existing Welkin duration before ordering: duration stacking is limited to 180 days. Daily Primogems require daily login. Provide your Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation.",
+    "description": "WHAT YOU RECEIVE: Genshin Impact Blessing of the Welkin Moon 180 Days (Asia). PACKAGE DETAILS: Blessing of the Welkin Moon for 180 days on Asia server (six 30-day blessings). Check existing Welkin duration before ordering: duration stacking is limited to 180 days. Daily Primogems require daily login. Provide your Genshin UID and confirm Asia server before paying. ACCOUNT REQUIREMENTS: Provide your Genshin Impact UID and confirm the Asia server. DELIVERY: We will confirm the fulfillment method, availability and timing before payment. IMPORTANT: Verify package eligibility, current subscription or Battle Pass status where applicable. Never share passwords or login codes. Final supplier price and stock require confirmation.",
     "badge": "Asia Welkin",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900",
-    "productType": "Subscriptions"
+    "productType": "Subscriptions",
+    "supplierNotes": "Blessing of the Welkin Moon for 180 days on Asia server (six 30-day blessings). Check existing Welkin duration before ordering: duration stacking is limited to 180 days. Daily Primogems require daily login. Provide your Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation."
   },
   {
     "id": "genshin-welkin-30-asia",
@@ -514,10 +533,11 @@
     "category": "Genshin Impact",
     "price": 230,
     "priceLabel": "Rs230",
-    "description": "Blessing of the Welkin Moon for 30 days on Asia server. Includes 300 Genesis Crystals upon activation and 90 Primogems per day claimed by logging in. Missed daily claims are not recoverable. Check remaining Welkin duration before ordering (180-day stacking limit). Provide your Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation.",
+    "description": "WHAT YOU RECEIVE: Genshin Impact Blessing of the Welkin Moon 30 Days (Asia). PACKAGE DETAILS: Blessing of the Welkin Moon for 30 days on Asia server. Includes 300 Genesis Crystals upon activation and 90 Primogems per day claimed by logging in. Missed daily claims are not recoverable. Check remaining Welkin duration before ordering (180-day stacking limit). Provide your Genshin UID and confirm Asia server before paying. ACCOUNT REQUIREMENTS: Provide your Genshin Impact UID and confirm the Asia server. DELIVERY: We will confirm the fulfillment method, availability and timing before payment. IMPORTANT: Verify package eligibility, current subscription or Battle Pass status where applicable. Never share passwords or login codes. Final supplier price and stock require confirmation.",
     "badge": "Asia Welkin",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900",
-    "productType": "Subscriptions"
+    "productType": "Subscriptions",
+    "supplierNotes": "Blessing of the Welkin Moon for 30 days on Asia server. Includes 300 Genesis Crystals upon activation and 90 Primogems per day claimed by logging in. Missed daily claims are not recoverable. Check remaining Welkin duration before ordering (180-day stacking limit). Provide your Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation."
   },
   {
     "id": "genshin-welkin-90-asia",
@@ -525,10 +545,11 @@
     "category": "Genshin Impact",
     "price": 630,
     "priceLabel": "Rs630",
-    "description": "Blessing of the Welkin Moon for 90 days on Asia server (three 30-day blessings). Includes 300 Genesis Crystals per blessing and 90 Primogems per day claimed by logging in. Missed daily claims are not recoverable. Check existing Welkin duration before ordering (180-day stacking limit). Provide your Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation.",
+    "description": "WHAT YOU RECEIVE: Genshin Impact Blessing of the Welkin Moon 90 Days (Asia). PACKAGE DETAILS: Blessing of the Welkin Moon for 90 days on Asia server (three 30-day blessings). Includes 300 Genesis Crystals per blessing and 90 Primogems per day claimed by logging in. Missed daily claims are not recoverable. Check existing Welkin duration before ordering (180-day stacking limit). Provide your Genshin UID and confirm Asia server before paying. ACCOUNT REQUIREMENTS: Provide your Genshin Impact UID and confirm the Asia server. DELIVERY: We will confirm the fulfillment method, availability and timing before payment. IMPORTANT: Verify package eligibility, current subscription or Battle Pass status where applicable. Never share passwords or login codes. Final supplier price and stock require confirmation.",
     "badge": "Asia Welkin",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900",
-    "productType": "Subscriptions"
+    "productType": "Subscriptions",
+    "supplierNotes": "Blessing of the Welkin Moon for 90 days on Asia server (three 30-day blessings). Includes 300 Genesis Crystals per blessing and 90 Primogems per day claimed by logging in. Missed daily claims are not recoverable. Check existing Welkin duration before ordering (180-day stacking limit). Provide your Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation."
   },
   {
     "id": "genshin-welkin-1090-asia",
@@ -536,10 +557,11 @@
     "category": "Genshin Impact",
     "price": 950,
     "priceLabel": "Rs950",
-    "description": "Bundle for Asia server: one 30-day Blessing of the Welkin Moon plus the 1,090 Genesis Crystals package. Welkin grants 300 Genesis Crystals upon activation and 90 Primogems daily with login for 30 days; missed daily rewards are not recoverable. Check existing Welkin duration (180-day stacking limit). Provide Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation.",
+    "description": "WHAT YOU RECEIVE: Genshin Impact Blessing of the Welkin Moon + 1,090 Genesis Crystals (Asia). PACKAGE DETAILS: Bundle for Asia server: one 30-day Blessing of the Welkin Moon plus the 1,090 Genesis Crystals package. Welkin grants 300 Genesis Crystals upon activation and 90 Primogems daily with login for 30 days; missed daily rewards are not recoverable. Check existing Welkin duration (180-day stacking limit). Provide Genshin UID and confirm Asia server before paying. ACCOUNT REQUIREMENTS: Provide your Genshin Impact UID and confirm the Asia server. DELIVERY: We will confirm the fulfillment method, availability and timing before payment. IMPORTANT: Verify package eligibility, current subscription or Battle Pass status where applicable. Never share passwords or login codes. Final supplier price and stock require confirmation.",
     "badge": "Asia Bundle",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900",
-    "productType": "Subscriptions"
+    "productType": "Subscriptions",
+    "supplierNotes": "Bundle for Asia server: one 30-day Blessing of the Welkin Moon plus the 1,090 Genesis Crystals package. Welkin grants 300 Genesis Crystals upon activation and 90 Primogems daily with login for 30 days; missed daily rewards are not recoverable. Check existing Welkin duration (180-day stacking limit). Provide Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation."
   },
   {
     "id": "genshin-welkin-8080-asia",
@@ -547,10 +569,11 @@
     "category": "Genshin Impact",
     "price": 3990,
     "priceLabel": "Rs3,990",
-    "description": "Bundle for Asia server: one 30-day Blessing of the Welkin Moon plus the 8,080 Genesis Crystals package. Welkin grants 300 Genesis Crystals upon activation and 90 Primogems daily with login for 30 days; missed daily rewards are not recoverable. Check existing Welkin duration (180-day stacking limit). Provide Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation.",
+    "description": "WHAT YOU RECEIVE: Genshin Impact Blessing of the Welkin Moon + 8,080 Genesis Crystals (Asia). PACKAGE DETAILS: Bundle for Asia server: one 30-day Blessing of the Welkin Moon plus the 8,080 Genesis Crystals package. Welkin grants 300 Genesis Crystals upon activation and 90 Primogems daily with login for 30 days; missed daily rewards are not recoverable. Check existing Welkin duration (180-day stacking limit). Provide Genshin UID and confirm Asia server before paying. ACCOUNT REQUIREMENTS: Provide your Genshin Impact UID and confirm the Asia server. DELIVERY: We will confirm the fulfillment method, availability and timing before payment. IMPORTANT: Verify package eligibility, current subscription or Battle Pass status where applicable. Never share passwords or login codes. Final supplier price and stock require confirmation.",
     "badge": "Asia Bundle",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900",
-    "productType": "Subscriptions"
+    "productType": "Subscriptions",
+    "supplierNotes": "Bundle for Asia server: one 30-day Blessing of the Welkin Moon plus the 8,080 Genesis Crystals package. Welkin grants 300 Genesis Crystals upon activation and 90 Primogems daily with login for 30 days; missed daily rewards are not recoverable. Check existing Welkin duration (180-day stacking limit). Provide Genshin UID and confirm Asia server before paying. Subject to supplier availability and final confirmation."
   },
   {
     "id": "genshin-gnostic-chorus-asia",
@@ -558,10 +581,11 @@
     "category": "Genshin Impact",
     "price": 950,
     "priceLabel": "Rs950",
-    "description": "Gnostic Chorus Battle Pass for Asia server and the current Battle Pass period. Includes premium Battle Pass rewards and a 10-level advancement, with period-specific bonuses. Requires eligible Battle Pass access; confirm Adventure Rank, current pass status, purchase window and supplier fulfillment method before paying. Do not share account passwords. Subject to supplier availability and final confirmation.",
+    "description": "WHAT YOU RECEIVE: Genshin Impact Gnostic Chorus Battle Pass (Asia). PACKAGE DETAILS: Gnostic Chorus Battle Pass for Asia server and the current Battle Pass period. Includes premium Battle Pass rewards and a 10-level advancement, with period-specific bonuses. Requires eligible Battle Pass access; confirm Adventure Rank, current pass status, purchase window and supplier fulfillment method before paying. Do not share account passwords. ACCOUNT REQUIREMENTS: Provide your Genshin Impact UID and confirm the Asia server. DELIVERY: We will confirm the fulfillment method, availability and timing before payment. IMPORTANT: Verify package eligibility, current subscription or Battle Pass status where applicable. Never share passwords or login codes. Final supplier price and stock require confirmation.",
     "badge": "Asia Battle Pass",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900",
-    "productType": "Subscriptions"
+    "productType": "Subscriptions",
+    "supplierNotes": "Gnostic Chorus Battle Pass for Asia server and the current Battle Pass period. Includes premium Battle Pass rewards and a 10-level advancement, with period-specific bonuses. Requires eligible Battle Pass access; confirm Adventure Rank, current pass status, purchase window and supplier fulfillment method before paying. Do not share account passwords. Subject to supplier availability and final confirmation."
   },
   {
     "id": "genshin-gnostic-hymn-asia",
@@ -569,10 +593,11 @@
     "category": "Genshin Impact",
     "price": 560,
     "priceLabel": "Rs560",
-    "description": "Gnostic Hymn premium Battle Pass for Asia server and the current Battle Pass period. Unlocks premium Battle Pass rewards as levels are earned; requires Adventure Rank 20 or higher. Confirm current Battle Pass eligibility, purchase window, prior ownership and supplier fulfillment method before paying. Never share account passwords. Subject to supplier availability and final confirmation.",
+    "description": "WHAT YOU RECEIVE: Genshin Impact Gnostic Hymn Battle Pass (Asia). PACKAGE DETAILS: Gnostic Hymn premium Battle Pass for Asia server and the current Battle Pass period. Unlocks premium Battle Pass rewards as levels are earned; requires Adventure Rank 20 or higher. Confirm current Battle Pass eligibility, purchase window, prior ownership and supplier fulfillment method before paying. Never share account passwords. ACCOUNT REQUIREMENTS: Provide your Genshin Impact UID and confirm the Asia server. DELIVERY: We will confirm the fulfillment method, availability and timing before payment. IMPORTANT: Verify package eligibility, current subscription or Battle Pass status where applicable. Never share passwords or login codes. Final supplier price and stock require confirmation.",
     "badge": "Asia Battle Pass",
     "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900",
-    "productType": "Subscriptions"
+    "productType": "Subscriptions",
+    "supplierNotes": "Gnostic Hymn premium Battle Pass for Asia server and the current Battle Pass period. Unlocks premium Battle Pass rewards as levels are earned; requires Adventure Rank 20 or higher. Confirm current Battle Pass eligibility, purchase window, prior ownership and supplier fulfillment method before paying. Never share account passwords. Subject to supplier availability and final confirmation."
   },
   {
     "id": "fortnite-vbucks-800",
@@ -1588,10 +1613,11 @@
     "category": "Steam & Gift Cards",
     "price": 6530,
     "priceLabel": "Rs6,530",
-    "description": "Razer Gold Global gift card, denomination USD 100. Provisional Eldorado listed price USD 102.50, estimated supplier cost includes 8% and USD 0.30 at Rs47/USD. Confirm region eligibility, seller availability and final checkout before payment.",
+    "description": "WHAT YOU RECEIVE: Razer Gold Global $100 Gift Card, a digital Razer Gold redemption code subject to seller stock. VALUE: Use the denomination and currency shown in the title. REDEMPTION: Confirm your Razer Gold account and code region are compatible. DELIVERY: Code delivery timing and method are confirmed before payment. IMPORTANT: The supplier price and final checkout total may change. Razer Gold Global gift card, denomination USD 100. Provisional Eldorado listed price USD 102.50, estimated supplier cost includes 8% and USD 0.30 at Rs47/USD. Confirm region eligibility, seller availability and final checkout before payment.",
     "badge": "Confirm Redemption Region",
     "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900",
-    "productType": "Gift Cards"
+    "productType": "Gift Cards",
+    "supplierNotes": "Razer Gold Global gift card, denomination USD 100. Provisional Eldorado listed price USD 102.50, estimated supplier cost includes 8% and USD 0.30 at Rs47/USD. Confirm region eligibility, seller availability and final checkout before payment."
   },
   {
     "id": "google-play-tr-25-try",
@@ -1599,10 +1625,11 @@
     "category": "Steam & Gift Cards",
     "price": 90,
     "priceLabel": "Rs90",
-    "description": "Turkey Google Play gift card, 25 TRY. Redeemable only in Turkey with an eligible Turkey-region Google Play account; verify seller offer and checkout price before payment. Provisional price.",
+    "description": "WHAT YOU RECEIVE: Google Play Turkey 25 TRY Gift Card, subject to authorized code availability. REGION: Redemption requires an eligible Google Play account and country compatibility in Turkey; being in another country may prevent redemption. DELIVERY: Code availability and delivery timing must be confirmed before payment. IMPORTANT: Turkey Google Play gift card, 25 TRY. Redeemable only in Turkey with an eligible Turkey-region Google Play account; verify seller offer and checkout price before payment. Provisional price.",
     "badge": "Turkey Accounts Only",
     "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=900",
-    "productType": "Gift Cards"
+    "productType": "Gift Cards",
+    "supplierNotes": "Turkey Google Play gift card, 25 TRY. Redeemable only in Turkey with an eligible Turkey-region Google Play account; verify seller offer and checkout price before payment. Provisional price."
   },
   {
     "id": "google-play-tr-100-try",
@@ -1610,10 +1637,11 @@
     "category": "Steam & Gift Cards",
     "price": 180,
     "priceLabel": "Rs180",
-    "description": "Turkey Google Play gift card, 100 TRY. Redeemable only in Turkey with an eligible Turkey-region Google Play account; verify seller offer and checkout price before payment. Provisional price.",
+    "description": "WHAT YOU RECEIVE: Google Play Turkey 100 TRY Gift Card, subject to authorized code availability. REGION: Redemption requires an eligible Google Play account and country compatibility in Turkey; being in another country may prevent redemption. DELIVERY: Code availability and delivery timing must be confirmed before payment. IMPORTANT: Turkey Google Play gift card, 100 TRY. Redeemable only in Turkey with an eligible Turkey-region Google Play account; verify seller offer and checkout price before payment. Provisional price.",
     "badge": "Turkey Accounts Only",
     "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=900",
-    "productType": "Gift Cards"
+    "productType": "Gift Cards",
+    "supplierNotes": "Turkey Google Play gift card, 100 TRY. Redeemable only in Turkey with an eligible Turkey-region Google Play account; verify seller offer and checkout price before payment. Provisional price."
   },
   {
     "id": "google-play-tr-250-try",
@@ -1621,10 +1649,11 @@
     "category": "Steam & Gift Cards",
     "price": 460,
     "priceLabel": "Rs460",
-    "description": "Turkey Google Play gift card, 250 TRY. Redeemable only in Turkey with an eligible Turkey-region Google Play account; verify seller offer and checkout price before payment. Provisional price.",
+    "description": "WHAT YOU RECEIVE: Google Play Turkey 250 TRY Gift Card, subject to authorized code availability. REGION: Redemption requires an eligible Google Play account and country compatibility in Turkey; being in another country may prevent redemption. DELIVERY: Code availability and delivery timing must be confirmed before payment. IMPORTANT: Turkey Google Play gift card, 250 TRY. Redeemable only in Turkey with an eligible Turkey-region Google Play account; verify seller offer and checkout price before payment. Provisional price.",
     "badge": "Turkey Accounts Only",
     "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=900",
-    "productType": "Gift Cards"
+    "productType": "Gift Cards",
+    "supplierNotes": "Turkey Google Play gift card, 250 TRY. Redeemable only in Turkey with an eligible Turkey-region Google Play account; verify seller offer and checkout price before payment. Provisional price."
   },
   {
     "id": "google-play-tr-500-try",
@@ -1632,10 +1661,11 @@
     "category": "Steam & Gift Cards",
     "price": 880,
     "priceLabel": "Rs880",
-    "description": "UNVERIFIED denomination: Google's published Turkey gift card range ends at TRY 250. Do not take payment until an authorized, redeemable Turkey code of TRY 500 is independently confirmed. Existing listed price is provisional.",
+    "description": "WHAT YOU RECEIVE: Google Play Turkey 500 TRY Gift Card, subject to authorized code availability. REGION: Redemption requires an eligible Google Play account and country compatibility in Turkey; being in another country may prevent redemption. DELIVERY: Code availability and delivery timing must be confirmed before payment. IMPORTANT: UNVERIFIED DENOMINATION — DO NOT PAY. An authorized, redeemable code has not been independently confirmed. UNVERIFIED denomination: Google's published Turkey gift card range ends at TRY 250. Do not take payment until an authorized, redeemable Turkey code of TRY 500 is independently confirmed. Existing listed price is provisional.",
     "badge": "Unverified — Do Not Pay",
     "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=900",
-    "productType": "Gift Cards"
+    "productType": "Gift Cards",
+    "supplierNotes": "UNVERIFIED denomination: Google's published Turkey gift card range ends at TRY 250. Do not take payment until an authorized, redeemable Turkey code of TRY 500 is independently confirmed. Existing listed price is provisional."
   },
   {
     "id": "google-play-tr-1000-try",
@@ -1643,10 +1673,11 @@
     "category": "Steam & Gift Cards",
     "price": 1740,
     "priceLabel": "Rs1,740",
-    "description": "UNVERIFIED denomination: Google's published Turkey gift card range ends at TRY 250. Do not take payment until an authorized, redeemable Turkey code of TRY 1000 is independently confirmed. Existing listed price is provisional.",
+    "description": "WHAT YOU RECEIVE: Google Play Turkey 1000 TRY Gift Card, subject to authorized code availability. REGION: Redemption requires an eligible Google Play account and country compatibility in Turkey; being in another country may prevent redemption. DELIVERY: Code availability and delivery timing must be confirmed before payment. IMPORTANT: UNVERIFIED DENOMINATION — DO NOT PAY. An authorized, redeemable code has not been independently confirmed. UNVERIFIED denomination: Google's published Turkey gift card range ends at TRY 250. Do not take payment until an authorized, redeemable Turkey code of TRY 1000 is independently confirmed. Existing listed price is provisional.",
     "badge": "Unverified — Do Not Pay",
     "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=900",
-    "productType": "Gift Cards"
+    "productType": "Gift Cards",
+    "supplierNotes": "UNVERIFIED denomination: Google's published Turkey gift card range ends at TRY 250. Do not take payment until an authorized, redeemable Turkey code of TRY 1000 is independently confirmed. Existing listed price is provisional."
   },
   {
     "id": "razer-gold-5-eur",
@@ -1654,10 +1685,11 @@
     "category": "Steam & Gift Cards",
     "price": 470,
     "priceLabel": "Rs470",
-    "description": "Eldorado advertised starting price USD 7.04. Razer Gold 5 EUR denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional.",
+    "description": "WHAT YOU RECEIVE: Razer Gold 5 EUR Gift Card, a digital Razer Gold redemption code subject to seller stock. VALUE: Use the denomination and currency shown in the title. REDEMPTION: Confirm your Razer Gold account and code region are compatible. DELIVERY: Code delivery timing and method are confirmed before payment. IMPORTANT: The supplier price and final checkout total may change. Eldorado advertised starting price USD 7.04. Razer Gold 5 EUR denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional.",
     "badge": "Confirm Region & Stock",
     "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900",
-    "productType": "Gift Cards"
+    "productType": "Gift Cards",
+    "supplierNotes": "Eldorado advertised starting price USD 7.04. Razer Gold 5 EUR denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional."
   },
   {
     "id": "razer-gold-20-cad",
@@ -1665,10 +1697,11 @@
     "category": "Steam & Gift Cards",
     "price": 1020,
     "priceLabel": "Rs1,020",
-    "description": "Eldorado advertised starting price USD 15.68. Razer Gold 20 CAD denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional.",
+    "description": "WHAT YOU RECEIVE: Razer Gold 20 CAD Gift Card, a digital Razer Gold redemption code subject to seller stock. VALUE: Use the denomination and currency shown in the title. REDEMPTION: Confirm your Razer Gold account and code region are compatible. DELIVERY: Code delivery timing and method are confirmed before payment. IMPORTANT: The supplier price and final checkout total may change. Eldorado advertised starting price USD 15.68. Razer Gold 20 CAD denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional.",
     "badge": "Confirm Region & Stock",
     "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900",
-    "productType": "Gift Cards"
+    "productType": "Gift Cards",
+    "supplierNotes": "Eldorado advertised starting price USD 15.68. Razer Gold 20 CAD denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional."
   },
   {
     "id": "razer-gold-40-pln",
@@ -1676,10 +1709,11 @@
     "category": "Steam & Gift Cards",
     "price": 760,
     "priceLabel": "Rs760",
-    "description": "Eldorado advertised starting price USD 11.63. Razer Gold 40 PLN denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional.",
+    "description": "WHAT YOU RECEIVE: Razer Gold 40 PLN Gift Card, a digital Razer Gold redemption code subject to seller stock. VALUE: Use the denomination and currency shown in the title. REDEMPTION: Confirm your Razer Gold account and code region are compatible. DELIVERY: Code delivery timing and method are confirmed before payment. IMPORTANT: The supplier price and final checkout total may change. Eldorado advertised starting price USD 11.63. Razer Gold 40 PLN denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional.",
     "badge": "Confirm Region & Stock",
     "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900",
-    "productType": "Gift Cards"
+    "productType": "Gift Cards",
+    "supplierNotes": "Eldorado advertised starting price USD 11.63. Razer Gold 40 PLN denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional."
   },
   {
     "id": "razer-gold-5-try",
@@ -1687,9 +1721,10 @@
     "category": "Steam & Gift Cards",
     "price": 50,
     "priceLabel": "Rs50",
-    "description": "Eldorado advertised starting price USD 0.50. Razer Gold 5 TRY denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional.",
+    "description": "WHAT YOU RECEIVE: Razer Gold 5 TRY Gift Card, a digital Razer Gold redemption code subject to seller stock. VALUE: Use the denomination and currency shown in the title. REDEMPTION: Confirm your Razer Gold account and code region are compatible. DELIVERY: Code delivery timing and method are confirmed before payment. IMPORTANT: The supplier price and final checkout total may change. Eldorado advertised starting price USD 0.50. Razer Gold 5 TRY denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional.",
     "badge": "Confirm Region & Stock",
     "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900",
-    "productType": "Gift Cards"
+    "productType": "Gift Cards",
+    "supplierNotes": "Eldorado advertised starting price USD 0.50. Razer Gold 5 TRY denomination. Confirm card region, eligible account, seller stock and final checkout cost before accepting payment. Price is provisional."
   }
 ]
