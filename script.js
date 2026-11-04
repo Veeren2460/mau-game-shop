@@ -1,3 +1,5 @@
+function writeStoredArray(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true;}catch{return false;}}
+function removeStoredValue(key){try{localStorage.removeItem(key);}catch{}}
 function readStoredArray(key){
  try{
   const value=JSON.parse(localStorage.getItem(key)||"[]");
@@ -78,7 +80,7 @@ function renderProducts(){
   $("#favoritesFilter").setAttribute("aria-pressed",String(favoritesOnly));
   const query=$("#searchInput").value.trim().toLowerCase();
   const budget=$("#priceFilter").value;
-  const filtered=products.filter(p=>(budget==="all"||(budget==="quote"?p.price==null:(p.price!=null&&Number.isFinite(Number(p.price))&&Number(p.price)<=Number(budget))))&&(!favoritesOnly||favorites.has(p.id))&&(activeType==="All"||productType(p)===activeType)&&(activeCategory==="All"||p.category===activeCategory)&&(`${p.name} ${p.category} ${p.description}`.toLowerCase().includes(query)));
+  const filtered=products.filter(p=>(budget==="all"||(budget==="quote"?p.price==null:(p.price!=null&&!isStartingPrice(p)&&Number.isFinite(Number(p.price))&&Number(p.price)<=Number(budget))))&&(!favoritesOnly||favorites.has(p.id))&&(activeType==="All"||productType(p)===activeType)&&(activeCategory==="All"||p.category===activeCategory)&&(`${p.name} ${p.category} ${p.description}`.toLowerCase().includes(query)));
   const sort=$("#sortProducts").value;
   renderActiveFilters(query,sort,budget);
   if(sort==="price-asc")filtered.sort((a,b)=>(a.price==null?Infinity:a.price)-(b.price==null?Infinity:b.price));
@@ -107,7 +109,7 @@ function renderRecentlyViewed(){
 }
 function trackRecentlyViewed(id){
  recentlyViewed=[id,...recentlyViewed.filter(x=>x!==id)].slice(0,6);
- localStorage.setItem("mauGameShopRecentlyViewed",JSON.stringify(recentlyViewed));
+ writeStoredArray("mauGameShopRecentlyViewed",recentlyViewed);
  renderRecentlyViewed();
 }
 function showProduct(id,updateUrl=true){
@@ -118,7 +120,7 @@ function showProduct(id,updateUrl=true){
  if(updateUrl){const url=new URL(window.location.href);if(url.searchParams.get("product")!==p.id){url.searchParams.set("product",p.id);history.pushState({product:p.id},"",url);}}
  if(!$("#productDialog").open)$("#productDialog").showModal();
 }
-function saveCart(){localStorage.setItem("mauGameShopCart",JSON.stringify(cart));renderCart()}
+function saveCart(){writeStoredArray("mauGameShopCart",cart);renderCart()}
 const MAX_ITEM_QTY=20,MAX_CART_LINES=30,MAX_ORDER_SUBTOTAL=100000;
 function cartLimitError(items){
  if(items.length>MAX_CART_LINES)return "Maximum 30 different products per order. Please split your order.";
@@ -148,10 +150,12 @@ function cartSummary(){
 function renderCheckoutReview(){
  const el=$("#checkoutReview");if(!el)return;
  const valid=cart.map(item=>({item,p:products.find(p=>p.id===item.id)})).filter(x=>x.p);
- if(!valid.length){el.innerHTML='<h3>Review your order</h3><p>Your cart is empty. Add products before checking out.</p>';return;}
+ if(!valid.length){$("#customerNote").required=false;el.innerHTML='<h3>Review your order</h3><p>Your cart is empty. Add products before checking out.</p>';return;}
  const known=valid.reduce((sum,{item,p})=>sum+(p.price==null?0:p.price*item.qty),0);
  const quote=valid.some(({p})=>p.price==null);
- el.innerHTML='<h3>Review your order</h3><ul>'+valid.map(({item,p})=>'<li><span>'+safeText(p.name)+' <b>×'+item.qty+'</b></span><strong>'+safeText(linePrice(p,item.qty))+'</strong></li>').join('')+'</ul><div class="review-total"><span>'+safeText(cartSummary().label)+'</span><strong>'+safeText(cartSummary().value)+'</strong></div>'+(quote?'<p class="review-note">Some items require a quote. The final amount will be confirmed before payment.</p>':'<p class="review-note">Prices and availability are confirmed by the shop before payment.</p>');
+ const requirements=quoteRequirements();
+ $("#customerNote").required=requirements.length>0;
+ el.innerHTML='<h3>Review your order</h3><ul>'+valid.map(({item,p})=>'<li><span>'+safeText(p.name)+' <b>×'+item.qty+'</b></span><strong>'+safeText(linePrice(p,item.qty))+'</strong></li>').join('')+'</ul><div class="review-total"><span>'+safeText(cartSummary().label)+'</span><strong>'+safeText(cartSummary().value)+'</strong></div>'+(quote?'<p class="review-note">Some items require a quote. Add the following details in the notes: '+requirements.map(safeText).join('; ')+'. The final amount will be confirmed before payment.</p>':'<p class="review-note">Prices and availability are confirmed by the shop before payment.</p>');
 }
 function renderCart(){
   renderCheckoutReview();
@@ -162,11 +166,23 @@ function renderCart(){
   if(!cart.length){$("#cartItems").innerHTML='<p class="muted">Your cart is empty.</p>';return}
   $("#cartItems").innerHTML=cart.map(item=>{const p=products.find(x=>x.id===item.id);if(!p)return "";return `<div class="cart-line"><div><h4>${safeText(p.name)}</h4><small>${p.price==null?"Price to be confirmed":safeText(linePrice(p))+" each"}</small><div class="qty-controls"><button data-qty="${p.id}" data-delta="-1" aria-label="Decrease quantity">−</button><b>${item.qty}</b><button data-qty="${p.id}" data-delta="1" aria-label="Increase quantity">+</button><button class="remove" data-remove="${p.id}">Remove</button></div></div><b>${safeText(linePrice(p,item.qty))}</b></div>`}).join("");
 }
-function orderMessage(){
-  const lines=cart.map(item=>{const p=products.find(x=>x.id===item.id);return p?`• ${p.name} x${item.qty} — ${p.price==null?"Please quote":money(p.price*item.qty)}`:""}).filter(Boolean);
-  const total=cart.reduce((sum,item)=>{const p=products.find(x=>x.id===item.id);return sum+(p&&p.price!=null?p.price*item.qty:0)},0);
-  return `Hello MAU GAME SHOP! I would like to place an order:\n\n${lines.join("\n")}\n\nKnown-price subtotal: ${money(total)}\nPlease confirm availability, final total and payment instructions.\n\nName:`;
+function quoteRequirements(){
+ return cart.map(item=>products.find(p=>p.id===item.id)).filter(p=>p&&p.price==null).map(p=>{
+ const details=p.id==="ps-plus"?"tier, duration and PlayStation account country":productType(p)==="Gift Cards"?"card value, currency and account country":productType(p)==="Subscriptions"?"duration, package and account region":p.category==="Gaming Accessories"?"model, compatibility and quantity":"package amount and account region or server";
+ return p.name+": "+details;
+ });
 }
+function orderMessage(){
+ const lines=cart.map(item=>{const p=products.find(p=>p.id===item.id);return p?"• "+p.name+" ×"+item.qty+" — "+linePrice(p,item.qty):"";}).filter(Boolean);
+ const summary=cartSummary(),requirements=quoteRequirements();
+ return ["Hello MAU GAME SHOP! I would like to request an order:","",...lines,"",summary.label+": "+summary.value,...(requirements.length?["","Please specify:",...requirements]:[]),"","Please confirm availability, final price and payment instructions.","Name:"].join("\n");
+}
+$("#sendWhatsAppOrder")?.addEventListener("click",()=>{
+ if(catalogState!=="ready"){toast("Wait for products to load.");return;}
+ if(!cart.length){toast("Your cart is empty.");return;}
+ const error=cartLimitError(cart);if(error){toast(error);return;}
+ const url=whatsappUrl(orderMessage());if(url!=="#")window.open(url,"_blank","noopener");
+});
 let cartPreviousFocus=null;
 function openCart(){
  const drawer=$("#cartDrawer");
@@ -222,7 +238,7 @@ async function init(){
   recentlyViewed=recentlyViewed.filter(id=>typeof id==="string"&&validIds.has(id)).slice(0,6);
   favorites=new Set([...favorites].filter(id=>typeof id==="string"&&validIds.has(id)));
   cart=cart.filter(item=>item&&typeof item.id==="string"&&validIds.has(item.id)&&Number.isInteger(item.qty)&&item.qty>0).map(item=>({id:item.id,qty:item.qty}));
-  localStorage.setItem("mauGameShopCart",JSON.stringify(cart));
+  writeStoredArray("mauGameShopCart",cart);
   $("#year").textContent=new Date().getFullYear();
   $("#juiceDetails").textContent=(config.payment.juiceNumber||"").includes("ADD_")?"Juice details to be added by the shop owner.":`${config.payment.juiceName} · ${config.payment.juiceNumber}`;
   $("#bankDetails").textContent=(config.payment.accountNumber||"").includes("ADD_")?"Bank account details to be added by the shop owner.":`${config.payment.bankName} · ${config.payment.accountName} · ${config.payment.accountNumber}`;
@@ -248,7 +264,7 @@ document.addEventListener("click",e=>{
     }
     syncCategoryButtons();renderProducts();
   }
-  const favorite=e.target.closest("[data-favorite]");if(favorite){const id=favorite.dataset.favorite;if(favorites.has(id))favorites.delete(id);else favorites.add(id);localStorage.setItem("mauGameShopFavorites",JSON.stringify([...favorites]));renderProducts();if($("#productDialog").open&&$("#productDetail [data-favorite]")?.dataset.favorite===id){const detailButton=$("#productDetail [data-favorite]");detailButton.textContent=favorites.has(id)?"♥ Saved":"♡ Save product";detailButton.setAttribute("aria-pressed",String(favorites.has(id)));}toast(favorites.has(id)?"Product saved":"Removed from saved products");}
+  const favorite=e.target.closest("[data-favorite]");if(favorite){const id=favorite.dataset.favorite;if(favorites.has(id))favorites.delete(id);else favorites.add(id);writeStoredArray("mauGameShopFavorites",[...favorites]);renderProducts();if($("#productDialog").open&&$("#productDetail [data-favorite]")?.dataset.favorite===id){const detailButton=$("#productDetail [data-favorite]");detailButton.textContent=favorites.has(id)?"♥ Saved":"♡ Save product";detailButton.setAttribute("aria-pressed",String(favorites.has(id)));}toast(favorites.has(id)?"Product saved":"Removed from saved products");}
   const copyOrder=e.target.closest("[data-copy-order]");if(copyOrder){const number=copyOrder.dataset.copyOrder;if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(number).then(()=>toast("Order number copied")).catch(()=>toast("Could not copy order number"));}else{window.prompt("Copy your order number:",number);}}
   const detail=e.target.closest("[data-detail]");if(detail)showProduct(detail.dataset.detail);
   const share=e.target.closest("[data-share]");if(share){const p=products.find(x=>x.id===share.dataset.share);if(p){const url=new URL(window.location.href);url.searchParams.set("product",p.id);url.hash="shop";const link=url.toString();if(navigator.share){navigator.share({title:p.name,text:p.name+" — MAU GAME SHOP",url:link}).catch(()=>{});}else if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(link).then(()=>toast("Product link copied!")).catch(()=>toast("Could not copy link"));}else{window.prompt("Copy this product link:",link);}}}
@@ -272,7 +288,7 @@ $("#productDialog").addEventListener("click",e=>{if(e.target===$("#productDialog
 $("#productDialog").addEventListener("close",clearProductUrl);
 window.addEventListener("popstate",()=>{const id=new URLSearchParams(window.location.search).get("product");if(id&&products.some(p=>p.id===id)){showProduct(id,false);}else if($("#productDialog").open){suppressProductUrlCleanup=true;$("#productDialog").close();}});
 $("#loadMoreProducts").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;renderProducts();});
-$("#clearRecentlyViewed").addEventListener("click",()=>{recentlyViewed=[];localStorage.removeItem("mauGameShopRecentlyViewed");renderRecentlyViewed();});
+$("#clearRecentlyViewed").addEventListener("click",()=>{recentlyViewed=[];removeStoredValue("mauGameShopRecentlyViewed");renderRecentlyViewed();});
 $("#favoritesFilter").addEventListener("click",()=>{favoritesOnly=!favoritesOnly;renderProducts();});
 $("#searchInput").addEventListener("input",renderProducts);
 document.addEventListener("keydown",e=>{
@@ -317,6 +333,7 @@ document.querySelector("#checkoutForm").addEventListener("submit",async e=>{
  const limitError=cartLimitError(cart);if(limitError){toast(limitError);return;}
  const form=e.currentTarget,button=form.querySelector('button[type="submit"]');
  const name=$("#customerName").value.trim(),phone=$("#customerPhone").value.trim(),player=$("#customerPlayer").value.trim(),payment=$("#customerPayment").value,note=$("#customerNote").value.trim();
+ if(quoteRequirements().length&&!note){toast("Add package, region and duration details for your quote request.");$("#customerNote").focus();return;}
  const methods={"Juice":"juice","MCB":"mcb","Card inquiry":"card"};
  button.disabled=true;button.textContent="Saving order...";
  try{
