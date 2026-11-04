@@ -28,8 +28,14 @@ function renderProducts(){
     <article class="product-card">
       <div class="product-image"><img src="${safeText(p.image)}" alt="${safeText(p.name)}" loading="lazy" onerror="this.style.display='none'"><span class="product-badge">${safeText(p.badge||p.category)}</span></div>
       <div class="product-info"><span class="product-category">${safeText(p.category)}</span><h3>${safeText(p.name)}</h3><p>${safeText(p.description)}</p>
-      <div class="product-bottom"><span class="price">${safeText(p.priceLabel || (p.price==null?"Request price":money(p.price)))}</span><button class="add-button" data-add="${safeText(p.id)}">+ Add</button></div></div>
+      <div class="product-bottom"><span class="price">${safeText(p.priceLabel || (p.price==null?"Request price":money(p.price)))}</span><button class="add-button" data-add="${safeText(p.id)}">+ Add</button></div><button class="detail-button" data-detail="${safeText(p.id)}" aria-label="View details for ${safeText(p.name)}">View details ↗</button></div>
     </article>`).join(""):`<div class="empty-state">${activeType==="Accounts"?"No account listings available yet. Please check back later.":"No products found. Try another search or category."}</div>`;
+}
+function showProduct(id){
+ const p=products.find(x=>x.id===id);if(!p)return;
+ const warning=/unverified|do not pay/i.test(String(p.badge||"")+" "+String(p.description||""));
+ $("#productDetail").innerHTML=`<div class="detail-layout"><div class="detail-image"><img src="${safeText(p.image)}" alt="${safeText(p.name)}" loading="lazy"></div><div class="detail-copy"><span class="product-category">${safeText(p.category)} · ${safeText(productType(p))}</span><h2>${safeText(p.name)}</h2><p>${safeText(p.description)}</p><div class="detail-price">${safeText(p.priceLabel||(p.price==null?"Request price":money(p.price)))}</div><p class="detail-disclaimer">Region, stock, delivery method and final price must be confirmed before payment.</p>${warning?'<p class="detail-warning">This listing needs independent verification before payment.</p>':""}<button class="btn primary" data-add="${safeText(p.id)}">Add to cart</button></div></div>`;
+ $("#productDialog").showModal();
 }
 function saveCart(){localStorage.setItem("mauGameShopCart",JSON.stringify(cart));renderCart()}
 function addToCart(id){const p=products.find(x=>x.id===id);if(!p)return;const existing=cart.find(x=>x.id===id);if(existing)existing.qty++;else cart.push({id,qty:1});saveCart();toast(`${p.name} added to your order`)}
@@ -56,6 +62,7 @@ async function init(){
   renderProducts();renderCart();
 }
 document.addEventListener("click",e=>{
+  const detail=e.target.closest("[data-detail]");if(detail)showProduct(detail.dataset.detail);
   const type=e.target.closest("[data-type]");if(type)setType(type.dataset.type);
   const add=e.target.closest("[data-add]");if(add)addToCart(add.dataset.add);
   const filter=e.target.closest("[data-category]");if(filter){activeCategory=filter.dataset.category;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b===filter));renderProducts()}
@@ -63,6 +70,8 @@ document.addEventListener("click",e=>{
   const remove=e.target.closest("[data-remove]");if(remove){cart=cart.filter(x=>x.id!==remove.dataset.remove);saveCart()}
   const service=e.target.closest("[data-service-filter]");if(service){activeType="All";document.querySelectorAll("[data-type]").forEach(b=>{b.classList.toggle("active",b.dataset.type==="All");b.setAttribute("aria-pressed",String(b.dataset.type==="All"))});activeCategory=service.dataset.serviceFilter;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category===activeCategory));renderProducts()}
 });
+$("#closeProduct").addEventListener("click",()=>$("#productDialog").close());
+$("#productDialog").addEventListener("click",e=>{if(e.target===$("#productDialog"))$("#productDialog").close()});
 $("#searchInput").addEventListener("input",renderProducts);
 $("#sortProducts").addEventListener("change",renderProducts);
 $("#resetBrowse").addEventListener("click",()=>{setType("All");$("#sortProducts").value="default";renderProducts();});
