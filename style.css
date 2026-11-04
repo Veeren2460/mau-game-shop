@@ -140,3 +140,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .recent-price{margin-top:auto;font-size:11px;color:#d3e4ff}
 @media(max-width:800px){.recently-items{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.recently-viewed{padding:12px}.recently-items{grid-template-columns:1fr}.recent-item{min-height:0}}
+
+/* Removable active filter chips */
+.active-filter-chips{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:8px 0 17px}
+.active-filter-chips[hidden]{display:none}
+.active-filter-chips button{display:inline-flex;align-items:center;gap:9px;max-width:100%;border:1px solid rgba(58,181,255,.45);border-radius:999px;background:rgba(19,57,92,.68);color:#d7efff;padding:8px 12px;font-size:11px;font-weight:700;cursor:pointer;overflow-wrap:anywhere;text-align:left}
+.active-filter-chips button:hover{background:#20517b;border-color:#77d7ff}
+.active-filter-chips button span{font-size:17px;line-height:10px;color:#a8dfff}
+@media(max-width:650px){.active-filter-chips{gap:6px}.active-filter-chips button{padding:7px 10px;font-size:10px}}
