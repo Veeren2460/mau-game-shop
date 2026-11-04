@@ -128,8 +128,38 @@ function orderMessage(){
   const total=cart.reduce((sum,item)=>{const p=products.find(x=>x.id===item.id);return sum+(p&&p.price!=null?p.price*item.qty:0)},0);
   return `Hello MAU GAME SHOP! I would like to place an order:\n\n${lines.join("\n")}\n\nKnown-price subtotal: ${money(total)}\nPlease confirm availability, final total and payment instructions.\n\nName:`;
 }
-function openCart(){$("#cartDrawer").classList.add("open");$("#cartDrawer").setAttribute("aria-hidden","false");$("#cartOverlay").hidden=false}
-function closeCart(){$("#cartDrawer").classList.remove("open");$("#cartDrawer").setAttribute("aria-hidden","true");$("#cartOverlay").hidden=true}
+let cartPreviousFocus=null;
+function openCart(){
+ const drawer=$("#cartDrawer");
+ if(drawer.classList.contains("open"))return;
+ cartPreviousFocus=document.activeElement;
+ drawer.inert=false;
+ drawer.classList.add("open");
+ drawer.setAttribute("aria-hidden","false");
+ $("#cartOverlay").hidden=false;
+ $("#cartClose").focus();
+}
+function closeCart(){
+ const drawer=$("#cartDrawer");
+ if(!drawer.classList.contains("open"))return;
+ drawer.classList.remove("open");
+ drawer.setAttribute("aria-hidden","true");
+ drawer.inert=true;
+ $("#cartOverlay").hidden=true;
+ if(cartPreviousFocus&&cartPreviousFocus.isConnected)cartPreviousFocus.focus();
+ cartPreviousFocus=null;
+}
+document.addEventListener("keydown",e=>{
+ const drawer=$("#cartDrawer");
+ if(!drawer.classList.contains("open"))return;
+ if(e.key==="Escape"){e.preventDefault();closeCart();return;}
+ if(e.key!=="Tab")return;
+ const controls=[...drawer.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(el=>el.getClientRects().length);
+ if(!controls.length)return;
+ const first=controls[0],last=controls[controls.length-1];
+ if(e.shiftKey&&(document.activeElement===first||!drawer.contains(document.activeElement))){e.preventDefault();last.focus();}
+ else if(!e.shiftKey&&(document.activeElement===last||!drawer.contains(document.activeElement))){e.preventDefault();first.focus();}
+});
 async function init(){
   try{const [p,c]=await Promise.all([fetch("products.json"),fetch("store-config.json")]);if(!p.ok||!c.ok)throw new Error("Could not load store files");products=await p.json();config=await c.json();}catch(e){$("#productGrid").innerHTML='<div class="empty-state">Could not load products. Please make sure index.html, products.json and store-config.json are in the same folder and open the site through a web host or local server.</div>';return}
   const validIds=new Set(products.map(p=>p.id));
