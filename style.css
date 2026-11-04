@@ -116,3 +116,12 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .review-total strong{font-size:21px;color:#fff}
 .checkout-review .review-note{margin:12px 0 0;color:#a9bbd9;font-size:11px}
 @media(max-width:600px){.checkout-review{padding:16px}.checkout-review li{gap:8px}}
+
+/* Checkout success confirmation */
+#checkoutStatus.order-success{margin-top:18px;padding:18px 20px;border:1px solid rgba(76,212,168,.55);border-radius:13px;background:rgba(15,67,61,.5);color:#e5fff6}
+#checkoutStatus.order-success>strong{display:block;font-size:16px;color:#b5ffe5}
+#checkoutStatus.order-success p{margin:10px 0;font-size:13px;line-height:1.6}
+#checkoutStatus.order-success b{font-size:17px;color:#fff;overflow-wrap:anywhere}
+.copy-order-button{margin-top:7px;border:1px solid rgba(185,255,231,.55);border-radius:9px;padding:10px 14px;background:#194b4b;color:#eafff7;font-size:12px;font-weight:800;cursor:pointer}
+.copy-order-button:hover{background:#24645e}
+.copy-order-button:focus-visible{outline:2px solid #b5ffe5;outline-offset:3px}
