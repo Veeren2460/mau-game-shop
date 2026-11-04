@@ -17,7 +17,12 @@ let favorites = new Set(readStoredArray("mauGameShopFavorites"));
 function productType(p){return p.productType || "Top-Ups";}
 
 function updateBrowseContext(count){const el=$("#browseContext");if(el)el.textContent=`${activeType==="All"?"All products":activeType==="Services"?"Services & gear":activeType} · ${count} item${count===1?"":"s"}`;}
-function setType(type){activeType=type;activeCategory="All";$("#searchInput").value="";document.querySelectorAll("[data-type]").forEach(b=>{const on=b.dataset.type===type;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on))});document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category==="All"));renderProducts();}
+function browseSection(type="All",category="All"){
+ activeType=type;activeCategory=category;favoritesOnly=false;
+ $("#searchInput").value="";$("#priceFilter").value="all";$("#sortProducts").value="default";
+ syncCategoryButtons();renderProducts();
+}
+function setType(type){browseSection(type);}
 let cart = readStoredArray("mauGameShopCart");
 const $ = (s) => document.querySelector(s);
 const money = (n) => "Rs" + Number(n).toLocaleString("en-MU");
@@ -31,7 +36,7 @@ function whatsappUrl(message){
 function productArt(p,large=false){
   const category=safeText(p.category);
   const title=safeText(p.name);
-  const type=safeText(productType(p));
+  const type=safeText(productType(p)==="Services"?"Services & gear":productType(p));
   const isUnverified=/unverified|do not pay/i.test(String(p.badge||"")+" "+String(p.description||""));
   const badge=isUnverified?'<span class="art-caution">VERIFY BEFORE PAYMENT</span>':"";
   return `<div class="${large?"detail-image":"product-image"} game-art" data-category="${category}" role="img" aria-label="${title} product artwork">
@@ -45,13 +50,17 @@ function productArt(p,large=false){
   </div>`;
 }
 function syncCategoryButtons(){
+ document.querySelectorAll(".filter").forEach(b=>{
+  b.disabled=b.dataset.category!=="All"&&!products.some(p=>(activeType==="All"||productType(p)===activeType)&&p.category===b.dataset.category);
+  b.setAttribute("aria-pressed",String(b.dataset.category===activeCategory));
+ });
  document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category===activeCategory));
  document.querySelectorAll("[data-type]").forEach(b=>{const active=b.dataset.type===activeType;b.classList.toggle("active",active);b.setAttribute("aria-pressed",String(active));});
 }
 function renderActiveFilters(query,sort,budget){
  const el=$("#activeFilterChips");if(!el)return;
  const chips=[];
- if(activeType!=="All")chips.push(["type","Type: "+activeType]);
+ if(activeType!=="All")chips.push(["type","Type: "+(activeType==="Services"?"Services & gear":activeType)]);
  if(activeCategory!=="All")chips.push(["category",activeCategory]);
  if(query)chips.push(["search","Search: "+query]);
  if(budget!=="all")chips.push(["budget",budget==="quote"?"Quote only":"Up to Rs"+Number(budget).toLocaleString("en-MU")]);
@@ -61,6 +70,7 @@ function renderActiveFilters(query,sort,budget){
  el.innerHTML=chips.map(([key,label])=>`<button type="button" data-clear-filter="${key}" aria-label="Remove ${safeText(label)} filter">${safeText(label)} <span aria-hidden="true">×</span></button>`).join("");
 }
 function renderProducts(){
+  syncCategoryButtons();
   $("#favoritesCount").textContent=favorites.size;
   $("#favoritesFilter").setAttribute("aria-pressed",String(favoritesOnly));
   const query=$("#searchInput").value.trim().toLowerCase();
@@ -101,27 +111,38 @@ function showProduct(id,updateUrl=true){
  const p=products.find(x=>x.id===id);if(!p)return;
  trackRecentlyViewed(id);
  const warning=/unverified|do not pay/i.test(String(p.badge||"")+" "+String(p.description||""));
- $("#productDetail").innerHTML=`<div class="detail-layout">${productArt(p,true)}<div class="detail-copy"><span class="product-category">${safeText(p.category)} · ${safeText(productType(p))}</span><h2>${safeText(p.name)}</h2><p>${safeText(p.description)}</p><div class="detail-price">${safeText(p.priceLabel||(p.price==null?"Request price":money(p.price)))}</div><p class="detail-disclaimer">Region, stock, delivery method and final price must be confirmed before payment.</p>${warning?'<p class="detail-warning">This listing needs independent verification before payment.</p>':""}<div class="detail-actions"><button class="btn primary" data-add="${safeText(p.id)}">Add to cart</button><button class="btn ghost" type="button" data-favorite="${safeText(p.id)}" aria-pressed="${favorites.has(p.id)}">${favorites.has(p.id)?"♥ Saved":"♡ Save product"}</button><button class="btn ghost" type="button" data-share="${safeText(p.id)}">Share product ↗</button></div></div></div>`;
+ $("#productDetail").innerHTML=`<div class="detail-layout">${productArt(p,true)}<div class="detail-copy"><span class="product-category">${safeText(p.category)} · ${safeText(productType(p)==="Services"?"Services & gear":productType(p))}</span><h2>${safeText(p.name)}</h2><p>${safeText(p.description)}</p><div class="detail-price">${safeText(p.priceLabel||(p.price==null?"Request price":money(p.price)))}</div><p class="detail-disclaimer">Region, stock, delivery method and final price must be confirmed before payment.</p>${warning?'<p class="detail-warning">This listing needs independent verification before payment.</p>':""}<div class="detail-actions"><button class="btn primary" data-add="${safeText(p.id)}">Add to cart</button><button class="btn ghost" type="button" data-favorite="${safeText(p.id)}" aria-pressed="${favorites.has(p.id)}">${favorites.has(p.id)?"♥ Saved":"♡ Save product"}</button><button class="btn ghost" type="button" data-share="${safeText(p.id)}">Share product ↗</button></div></div></div>`;
  if(updateUrl){const url=new URL(window.location.href);if(url.searchParams.get("product")!==p.id){url.searchParams.set("product",p.id);history.pushState({product:p.id},"",url);}}
  if(!$("#productDialog").open)$("#productDialog").showModal();
 }
 function saveCart(){localStorage.setItem("mauGameShopCart",JSON.stringify(cart));renderCart()}
 function addToCart(id){const status=$("#checkoutStatus");if(status){status.classList.remove("order-success");status.textContent="";}const p=products.find(x=>x.id===id);if(!p)return;const existing=cart.find(x=>x.id===id);if(existing){if(existing.qty>=99){toast("Maximum 99 of each product per order.");return;}existing.qty++;}else cart.push({id,qty:1});saveCart();toast(`${p.name} added to your order`)}
+function isStartingPrice(p){return /^from\b/i.test(String(p.priceLabel||""));}
+function linePrice(p,qty=1){return p.price==null?"Quote needed":(isStartingPrice(p)?"From ":"")+money(p.price*qty);}
+function cartSummary(){
+ const entries=cart.map(item=>({item,p:products.find(p=>p.id===item.id)})).filter(x=>x.p);
+ const priced=entries.filter(({p})=>p.price!=null);
+ const quote=priced.length<entries.length;
+ const from=priced.some(({p})=>isStartingPrice(p));
+ const total=priced.reduce((sum,{item,p})=>sum+p.price*item.qty,0);
+ return {label:quote?"Priced items subtotal — quote items extra":from?"Starting-price subtotal":"Known-price subtotal",value:entries.length&&!priced.length?"Awaiting quote":(from?"From ":"")+money(total)};
+}
 function renderCheckoutReview(){
  const el=$("#checkoutReview");if(!el)return;
  const valid=cart.map(item=>({item,p:products.find(p=>p.id===item.id)})).filter(x=>x.p);
  if(!valid.length){el.innerHTML='<h3>Review your order</h3><p>Your cart is empty. Add products before checking out.</p>';return;}
  const known=valid.reduce((sum,{item,p})=>sum+(p.price==null?0:p.price*item.qty),0);
  const quote=valid.some(({p})=>p.price==null);
- el.innerHTML='<h3>Review your order</h3><ul>'+valid.map(({item,p})=>'<li><span>'+safeText(p.name)+' <b>×'+item.qty+'</b></span><strong>'+(p.price==null?'Quote needed':money(p.price*item.qty))+'</strong></li>').join('')+'</ul><div class="review-total"><span>Known-price subtotal</span><strong>'+money(known)+'</strong></div>'+(quote?'<p class="review-note">Some items require a quote. The final amount will be confirmed before payment.</p>':'<p class="review-note">Prices and availability are confirmed by the shop before payment.</p>');
+ el.innerHTML='<h3>Review your order</h3><ul>'+valid.map(({item,p})=>'<li><span>'+safeText(p.name)+' <b>×'+item.qty+'</b></span><strong>'+safeText(linePrice(p,item.qty))+'</strong></li>').join('')+'</ul><div class="review-total"><span>'+safeText(cartSummary().label)+'</span><strong>'+safeText(cartSummary().value)+'</strong></div>'+(quote?'<p class="review-note">Some items require a quote. The final amount will be confirmed before payment.</p>':'<p class="review-note">Prices and availability are confirmed by the shop before payment.</p>');
 }
 function renderCart(){
   renderCheckoutReview();
   $("#cartCount").textContent=cart.reduce((n,x)=>n+x.qty,0);
   const knownTotal=cart.reduce((sum,item)=>{const p=products.find(x=>x.id===item.id);return sum+(p&&p.price!=null?p.price*item.qty:0)},0);
-  $("#cartTotal").textContent=money(knownTotal);
+  $("#cartTotal").textContent=cartSummary().value;
+  const totalLabel=document.querySelector(".cart-total span");if(totalLabel)totalLabel.textContent=cartSummary().label;
   if(!cart.length){$("#cartItems").innerHTML='<p class="muted">Your cart is empty.</p>';return}
-  $("#cartItems").innerHTML=cart.map(item=>{const p=products.find(x=>x.id===item.id);if(!p)return "";return `<div class="cart-line"><div><h4>${safeText(p.name)}</h4><small>${p.price==null?"Price to be confirmed":money(p.price)+" each"}</small><div class="qty-controls"><button data-qty="${p.id}" data-delta="-1" aria-label="Decrease quantity">−</button><b>${item.qty}</b><button data-qty="${p.id}" data-delta="1" aria-label="Increase quantity">+</button><button class="remove" data-remove="${p.id}">Remove</button></div></div><b>${p.price==null?"Quote":money(p.price*item.qty)}</b></div>`}).join("");
+  $("#cartItems").innerHTML=cart.map(item=>{const p=products.find(x=>x.id===item.id);if(!p)return "";return `<div class="cart-line"><div><h4>${safeText(p.name)}</h4><small>${p.price==null?"Price to be confirmed":safeText(linePrice(p))+" each"}</small><div class="qty-controls"><button data-qty="${p.id}" data-delta="-1" aria-label="Decrease quantity">−</button><b>${item.qty}</b><button data-qty="${p.id}" data-delta="1" aria-label="Increase quantity">+</button><button class="remove" data-remove="${p.id}">Remove</button></div></div><b>${safeText(linePrice(p,item.qty))}</b></div>`}).join("");
 }
 function orderMessage(){
   const lines=cart.map(item=>{const p=products.find(x=>x.id===item.id);return p?`• ${p.name} x${item.qty} — ${p.price==null?"Please quote":money(p.price*item.qty)}`:""}).filter(Boolean);
@@ -177,7 +198,7 @@ async function init(){
   if(linkedProduct && products.some(p=>p.id===linkedProduct))showProduct(linkedProduct,false);
 }
 document.addEventListener("click",e=>{
-  const heroCategory=e.target.closest("[data-hero-category]");if(heroCategory){activeType="All";activeCategory=heroCategory.dataset.heroCategory;$("#searchInput").value="";document.querySelectorAll("[data-type]").forEach(b=>{const on=b.dataset.type==="All";b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on))});document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category===activeCategory));renderProducts();}
+  const heroCategory=e.target.closest("[data-hero-category]");if(heroCategory)browseSection("All",heroCategory.dataset.heroCategory);
   const emptyReset=e.target.closest("#emptyResetFilters");if(emptyReset){favoritesOnly=false;$("#priceFilter").value="all";$("#sortProducts").value="default";setType("All");}
   const clearFilter=e.target.closest("[data-clear-filter]");
   if(clearFilter){
@@ -197,10 +218,10 @@ document.addEventListener("click",e=>{
   const share=e.target.closest("[data-share]");if(share){const p=products.find(x=>x.id===share.dataset.share);if(p){const url=new URL(window.location.href);url.searchParams.set("product",p.id);url.hash="shop";const link=url.toString();if(navigator.share){navigator.share({title:p.name,text:p.name+" — MAU GAME SHOP",url:link}).catch(()=>{});}else if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(link).then(()=>toast("Product link copied!")).catch(()=>toast("Could not copy link"));}else{window.prompt("Copy this product link:",link);}}}
   const type=e.target.closest("[data-type]");if(type)setType(type.dataset.type);
   const add=e.target.closest("[data-add]");if(add)addToCart(add.dataset.add);
-  const filter=e.target.closest("button.filter[data-category]");if(filter){activeCategory=filter.dataset.category;syncCategoryButtons();renderProducts()}
+  const filter=e.target.closest("button.filter[data-category]");if(filter&&!filter.disabled){activeCategory=filter.dataset.category;syncCategoryButtons();renderProducts()}
   const qty=e.target.closest("[data-qty]");if(qty){const item=cart.find(x=>x.id===qty.dataset.qty);if(item){const next=item.qty+Number(qty.dataset.delta);if(next>99){toast("Maximum 99 of each product per order.");}else{item.qty=next;if(item.qty<1)cart=cart.filter(x=>x.id!==item.id);saveCart()}}}
   const remove=e.target.closest("[data-remove]");if(remove){cart=cart.filter(x=>x.id!==remove.dataset.remove);saveCart()}
-  const service=e.target.closest("[data-service-filter]");if(service){activeType="All";document.querySelectorAll("[data-type]").forEach(b=>{b.classList.toggle("active",b.dataset.type==="All");b.setAttribute("aria-pressed",String(b.dataset.type==="All"))});activeCategory=service.dataset.serviceFilter;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.category===activeCategory));renderProducts()}
+  const service=e.target.closest("[data-service-filter]");if(service)browseSection("Services",service.dataset.serviceFilter);
 });
 let suppressProductUrlCleanup=false;
 function clearProductUrl(){if(suppressProductUrlCleanup){suppressProductUrlCleanup=false;return;}const url=new URL(window.location.href);if(url.searchParams.has("product")){url.searchParams.delete("product");history.replaceState(null,"",url);}}
