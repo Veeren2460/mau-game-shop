@@ -212,6 +212,22 @@ $("#loadMoreProducts").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;ren
 $("#clearRecentlyViewed").addEventListener("click",()=>{recentlyViewed=[];localStorage.removeItem("mauGameShopRecentlyViewed");renderRecentlyViewed();});
 $("#favoritesFilter").addEventListener("click",()=>{favoritesOnly=!favoritesOnly;renderProducts();});
 $("#searchInput").addEventListener("input",renderProducts);
+document.addEventListener("keydown",e=>{
+ const target=e.target;
+ const editing=target instanceof HTMLElement&&(target.isContentEditable||["INPUT","TEXTAREA","SELECT"].includes(target.tagName));
+ const shortcut=(e.key==="/"&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!editing)||((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k");
+ if(shortcut&&!$("#productDialog").open){
+  e.preventDefault();
+  $("#searchInput").focus();
+  $("#searchInput").scrollIntoView({behavior:"smooth",block:"center"});
+ }
+ if(e.key==="Escape"&&document.activeElement===$("#searchInput")&&$("#searchInput").value){
+  e.preventDefault();
+  $("#searchInput").value="";
+  renderProducts();
+ }
+});
+
 $("#sortProducts").addEventListener("change",renderProducts);
 $("#priceFilter").addEventListener("change",renderProducts);
 $("#resetBrowse").addEventListener("click",()=>{favoritesOnly=false;$("#priceFilter").value="all";$("#sortProducts").value="default";setType("All");renderProducts();});
