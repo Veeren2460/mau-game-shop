@@ -16,6 +16,22 @@ function whatsappUrl(message){
   if(!number || number.includes("XXXXXXXX")){toast("Shop owner: add your WhatsApp number in store-config.json first.");return "#"}
   return `https://wa.me/${number}?text=${encodeURIComponent(message)}`
 }
+function productArt(p,large=false){
+  const category=safeText(p.category);
+  const title=safeText(p.name);
+  const type=safeText(productType(p));
+  const isUnverified=/unverified|do not pay/i.test(String(p.badge||"")+" "+String(p.description||""));
+  const badge=isUnverified?'<span class="art-caution">VERIFY BEFORE PAYMENT</span>':"";
+  return `<div class="${large?"detail-image":"product-image"} game-art" data-category="${category}" role="img" aria-label="${title} product artwork">
+    <span class="art-grid" aria-hidden="true"></span>
+    <span class="art-top" aria-hidden="true">MAU GAME SHOP <span>✦</span> ${type}</span>
+    <span class="art-emblem" aria-hidden="true">${safeText(({ "Free Fire":"⚡","PUBG Mobile":"◎","Mobile Legends":"◆","Roblox":"◇","Fortnite":"✦","PlayStation":"△","Xbox":"✕","Nintendo":"●","Genshin Impact":"✧","Valorant":"Ⅴ","Call of Duty: Mobile":"⌖","Honkai: Star Rail":"✶","eFootball":"◉","Blood Strike":"⚔","Steam & Gift Cards":"▣","Gaming Accessories":"🎮","Digital Services":"⌘" })[p.category]||"✦")}</span>
+    <span class="art-title" aria-hidden="true">${title}</span>
+    <span class="art-footer" aria-hidden="true">DIGITAL GAMING MARKETPLACE</span>
+    ${badge}
+    ${large?"":`<span class="product-badge">${safeText(p.badge||p.category)}</span>`}
+  </div>`;
+}
 function renderProducts(){
   const query=$("#searchInput").value.trim().toLowerCase();
   const filtered=products.filter(p=>(activeType==="All"||productType(p)===activeType)&&(activeCategory==="All"||p.category===activeCategory)&&(`${p.name} ${p.category} ${p.description}`.toLowerCase().includes(query)));
@@ -26,7 +42,7 @@ function renderProducts(){
   updateBrowseContext(filtered.length);
   $("#productGrid").innerHTML=filtered.length?filtered.map(p=>`
     <article class="product-card">
-      <div class="product-image" data-category="${safeText(p.category)}"><img src="${safeText(p.image)}" alt="" loading="lazy" onerror="this.style.display='none'"><span class="product-art-label" aria-hidden="true">${safeText(p.category)}</span><span class="product-badge">${safeText(p.badge||p.category)}</span></div>
+      ${productArt(p)}
       <div class="product-info"><span class="product-category">${safeText(p.category)}</span><h3>${safeText(p.name)}</h3><p>${safeText(p.description)}</p>
       <div class="product-bottom"><span class="price">${safeText(p.priceLabel || (p.price==null?"Request price":money(p.price)))}</span><button class="add-button" data-add="${safeText(p.id)}">+ Add</button></div><button class="detail-button" data-detail="${safeText(p.id)}" aria-label="View details for ${safeText(p.name)}">View details ↗</button></div>
     </article>`).join(""):`<div class="empty-state">${activeType==="Accounts"?"No account listings available yet. Please check back later.":"No products found. Try another search or category."}</div>`;
@@ -34,7 +50,7 @@ function renderProducts(){
 function showProduct(id){
  const p=products.find(x=>x.id===id);if(!p)return;
  const warning=/unverified|do not pay/i.test(String(p.badge||"")+" "+String(p.description||""));
- $("#productDetail").innerHTML=`<div class="detail-layout"><div class="detail-image" data-category="${safeText(p.category)}"><img src="${safeText(p.image)}" alt="" loading="lazy" onerror="this.style.display='none'"><span class="detail-art-label">${safeText(p.category)}</span></div><div class="detail-copy"><span class="product-category">${safeText(p.category)} · ${safeText(productType(p))}</span><h2>${safeText(p.name)}</h2><p>${safeText(p.description)}</p><div class="detail-price">${safeText(p.priceLabel||(p.price==null?"Request price":money(p.price)))}</div><p class="detail-disclaimer">Region, stock, delivery method and final price must be confirmed before payment.</p>${warning?'<p class="detail-warning">This listing needs independent verification before payment.</p>':""}<button class="btn primary" data-add="${safeText(p.id)}">Add to cart</button></div></div>`;
+ $("#productDetail").innerHTML=`<div class="detail-layout">${productArt(p,true)}<div class="detail-copy"><span class="product-category">${safeText(p.category)} · ${safeText(productType(p))}</span><h2>${safeText(p.name)}</h2><p>${safeText(p.description)}</p><div class="detail-price">${safeText(p.priceLabel||(p.price==null?"Request price":money(p.price)))}</div><p class="detail-disclaimer">Region, stock, delivery method and final price must be confirmed before payment.</p>${warning?'<p class="detail-warning">This listing needs independent verification before payment.</p>':""}<button class="btn primary" data-add="${safeText(p.id)}">Add to cart</button></div></div>`;
  $("#productDialog").showModal();
 }
 function saveCart(){localStorage.setItem("mauGameShopCart",JSON.stringify(cart));renderCart()}
